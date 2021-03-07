@@ -1,5 +1,6 @@
 import random
 import enum
+import os
 
 from . svg_parser import SVGParser
 
@@ -351,6 +352,11 @@ class Avatar:
             shirt_graphic=ClothesGraphic.pick_random() if shirt_graphic is None else shirt_graphic,
             shirt_text = shirt_text,
         )
+
+    @staticmethod
+    def __get_path(enum_cls, value):
+        package_path = os.path.dirname(__file__)
+        return os.path.join(package_path, enum_cls.__path__, '{}.svg'.format(value))
 
     def render(self, path=None):
 
