@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="264px" height="110px" viewbox="0 0 264 110" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M0 80.3117L26 80.3117L102 80.3117L118 80.3117L128 80.3117L128 -0.43816Q125.757 -0.688859 123.501 -0.688859L102 -0.688859L102 44.3117L26 44.3117L26 -0.688859L4.49926 -0.688859Q2.24265 -0.688859 7.41418e-15 -0.438161L0 80.3117Z" transform="translate(68 29.688343)" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="ClothingOverall">
+    <path d="M0 80.3117L26 80.3117L102 80.3117L118 80.3117L128 80.3117L128 -0.43816Q125.757 -0.688859 123.501 -0.688859L102 -0.688859L102 44.3117L26 44.3117L26 -0.688859L4.49926 -0.688859Q2.24265 -0.688859 7.41418e-15 -0.438161L0 80.3117Z" transform="translate(68 29.688343)" id="Overall" fill="#B7C1DB" fill-rule="evenodd" stroke="none" />
+    <g clip-path="url(#mask_1)">
+      <g id="Color-Fabric">
+        <path d="M0 0L264 0L264 110L0 110L0 0Z" id="🖍Color" fill="#E6E6E6" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+    <path d="M5 10C7.76142 10 10 7.76142 10 5C10 2.23858 7.76142 0 5 0C2.23858 0 0 2.23858 0 5C0 7.76142 2.23858 10 5 10Z" transform="translate(76 78)" id="Button" fill="#F4F4F4" fill-rule="evenodd" stroke="none" />
+    <path d="M5 10C7.76142 10 10 7.76142 10 5C10 2.23858 7.76142 0 5 0C2.23858 0 0 2.23858 0 5C0 7.76142 2.23858 10 5 10Z" transform="translate(178 78)" id="Button" fill="#F4F4F4" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>

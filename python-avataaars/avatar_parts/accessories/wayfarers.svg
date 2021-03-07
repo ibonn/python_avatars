@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="142px" height="54px" viewbox="0 0 142 54" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="0.5" y1="0" x2="0.5" y2="1" id="gradient_1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5019608" />
+      <stop offset="0.7050582" stop-color="#000000" stop-opacity="0.5019608" />
+    </linearGradient>
+    <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+      <feOffset dx="0" dy="2" />
+      <feGaussianBlur stdDeviation="0" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
+    </filter>
+    <path d="M43.9949 17.5714C43.9949 27.2738 35.7447 35.1429 21.9974 35.1429L19.2474 35.1429C5.50009 35.1429 0 27.2709 0 17.5714L0 17.5714C0 7.86614 1.28414 0 20.5315 0L23.4633 0C42.7107 0 43.9949 7.86614 43.9949 17.5714L43.9949 17.5714Z" transform="translate(0.92302275 0)" id="path_1" />
+    <path d="M43.9949 17.5714C43.9949 27.2738 35.7477 35.1429 21.9974 35.1429L19.2474 35.1429C5.50009 35.1429 0 27.2709 0 17.5714L0 17.5714C0 7.86614 1.28414 0 20.5315 0L23.4633 0C42.7078 0 43.9949 7.86614 43.9949 17.5714L43.9949 17.5714Z" transform="translate(62.491203 0)" id="path_2" />
+  </defs>
+  <g id="Top_ResourcesWayfarers">
+    <g filter="url(#filter_1)">
+      <g id="Wayfarers" transform="translate(7 7)">
+        <g id="Shades" transform="translate(10.795455 2.9285715)">
+          <g id="Shade">
+            <use stroke="none" fill="#000000" fill-opacity="0.7019608" xlink:href="#path_1" fill-rule="evenodd" />
+            <use stroke="none" fill="url(#gradient_1)" style="mix-blend-mode: screen;" xlink:href="#path_1" fill-rule="evenodd" />
+          </g>
+          <g id="Shade">
+            <use stroke="none" fill="#000000" fill-opacity="0.7019608" xlink:href="#path_2" fill-rule="evenodd" />
+            <use stroke="none" fill="url(#gradient_1)" style="mix-blend-mode: screen;" xlink:href="#path_2" fill-rule="evenodd" />
+          </g>
+        </g>
+        <path d="M22.1792 41L24.9293 41C39.6089 41 49.8585 32.5686 49.8585 20.5C49.8585 10.127 48.0466 0 26.3952 0L23.4633 0C1.81186 0 0 10.127 0 20.5C0 33.3359 8.29118 41 22.1792 41ZM5.86364 20.5C5.86364 12.3176 5.86364 5.85421 23.4633 5.85421L26.3952 5.85421C43.9949 5.85421 43.9949 12.3176 43.9949 20.5C43.9949 29.1217 36.1552 35.1429 24.9292 35.1429L22.1792 35.1429C8.69284 35.1429 5.86364 27.1801 5.86364 20.5Z" transform="translate(8.786659 0)" id="Left" fill="#252C2F" fill-rule="evenodd" stroke="none" />
+        <path d="M22.1792 41L24.9293 41C39.6089 41 49.8585 32.5686 49.8585 20.5C49.8585 10.127 48.0466 0 26.3952 0L23.4633 0C1.81186 0 0 10.127 0 20.5C0 33.3359 8.29118 41 22.1792 41ZM5.86364 20.5C5.86364 12.3176 5.86364 5.85421 23.4633 5.85421L26.3952 5.85421C43.9949 5.85421 43.9949 12.3176 43.9949 20.5C43.9949 29.1217 36.1552 35.1429 24.9292 35.1429L22.1792 35.1429C8.69577 35.1429 5.86364 27.1801 5.86364 20.5Z" transform="translate(70.35484 0)" id="Right" fill="#252C2F" fill-rule="evenodd" stroke="none" />
+        <path d="M2.93182 5.85714C3.61786 5.17186 11.1233 0 32.25 0C49.964 0 53.7138 1.88014 59.3898 4.72086L59.8053 4.93055C60.1999 5.07314 62.2179 5.7742 64.5785 5.85129C66.729 5.7569 68.5685 5.16081 69.106 4.96981C75.5845 1.74762 81.926 0 96.75 0C117.877 0 125.382 5.17186 126.068 5.85714C127.689 5.85714 129 7.16621 129 8.78571L129 11.7143C129 13.3338 127.689 14.6429 126.068 14.6429C126.068 14.6429 120.205 14.6429 120.205 17.5714C120.205 20.5 117.273 13.3338 117.273 11.7143L117.273 8.86188C113.697 7.46243 107.297 5.85714 96.75 5.85714C84.9996 5.85714 79.1476 6.98813 74.1277 9.10414L74.1838 9.24257L71.6879 10.25L74.1813 11.2583L71.9812 16.6875L69.2636 15.5886C69.0209 15.4905 68.4972 15.3141 67.771 15.131C65.7466 14.6204 63.6654 14.4649 61.8248 14.8513C61.1496 14.9931 60.5231 15.2058 59.9481 15.4931L57.3261 16.8034L54.7026 11.5652L57.3246 10.2549L57.331 10.2517L54.8191 9.23671L54.8992 9.03891C50.57 6.97579 46.5782 5.85714 32.25 5.85714C21.7039 5.85714 15.3035 7.46146 11.7273 8.86093L11.7273 11.7143C11.7273 13.3338 8.79545 20.5 8.79545 17.5714C8.79545 14.6429 2.93182 14.6429 2.93182 14.6429C1.31345 14.6429 0 13.3338 0 11.7143L0 8.78571C0 7.16621 1.31345 5.85714 2.93182 5.85714Z" id="Stuff" fill="#252C2F" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

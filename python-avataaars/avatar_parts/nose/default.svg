@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="56px" height="24px" viewbox="0 0 56 24" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="NoseDefault">
+    <path d="M0 0C0 4.41828 5.37258 8 12 8L12 8C18.6274 8 24 4.41828 24 0" transform="translate(16 8)" id="Nose" fill="#000000" fill-opacity="0.16078432" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="266px" height="280px" viewbox="0 0 266 280" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M0.119276 63.0073C0.466132 64.4958 1.79203 64.23 2.11928 63.0073C1.65654 61.453 5.41522 34.2554 15.1193 27.0073C18.7375 24.4907 38.1275 22.2392 57.4319 22.2529C76.5279 22.2664 95.5401 24.5179 99.1193 27.0073C108.823 34.2554 112.582 61.453 112.119 63.0073C112.447 64.23 113.772 64.4958 114.119 63.0073C114.838 52.7092 114.119 -0.718315 57.1193 0.00732202C0.119276 0.732959 -0.599902 52.7092 0.119276 63.0073Z" transform="translate(0.88072383 0.992678)" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="TopShort-HairThe-Caesar">
+    <g id="Facial-Hair" transform="translate(49 72)" />
+    <g id="Hair" transform="translate(75 34)">
+      <path d="M0.119276 63.0073C0.466132 64.4958 1.79203 64.23 2.11928 63.0073C1.65654 61.453 5.41522 34.2554 15.1193 27.0073C18.7375 24.4907 38.1275 22.2392 57.4319 22.2529C76.5279 22.2664 95.5401 24.5179 99.1193 27.0073C108.823 34.2554 112.582 61.453 112.119 63.0073C112.447 64.23 113.772 64.4958 114.119 63.0073C114.838 52.7092 114.119 -0.718315 57.1193 0.00732202C0.119276 0.732959 -0.599902 52.7092 0.119276 63.0073Z" transform="translate(0.88072383 0.992678)" id="Caesar" fill="#28354B" fill-rule="evenodd" stroke="none" />
+      <g clip-path="url(#mask_1)">
+        <g id="Hair-Color" transform="translate(-74 -34)">
+          <path d="M0 0L264 0L264 280L0 280L0 0Z" id="Color" fill="#4A312C" fill-rule="evenodd" stroke="none" />
+        </g>
+      </g>
+    </g>
+    <g id="Accessory" transform="translate(62 85)" />
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="266px" height="280px" viewbox="0 0 266 280" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M0 23C0 26.9938 0.923687 28.071 6 28C9.25466 27.9486 9.4434 21.995 9.65211 15.4114C9.79079 11.0368 9.93829 6.38398 11 3C11.619 -1.43187 9.17612 -0.170696 8 2C4.04085 6.77809 0 17.344 0 23ZM126 23C126 26.9938 125.076 28.071 120 28C116.745 27.9486 116.557 21.995 116.348 15.4114C116.209 11.0368 116.062 6.38398 115 3C114.381 -1.43187 116.824 -0.170696 118 2C121.959 6.77809 126 17.344 126 23Z" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="TopShort-HairSides">
+    <g id="Facial-Hair" transform="translate(49 72)" />
+    <g id="Hair" transform="translate(70 74)">
+      <path d="M0 23C0 26.9938 0.923687 28.071 6 28C9.25466 27.9486 9.4434 21.995 9.65211 15.4114C9.79079 11.0368 9.93829 6.38398 11 3C11.619 -1.43187 9.17612 -0.170696 8 2C4.04085 6.77809 0 17.344 0 23ZM126 23C126 26.9938 125.076 28.071 120 28C116.745 27.9486 116.557 21.995 116.348 15.4114C116.209 11.0368 116.062 6.38398 115 3C114.381 -1.43187 116.824 -0.170696 118 2C121.959 6.77809 126 17.344 126 23Z" id="Sides" fill="#9E7A7A" fill-rule="evenodd" stroke="none" />
+      <g clip-path="url(#mask_1)">
+        <g id="Hair-Color" transform="translate(-69 -74)">
+          <path d="M0 0L264 0L264 280L0 280L0 0Z" id="Color" fill="#2C1B18" fill-rule="evenodd" stroke="none" />
+        </g>
+      </g>
+    </g>
+    <g id="Accessory" transform="translate(62 85)" />
+  </g>
+</svg>

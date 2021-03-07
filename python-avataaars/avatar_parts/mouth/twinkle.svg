@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="108px" height="44px" viewbox="0 0 108 44" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="MouthTwinkle">
+    <path d="M0 2C0 7.37176 6.15815 11 14 11C21.8418 11 28 7.37176 28 2C28 0.895431 27.0503 0 26 0C24.7073 0 24.1302 0.905176 24 2C22.7576 4.9379 19.6833 6.71631 14 7C8.31674 6.71631 5.24242 4.9379 4 2C3.86977 0.905176 3.29273 0 2 0C0.949699 0 0 0.895431 0 2Z" transform="translate(40 14)" id="Mouth" fill="#000000" fill-opacity="0.6" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>

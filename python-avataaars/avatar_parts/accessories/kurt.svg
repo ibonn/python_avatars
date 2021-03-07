@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="142px" height="54px" viewbox="0 0 142 54" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+      <feOffset dx="0" dy="2" />
+      <feGaussianBlur stdDeviation="0" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16078432 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
+    </filter>
+  </defs>
+  <g id="Top_ResourcesKurt">
+    <g filter="url(#filter_1)">
+      <g id="Kurts" transform="translate(5 2)">
+        <path d="M65.2327 10.4748C54.1953 10.4748 52.6033 1.39026 29.9033 0.104396C7.21826 -0.919544 0.0479641 5.81314 0.00920951 10.4748C0.0459758 14.7679 -1.11955 25.9249 13.5974 38.9933C28.3695 54.5057 43.5032 49.2455 48.9269 44.1785C54.368 41.8368 60.5731 20.8233 65.2327 20.8451C69.8924 20.867 76.0975 41.8368 81.5386 44.1785C86.9623 49.2455 102.096 54.5057 116.868 38.9933C131.585 25.9249 130.42 14.7679 130.456 10.4748C130.418 5.81314 123.247 -0.919544 100.562 0.104396C77.8622 1.39026 76.2702 10.4748 65.2327 10.4748Z" transform="translate(0.7672611 0.63634443)" id="It!" fill="#F4F4F4" fill-rule="evenodd" stroke="none" />
+        <path d="M43.4824 15.5556C43.8633 7.89742 30.5686 -0.283493 16.3059 1.77636e-15C2.05029 0.298583 0.194735 9.45277 0 12.963C-0.34883 21.0961 8.3674 39.3778 24.4588 38.8889C40.5502 38.3799 43.2622 20.6085 43.4824 15.5556Z" transform="translate(11.6470585 5.9259257)" id="Did" fill="#2F383B" fill-rule="evenodd" stroke="none" />
+        <path d="M43.4824 15.5556C43.8633 7.89742 30.5686 -0.283493 16.3059 1.77636e-15C2.05029 0.298583 0.194735 9.45277 0 12.963C-0.34883 21.0961 8.3674 39.3778 24.4588 38.8889C40.5502 38.3799 43.2622 20.6085 43.4824 15.5556Z" transform="matrix(-1 0 0 1 120.35294 5.9259257)" id="Courtney" fill="#2F383B" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>
