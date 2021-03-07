@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="112px" height="44px" viewbox="0 0 112 44" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <g id="EyesWink-😉">
-    <path d="M6 12C9.31371 12 12 9.31371 12 6C12 2.68629 9.31371 0 6 0C2.68629 0 0 2.68629 0 6C0 9.31371 2.68629 12 6 12Z" transform="translate(24 16)" id="Eye" fill="#000000" fill-opacity="0.6" fill-rule="evenodd" stroke="none" />
-    <path d="M0.160167 6.44731C2.00668 2.64851 6.16442 0 10.9976 0C15.8137 0 19.9591 2.62984 21.8154 6.40712C22.3668 7.5292 21.5821 8.44748 20.7906 7.76702C18.3395 5.65978 14.8587 4.34379 10.9976 4.34379C7.25721 4.34379 3.87376 5.57875 1.43754 7.57164C0.546793 8.30029 -0.379899 7.55838 0.160167 6.44731Z" transform="matrix(0.9975641 -0.06975647 0.06975647 0.9975641 70 18.534643)" id="Winky-Wink" fill="#000000" fill-opacity="0.6" fill-rule="evenodd" stroke="none" />
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="112px" height="44px" viewBox="0 0 112 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Eyes/Wink 😉</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Eyes/Wink-😉" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.599999964">
+        <circle id="Eye" fill="#000000" cx="30" cy="22" r="6"></circle>
+        <path d="M70.4123979,24.204889 C72.2589064,20.4060854 76.4166529,17.7575774 81.2498107,17.7575774 C86.065907,17.7575774 90.2113521,20.3874194 92.0675822,24.1647016 C92.618991,25.2867751 91.8343342,26.2050591 91.0428374,25.5246002 C88.5917368,23.4173607 85.1109468,22.1013658 81.2498107,22.1013658 C77.5094365,22.1013658 74.1259889,23.3363293 71.6897696,25.3292186 C70.7990233,26.0578718 69.8723316,25.3159619 70.4123979,24.204889 Z" id="Winky-Wink" fill="#000000" transform="translate(81.252230, 21.757577) rotate(-4.000000) translate(-81.252230, -21.757577) "></path>
+    </g>
 </svg>

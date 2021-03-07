@@ -1,21 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="266px" height="280px" viewbox="0 0 266 280" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <path d="M0 23C0 26.9938 0.923687 28.071 6 28C9.25466 27.9486 9.4434 21.995 9.65211 15.4114C9.79079 11.0368 9.93829 6.38398 11 3C11.619 -1.43187 9.17612 -0.170696 8 2C4.04085 6.77809 0 17.344 0 23ZM126 23C126 26.9938 125.076 28.071 120 28C116.745 27.9486 116.557 21.995 116.348 15.4114C116.209 11.0368 116.062 6.38398 115 3C114.381 -1.43187 116.824 -0.170696 118 2C121.959 6.77809 126 17.344 126 23Z" id="path_1" />
-    <clipPath id="mask_1">
-      <use xlink:href="#path_1" />
-    </clipPath>
-  </defs>
-  <g id="TopShort-HairSides">
-    <g id="Facial-Hair" transform="translate(49 72)" />
-    <g id="Hair" transform="translate(70 74)">
-      <path d="M0 23C0 26.9938 0.923687 28.071 6 28C9.25466 27.9486 9.4434 21.995 9.65211 15.4114C9.79079 11.0368 9.93829 6.38398 11 3C11.619 -1.43187 9.17612 -0.170696 8 2C4.04085 6.77809 0 17.344 0 23ZM126 23C126 26.9938 125.076 28.071 120 28C116.745 27.9486 116.557 21.995 116.348 15.4114C116.209 11.0368 116.062 6.38398 115 3C114.381 -1.43187 116.824 -0.170696 118 2C121.959 6.77809 126 17.344 126 23Z" id="Sides" fill="#9E7A7A" fill-rule="evenodd" stroke="none" />
-      <g clip-path="url(#mask_1)">
-        <g id="Hair-Color" transform="translate(-69 -74)">
-          <path d="M0 0L264 0L264 280L0 280L0 0Z" id="Color" fill="#2C1B18" fill-rule="evenodd" stroke="none" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="266px" height="280px" viewBox="0 0 266 280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Top/Short Hair/Sides</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11,3 C8.3404922,11.4766099 11.4173429,27.914487 6,28 C0.923687084,28.0709555 0,26.9937684 0,23 C0,17.3439836 4.0408529,6.77808536 8,2 C9.17612094,-0.170695788 11.6189856,-1.43187215 11,3 Z M115,3 C114.381014,-1.43187215 116.823879,-0.170695788 118,2 C121.959147,6.77808536 126,17.3439836 126,23 C126,26.9937684 125.076313,28.0709555 120,28 C114.582657,27.914487 117.659508,11.4766099 115,3 Z" id="path-1"></path>
+    </defs>
+    <g id="Top/Short-Hair/Sides" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Facial-Hair" transform="translate(49.000000, 72.000000)"></g>
+        <g id="Hair" transform="translate(70.000000, 74.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Sides" fill="#9E7A7A" xlink:href="#path-1"></use>
+            <g id="Hair-Color" mask="url(#mask-2)" fill="">
+                <g transform="translate(-69.000000, -74.000000)" id="Color">
+                    <rect x="0" y="0" width="264" height="280"></rect>
+                </g>
+            </g>
         </g>
-      </g>
+        <g id="Accessory" transform="translate(62.000000, 85.000000)"></g>
     </g>
-    <g id="Accessory" transform="translate(62 85)" />
-  </g>
 </svg>

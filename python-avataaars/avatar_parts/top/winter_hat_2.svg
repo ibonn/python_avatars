@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="266px" height="280px" viewBox="0 0 266 280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Top/Accessories/Winter Hat 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M32.4485915,77.5347425 C26.3649028,77.5347425 22.6330986,80.4596103 22.6330986,86.5347425 L22.6330986,165.988782 C22.6330986,196.446757 0,196.404852 0,176.910255 L0,103.04488 C0,68.8032255 17.2273451,21 72,21 L73.6319364,21.0142796 C127.115479,21.9547084 144,69.1456421 144,103.04488 L144,103.04488 L144,176.910255 C144,196.404852 121.366901,196.446757 121.366901,165.988782 L121.366901,165.988782 L121.366901,86.5347425 C121.366901,80.4596103 117.635097,77.5347425 111.551408,77.5347425 L111.551408,77.5347425 L72,77.5347425 L32.4485915,77.5347425 Z" id="path-1"></path>
+    </defs>
+    <g id="Top/Accessories/Winter-Hat-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hat" transform="translate(61.000000, 0.000000)">
+            <g id="string" transform="translate(0.000000, 176.000000)" fill="#F4F4F4">
+                <circle id="puff" cx="9" cy="65" r="9"></circle>
+                <rect x="8" y="0" width="2" height="58"></rect>
+            </g>
+            <g id="string" transform="translate(126.000000, 168.000000)" fill="#F4F4F4">
+                <circle id="puff" cx="9" cy="65" r="9"></circle>
+                <rect x="8" y="0" width="2" height="58"></rect>
+            </g>
+            <circle id="puff" fill="#F4F4F4" cx="72" cy="20" r="20"></circle>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#F4F4F4" xlink:href="#path-1"></use>
+            <g id="Fabric-Color" mask="url(#mask-2)" fill="">
+                <g transform="translate(-2.000000, 19.000000)" id="🖍Color">
+                    <rect x="0" y="0" width="149" height="172"></rect>
+                </g>
+            </g>
+            <rect id="color-dark" fill-opacity="0.2" fill="#000000" mask="url(#mask-2)" x="-1" y="21" width="146" height="46"></rect>
+            <g id="light-triangles" mask="url(#mask-2)" fill="#FFFFFF" fill-opacity="0.5">
+                <g transform="translate(29.000000, 32.000000)" id="Triangle">
+                    <polygon transform="translate(12.500000, 9.000000) rotate(180.000000) translate(-12.500000, -9.000000) " points="12.5 0 25 18 0 18"></polygon>
+                    <polygon transform="translate(43.500000, 9.000000) rotate(180.000000) translate(-43.500000, -9.000000) " points="43.5 0 56 18 31 18"></polygon>
+                    <polygon transform="translate(74.500000, 9.000000) rotate(180.000000) translate(-74.500000, -9.000000) " points="74.5 0 87 18 62 18"></polygon>
+                </g>
+            </g>
+            <g id="dark-triangles" mask="url(#mask-2)" fill="#000000" fill-opacity="0.5">
+                <g transform="translate(13.000000, 41.000000)" id="Triangle">
+                    <polygon points="12.5 0 25 18 0 18"></polygon>
+                    <polygon points="43.5 0 56 18 31 18"></polygon>
+                    <polygon points="74.5 0 87 18 62 18"></polygon>
+                    <polygon points="105.5 0 118 18 93 18"></polygon>
+                </g>
+            </g>
+        </g>
+        <g id="Facial-Hair" transform="translate(49.000000, 72.000000)"></g>
+        <g id="Accessory" transform="translate(62.000000, 85.000000)"></g>
+    </g>
+</svg>

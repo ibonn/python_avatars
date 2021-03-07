@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="264px" height="110px" viewbox="0 0 264 110" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <path d="M0 80.3117L26 80.3117L102 80.3117L118 80.3117L128 80.3117L128 -0.43816Q125.757 -0.688859 123.501 -0.688859L102 -0.688859L102 44.3117L26 44.3117L26 -0.688859L4.49926 -0.688859Q2.24265 -0.688859 7.41418e-15 -0.438161L0 80.3117Z" transform="translate(68 29.688343)" id="path_1" />
-    <clipPath id="mask_1">
-      <use xlink:href="#path_1" />
-    </clipPath>
-  </defs>
-  <g id="ClothingOverall">
-    <path d="M0 80.3117L26 80.3117L102 80.3117L118 80.3117L128 80.3117L128 -0.43816Q125.757 -0.688859 123.501 -0.688859L102 -0.688859L102 44.3117L26 44.3117L26 -0.688859L4.49926 -0.688859Q2.24265 -0.688859 7.41418e-15 -0.438161L0 80.3117Z" transform="translate(68 29.688343)" id="Overall" fill="#B7C1DB" fill-rule="evenodd" stroke="none" />
-    <g clip-path="url(#mask_1)">
-      <g id="Color-Fabric">
-        <path d="M0 0L264 0L264 110L0 110L0 0Z" id="🖍Color" fill="#E6E6E6" fill-rule="evenodd" stroke="none" />
-      </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="264px" height="110px" viewBox="0 0 264 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Clothing/Overall</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M196.000348,38.6320038 L196,110 L68,110 L67.999672,38.6319925 C75.8495147,34.0910485 84.6362412,30.9895697 93.9989132,29.6884945 L93.999,73.9993435 L170,73.9993435 L170.001087,29.6884945 C179.363767,30.9895707 188.1505,34.0910536 196.000348,38.6320038 Z" id="path-1"></path>
+    </defs>
+    <g id="Clothing/Overall" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Overall" fill="#B7C1DB" xlink:href="#path-1"></use>
+        <g id="Fabric-Color" mask="url(#mask-2)" fill="">
+            <rect id="🖍Color" x="0" y="0" width="264" height="110"></rect>
+        </g>
+        <circle id="Button" fill="#F4F4F4" cx="81" cy="83" r="5"></circle>
+        <circle id="Button" fill="#F4F4F4" cx="183" cy="83" r="5"></circle>
     </g>
-    <path d="M5 10C7.76142 10 10 7.76142 10 5C10 2.23858 7.76142 0 5 0C2.23858 0 0 2.23858 0 5C0 7.76142 2.23858 10 5 10Z" transform="translate(76 78)" id="Button" fill="#F4F4F4" fill-rule="evenodd" stroke="none" />
-    <path d="M5 10C7.76142 10 10 7.76142 10 5C10 2.23858 7.76142 0 5 0C2.23858 0 0 2.23858 0 5C0 7.76142 2.23858 10 5 10Z" transform="translate(178 78)" id="Button" fill="#F4F4F4" fill-rule="evenodd" stroke="none" />
-  </g>
 </svg>

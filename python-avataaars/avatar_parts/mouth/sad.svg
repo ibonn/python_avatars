@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="108px" height="44px" viewbox="0 0 108 44" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <g id="MouthSad">
-    <path d="M0.00105661 0.653944C0.650408 7.68311 6.6444 12.3768 13.9428 12.3768C21.2844 12.3768 27.3061 7.62733 27.8954 0.528761C27.9268 0.151302 27.02 -0.147047 26.5717 0.077395C21.033 2.85021 16.8234 4.23661 13.9428 4.23661C11.0986 4.23661 6.94998 2.88046 1.49687 0.168141C0.9901 -0.0839208 -0.0375238 0.236315 0.00105661 0.653944Z" transform="matrix(1 0 0 -1 40.05724 28.37682)" id="Mouth" fill="#000000" fill-opacity="0.69803923" fill-rule="evenodd" stroke="none" />
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="44px" viewBox="0 0 108 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Mouth/Sad</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mouth/Sad" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.699999988">
+        <path d="M40.0582943,16.6539438 C40.7076459,23.6831146 46.7016363,28.3768187 54,28.3768187 C61.3416045,28.3768187 67.3633339,23.627332 67.9526838,16.5287605 C67.9840218,16.1513016 67.0772329,15.8529531 66.6289111,16.077395 C61.0902255,18.8502083 56.8805885,20.2366149 54,20.2366149 C51.1558456,20.2366149 47.0072148,18.8804569 41.5541074,16.168141 C41.0473376,15.9160792 40.0197139,16.2363147 40.0582943,16.6539438 Z" id="Mouth" fill="#000000" transform="translate(54.005357, 22.188409) scale(1, -1) translate(-54.005357, -22.188409) "></path>
+    </g>
 </svg>
