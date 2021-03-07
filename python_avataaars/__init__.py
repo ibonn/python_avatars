@@ -1,9 +1,21 @@
 import random
 import enum
 import os
+import shutil
 
 from . svg_parser import SVGParser
 
+def install_part(part_path, part_type, print_messages=False):
+    file_name = os.path.splitext(os.path.basename(part_path))[0]
+    destination = _get_path(part_type, file_name)
+    shutil.copy(part_path, destination)
+    if print_messages:
+        print('"{}" installed at "{}" as {}.{}'.format(part_path, destination, part_type.__name__, file_name))
+
+def _get_path(enum_cls, value):
+    package_path = os.path.dirname(__file__)
+    p = os.path.join(package_path, enum_cls.__path__, '{}.svg'.format(value))
+    return p
 
 class AvatarEnum(enum.Enum):
     '''
@@ -22,6 +34,8 @@ class AvatarPart(AvatarEnum):
     '''
     Base enum for avatar parts
     '''
+
+    __path__ = ''
 
     def __str__(self):
         return self.value
@@ -89,11 +103,14 @@ class AvatarStyle(AvatarPart):
     '''
     Avatar styles
     '''
+
+    __path__ = 'avatar_parts/styles'
     TRANSPARENT = 'transparent'
     CIRCLE = 'circle'
 
 
 class ClothesGraphic(AvatarPart):
+    __path__ = 'avatar_parts/clothes/graphic'
     NONE = ''
     BAT = 'bat'
     BEAR = 'bear'
@@ -113,6 +130,7 @@ class Clothing(AvatarPart):
     '''
     Clothing types
     '''
+    __path__ = 'avatar_parts/clothes'
     NONE = ''
     BLAZER_SHIRT = 'blazer_shirt'
     BLAZER_SWEATER = 'blazer_sweater'
@@ -129,6 +147,7 @@ class Eyebrows(AvatarPart):
     '''
     Eyebrow types
     '''
+    __path__ = 'avatar_parts/eyebrows'
     NONE = ''
     ANGRY_NATURAL = 'angry_natural'
     ANGRY = 'angry'
@@ -149,6 +168,7 @@ class Eyes(AvatarPart):
     '''
     Eye types
     '''
+    __path__ = 'avatar_parts/eyes'
     CLOSED = 'closed'
     CRY = 'cry'
     DEFAULT = 'default'
@@ -167,6 +187,7 @@ class FacialHair(AvatarPart):
     '''
     Facial hair types
     '''
+    __path__ = 'avatar_parts/facial_hair'
     NONE = ''
     BEARD_LIGHT = 'beard_light'
     BEARD_MAGESTIC = 'beard_magestic'
@@ -187,6 +208,7 @@ class Mouth(AvatarPart):
     '''
     Mouth types
     '''
+    __path__ = 'avatar_parts/mouth'
     CONCERNED = 'concerned'
     DEFAULT = 'default'
     DISBELIEF = 'disbelief'
@@ -205,6 +227,7 @@ class Nose(AvatarPart):
     '''
     Nose types
     '''
+    __path__ = 'avatar_parts/nose'
     DEFAULT = 'default'
 
 
@@ -212,12 +235,14 @@ class Top(AvatarPart):
     '''
     Hair/top of head types
     '''
+    __path__ = 'avatar_parts/top'
     @staticmethod
     def get_all():
         return list(Hair) + list(Hat)
 
 
 class Hair(AvatarPart):
+    __path__ = 'avatar_parts/top/hair'
     NONE = 'no_hair'
     BIG_HAIR = 'big_hair'
     BOB = 'bob'
@@ -249,6 +274,7 @@ class Hair(AvatarPart):
 
 
 class Hat(AvatarPart):
+    __path__ = 'avatar_parts/top/hat'
     HAT = 'hat'
     HIJAB = 'hijab'
     TURBAN = 'turban'
@@ -262,6 +288,7 @@ class Accessory(AvatarPart):
     '''
     Accessories (Glasses)
     '''
+    __path__ = 'avatar_parts/accessories'
     NONE = ''
     EYEPATCH = 'eyepatch'
     KURT = 'kurt'
@@ -353,73 +380,70 @@ class Avatar:
             shirt_text = shirt_text,
         )
 
-    @staticmethod
-    def __get_path(enum_cls, value):
-        package_path = os.path.dirname(__file__)
-        return os.path.join(package_path, enum_cls.__path__, '{}.svg'.format(value))
-
     def render(self, path=None):
 
         # Load the base template based on the avatar style
-        avatar = SVGParser('avatar_parts/styles/avataaar_{}.svg'.format(self.style))
+        avatar = SVGParser(_get_path(AvatarStyle, self.style))
 
         # Set skin color
         avatar.get_element_by_id('Skin-Color').set_attr('fill', self.skin_color)
 
         # Set top
-        if self.top is not None and self.top.value != '':
-            top = SVGParser('avatar_parts/top/{}.svg'.format(self.top))
+        if not self.__is_empty(self.top):
+            
             if isinstance(self.top, Hair):
+                top = SVGParser(_get_path(Hair, self.top))
                 top.get_element_by_id('Hair-Color').set_attr('fill', self.hair_color)
             else:
-                pass  # TODO change hat color
+                top = SVGParser(_get_path(Hat, self.top))
+                # TODO change hat color
 
             # Set facial hair (top)
-            if self.facial_hair is not None and self.facial_hair.value != '':
+            if not self.__is_empty(self.facial_hair):
                 top_facial_hair = top.get_element_by_id('Facial-Hair')
                 if top_facial_hair:
-                    facial_hair = SVGParser('avatar_parts/facial_hair/{}.svg'.format(self.facial_hair))
+                    facial_hair = SVGParser(_get_path(FacialHair, self.facial_hair))
                     facial_hair.get_element_by_id('Facial-Hair-Color').set_attr('fill', self.facial_hair_color)
                     top_facial_hair.set_content(facial_hair.children())
 
             # Set accessories (top)
-            if self.accessory is not None and self.accessory.value != '':
-                accessories = SVGParser(
-                    'avatar_parts/accessories/{}.svg'.format(self.accessory))
+            if not self.__is_empty(self.accessory):
+                accessories = SVGParser(_get_path(Accessory, self.accessory))
                 top.get_element_by_id('Accessory').set_content(
                     accessories.children())
 
             avatar.get_element_by_id('Top').set_content(top.children())
 
         # Set eyebrows
-        if self.eyebrows is not None and self.eyebrows.value != '':
-            eyebrow = SVGParser(
-                'avatar_parts/eyebrows/{}.svg'.format(self.eyebrows))
+        if not self.__is_empty(self.eyebrows):
+            eyebrow = SVGParser(_get_path(Eyebrows, self.eyebrows))
             avatar.get_element_by_id('Eyebrow').set_content(eyebrow.children())
 
         # Set eyes
-        if self.eyes is not None and self.eyes.value != '':
-            eyes = SVGParser('avatar_parts/eyes/{}.svg'.format(self.eyes))
+        if not self.__is_empty(self.eyes):
+            eyes = SVGParser(_get_path(Eyes, self.eyes))
             avatar.get_element_by_id('Eyes').set_content(eyes.children())
 
         # Set nose
-        if self.nose is not None and self.nose.value != '':
-            nose = SVGParser('avatar_parts/nose/{}.svg'.format(self.nose))
+        if not self.__is_empty(self.nose):
+            nose = SVGParser(_get_path(Nose, self.nose))
             avatar.get_element_by_id('Nose').set_content(nose.children())
 
         # Set mouth
-        if self.mouth is not None and self.mouth.value != '':
-            mouth = SVGParser('avatar_parts/mouth/{}.svg'.format(self.mouth))
+        if not self.__is_empty(self.mouth):
+            mouth = SVGParser(_get_path(Mouth, self.mouth))
             avatar.get_element_by_id('Mouth').set_content(mouth.children())
 
         # Set clothes
-        if self.clothing is not None and self.clothing.value != '':
-            clothes = SVGParser('avatar_parts/clothes/{}.svg'.format(self.clothing))
-            clothes.get_element_by_id('Fabric-Color').set_attr('fill', self.clothing_color)
+        if not self.__is_empty(self.clothing):
+            clothes = SVGParser(_get_path(Clothing, self.clothing))
+            fabric_color = clothes.get_element_by_id('Fabric-Color')
+            if fabric_color:
+                fabric_color.set_attr('fill', self.clothing_color)
 
             # TODO Set graphic to all clothes
-            if self.clothing == Clothing.GRAPHIC_SHIRT and self.shirt_graphic is not None and self.shirt_graphic != ClothesGraphic.NONE and self.shirt_graphic != '':
-                graphic = SVGParser('avatar_parts/clothes/graphic/{}.svg'.format(self.shirt_graphic))
+            if self.clothing == Clothing.GRAPHIC_SHIRT and not self.__is_empty(self.shirt_graphic):
+                graphic = SVGParser(_get_path(ClothesGraphic, self.shirt_graphic))
                 if self.shirt_graphic == ClothesGraphic.CUSTOM_TEXT:
                     graphic.get_element_by_id('Graphic-Text').children('tspan')[0].set_content(self.shirt_text)
 
@@ -429,6 +453,10 @@ class Avatar:
         
 
         return avatar.render(path)
+
+    @staticmethod
+    def __is_empty(value):
+        return value is None or value == '' or isinstance(value, enum.Enum) and value.value == ''
 
     def __str__(self):
         return str(self.__dict__)
