@@ -1,7 +1,7 @@
 import random
 import enum
 
-from svg_parser import SVGParser
+from . svg_parser import SVGParser
 
 
 class AvatarEnum(enum.Enum):
