@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="108px" height="44px" viewBox="0 0 108 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
-    <title>Mouth/Default</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Mouth/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.699999988">
+        <g id="Mouth/Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.699999988">
         <path d="M40,15 C40,22.7319865 46.2680135,29 54,29 L54,29 C61.7319865,29 68,22.7319865 68,15" id="Mouth" fill="#000000"></path>
     </g>
 </svg>
