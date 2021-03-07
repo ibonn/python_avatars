@@ -19,7 +19,7 @@ class SVGParser:
             self.tree = svg
 
         elif svg is None:
-            tree = ET.parse(path)
+            tree = ET.parse(self.__get_path(path))
             self.tree = tree.getroot()
             
             # Rename IDs
@@ -55,6 +55,11 @@ class SVGParser:
                 match = re.match('#(.+)', x.get(xlink_href))
                 new_id = '#{}_{}'.format(self.prefix, match.group(1))
                 x.set(xlink_href, new_id)
+
+    @staticmethod
+    def __get_path(path):
+        package_path = os.path.dirname(__file__)
+        return os.path.join(package_path, path)
 
     def get_element_by_id(self, element_id):
         result = self.tree.findall('''.//*[@id='{}_{}']'''.format(self.prefix, element_id))
