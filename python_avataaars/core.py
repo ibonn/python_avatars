@@ -16,16 +16,20 @@ def install_part(part_path, part_type, print_messages=False):
     file_name = os.path.splitext(os.path.basename(part_path))[0]
     const_name = _sanitize(file_name)
 
+    package_path = os.path.dirname(__file__)
+    default_path = os.path.join(package_path, 'default.json')
+    installed_path = os.path.join(package_path, 'installed.json')
+
     # Load defaults
-    with open('default.json', 'r') as f:
+    with open(default_path, 'r') as f:
         default_values = json.load(f)
 
     # Load installed
-    if not os.path.isfile('installed.json'):
-        with open('installed.json', 'w') as f:
+    if not os.path.isfile(installed_path):
+        with open(installed_path, 'w') as f:
             json.dump({}, f)
 
-    with open('installed.json', 'r') as f:
+    with open(installed_path, 'r') as f:
         installed_values = json.load(f)
 
     # Combine installed with default
@@ -80,7 +84,10 @@ def _sanitize(value):
     return value.upper()                            # Return uppercase
 
 def _write_enum(filename, name, path, install, values_dict, t):
-    with open(filename, 'w') as f:
+    package_path = os.path.dirname(__file__)
+    file_path = os.path.join(package_path, filename)
+    
+    with open(file_path, 'w') as f:
         if t is AvatarColor:
             f.write('from .base_enums import AvatarColor\n')
             f.write('class {}(AvatarColor):\n'.format(name))
