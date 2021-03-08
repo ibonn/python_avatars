@@ -8,7 +8,7 @@ from .base_enums import AvatarPart, AvatarColor
 def install_part(part_path, part_type, print_messages=False):
 
     if not part_type.__install__:
-        raise RuntimeError("The part type {} cannot be expanded").format(part_type.__name__)
+        raise RuntimeError("The part type {} cannot be expanded".format(part_type.__name__))
 
     if part_type.__path__ == '':
         raise RuntimeError("Installation path not found")
