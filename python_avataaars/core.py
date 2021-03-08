@@ -47,8 +47,8 @@ def install_part(part_path, part_type, print_messages=False):
     installed_values[part_type.__name__][const_name] = file_name
 
     # Save installed
-    with open('installed.json', 'w') as f:
-        json.dump(installed_values, f)
+    with open(installed_path, 'w') as f:
+        json.dump(installed_values, f, indent=4)
 
     # Copy the file
     destination = _get_path(part_type, file_name)
@@ -86,7 +86,7 @@ def _sanitize(value):
 def _write_enum(filename, name, path, install, values_dict, t):
     package_path = os.path.dirname(__file__)
     file_path = os.path.join(package_path, filename)
-    
+
     with open(file_path, 'w') as f:
         if t is AvatarColor:
             f.write('from .base_enums import AvatarColor\n')
