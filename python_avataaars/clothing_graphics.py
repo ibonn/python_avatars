@@ -2,8 +2,11 @@ from .base_enums import AvatarPart
 
 
 class ClothingGraphic(AvatarPart):
-    __path__ = 'avatar_parts/clothes/graphic'
     
+    __install__ = True
+    __enum_path__ = 'clothing_graphics.py'
+    __path__ = 'avatar_parts/clothes/graphic'
+
     NONE = ''
     BAT = 'bat'
     BEAR = 'bear'

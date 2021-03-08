@@ -5,6 +5,8 @@ class ClothingType(AvatarPart):
     '''
     Clothing types
     '''
+    __install__ = True
+    __enum_path__ = 'clothing_types.py'
     __path__ = 'avatar_parts/clothes'
     
     NONE = ''

@@ -5,6 +5,9 @@ class ClothingColor(AvatarColor):
     '''
     Clothing colors
     '''
+    __install__ = True
+    __enum_path__ = 'clothing_colors.py'
+    
     BLACK = '#262E33'
     BLUE_01 = '#65C9FF'
     BLUE_02 = '#5199E4'
