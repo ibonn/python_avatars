@@ -62,16 +62,39 @@ def install_part(part_path, part_type, print_messages=False):
         print('"{}" installed at "{}" as {}.{}. Reload the library to use it'.format(part_path, destination, part_type.__name__, file_name))
 
 def uninstall_part(part, confirm=True):
-    pass
+    # TODO
+    raise NotImplementedError("TODO")
 
 def install_color(name, value, print_messages=False):
-    pass
+    # TODO
+    raise NotImplementedError("TODO")
 
 def uninstall_color(color, confirm=True):
-    pass
+    # TODO
+    raise NotImplementedError("TODO")
 
 def factory_reset(confirm=True):
-    pass
+    # TODO
+    raise NotImplementedError("TODO")
+    package_path = os.path.dirname(__file__)
+    default_path = os.path.join(package_path, 'default.json')
+    installed_path = os.path.join(package_path, 'installed.json')
+
+    # Load installed and remove svgs
+    if os.path.isfile(installed_path):
+        with open(installed_path, 'r') as f:
+            installed_values = json.load(f)
+
+        for enum_name, enum_values_dict in installed_values.items():
+            for name, value in enum_values_dict.items():
+                _get_path()
+
+    # Load defaults
+    with open(default_path, 'r') as f:
+        default_values = json.load(f)
+
+    for enum_name, enum_values_dict in default_values.items():
+        _write_enum()
 
 def _get_path(enum_cls, value):
     package_path = os.path.dirname(__file__)
@@ -89,18 +112,19 @@ def _write_enum(filename, name, path, install, values_dict, t):
 
     with open(file_path, 'w') as f:
         if t is AvatarColor:
-            f.write('from .base_enums import AvatarColor\n')
-            f.write('class {}(AvatarColor):\n'.format(name))
+            f.write('from .base_enums import AvatarColor\n\n\n')
+            f.write('class {}(AvatarColor):\n\n'.format(name))
         elif t is AvatarPart:
-            f.write('from .base_enums import AvatarPart\n')
-            f.write('class {}(AvatarPart):\n'.format(name))
+            f.write('from .base_enums import AvatarPart\n\n\n')
+            f.write('class {}(AvatarPart):\n\n'.format(name))
         else:
             raise RuntimeError()
 
-        f.write('   __install__ = {}\n'.format(install))
-        f.write('   __enum_path__ = {}\n'.format(filename))
-        f.write('   __path__ = {}\n'.format(path))
-        f.write('\n')
+        f.write("    __install__ = {}\n".format(install))
+        f.write("    __enum_path__ = '{}'\n".format(filename))
+        f.write("    __path__ = '{}'\n".format(path))
+        f.write("\n")
         for name, value in values_dict.items():
-            f.write("   {} = '{}'\n".format(name, value))
+            if name[:2] != '__':
+                f.write("    {} = '{}'\n".format(name, value))
         
