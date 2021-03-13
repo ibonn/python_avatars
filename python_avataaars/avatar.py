@@ -21,7 +21,7 @@ from . core import _get_path
 
 class Avatar:
     '''
-    The main avatar class
+    Avatar. Create a new avatar using this class.
     '''
 
     def __init__(
@@ -79,6 +79,10 @@ class Avatar:
         shirt_graphic=None,
         shirt_text=None,
     ):
+    """
+    Generates a random avatar. The parameters for this method are exactly the same as for the constructor.
+    If none of them are specified, the values are chosen randomly. The values for the specified parameters will stay fixed
+    """
         return Avatar(
             style=AvatarStyle.pick_random() if style is None else style,
             top=TopType.pick_random() if top is None else top,
@@ -101,6 +105,13 @@ class Avatar:
         )
 
     def render(self, path=None):
+        """
+        Render the avatar to svg. Always returns the resulting svg as a string
+
+        :param path: The path where the svg file will be saved. If ``None``, no file is saved
+        :type path: str
+        :return: str
+        """
 
         # Load the base template based on the avatar style
         avatar = SVGParser(_get_path(AvatarStyle, self.style))
@@ -176,7 +187,17 @@ class Avatar:
 
     @staticmethod
     def __is_empty(value):
+        """
+        Check wether a value is set or not for an attribute
+
+        :param value: The value to test
+        :type value: str or :class:`AvatarEnum`
+        :return: bool
+        """
         return value is None or value == '' or isinstance(value, enum.Enum) and value.value == ''
 
     def __str__(self):
+        """
+        String representation for the avatar
+        """
         return str(self.__dict__)
