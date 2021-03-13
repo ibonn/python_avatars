@@ -1,5 +1,7 @@
 {
     "AccessoryType": {
+        "__install__": true,
+        "__enum_path__": "accessory_types.py",
         "__path__": "avatar_parts/accessories",
         "NONE": "",
         "EYEPATCH": "eyepatch",
@@ -11,11 +13,15 @@
         "WAYFARERS": "wayfarers"
     },
     "AvatarStyle": {
+        "__install__": true,
+        "__enum_path__": "avatar_styles.py",
         "__path__": "avatar_parts/styles",
         "TRANSPARENT": "transparent",
         "CIRCLE": "circle"
     },
     "ClothingColor": {
+        "__install__": true,
+        "__enum_path__": "clothing_colors.py",
         "BLACK": "#262E33",
         "BLUE_01": "#65C9FF",
         "BLUE_02": "#5199E4",
@@ -32,6 +38,8 @@
         "WHITE": "#FFFFFF"
     },
     "ClothingGraphic": {
+        "__install__": true,
+        "__enum_path__": "clothing_graphics.py",
         "__path__": "avatar_parts/clothes/graphic",
         "NONE": "",
         "BAT": "bat",
@@ -48,6 +56,8 @@
         "SKULL": "skull"
     },
     "ClothingType": {
+        "__install__": true,
+        "__enum_path__": "clothing_types.py",
         "__path__": "avatar_parts/clothes",
         "NONE": "",
         "BLAZER_SHIRT": "blazer_shirt",
@@ -61,6 +71,8 @@
         "SHIRT_V_NECK": "shirt_v_neck"
     },
     "EyeType": {
+        "__install__": true,
+        "__enum_path__": "eye_types.py",
         "__path__": "avatar_parts/eyes",
         "CLOSED": "closed",
         "CRY": "cry",
@@ -76,6 +88,8 @@
         "X_DIZZY": "x_dizzy"
     },
     "EyebrowType": {
+        "__install__": true,
+        "__enum_path__": "eyebrow_types.py",
         "__path__": "avatar_parts/eyebrows",
         "NONE": "",
         "ANGRY_NATURAL": "angry_natural",
@@ -93,6 +107,8 @@
         "UP_DOWN": "up_down"
     },
     "FacialHairType": {
+        "__install__": true,
+        "__enum_path__": "facial_hair_types.py",
         "__path__": "avatar_parts/facial_hair",
         "CLOSED": "closed",
         "CRY": "cry",
@@ -108,6 +124,8 @@
         "X_DIZZY": "x_dizzy"
     },
     "HairColor": {
+        "__install__": true,
+        "__enum_path__": "hair_colors.py",
         "AUBURN": "#A55728",
         "BLACK": "#2C1B18",
         "BLONDE": "#B58143",
@@ -120,6 +138,8 @@
         "SILVER_GRAY": "#E8E1E1"
     },
     "HairType": {
+        "__install__": true,
+        "__enum_path__": "hair_types.py",
         "__path__": "avatar_parts/top/hair",
         "NONE": "no_hair",
         "BIG_HAIR": "big_hair",
@@ -150,6 +170,8 @@
         "STRAIGHT_STRAND": "straight_strand"
     },
     "HatType": {
+        "__install__": true,
+        "__enum_path__": "hat_types.py",
         "__path__": "avatar_parts/top/hat",
         "HAT": "hat",
         "HIJAB": "hijab",
@@ -160,6 +182,8 @@
         "WINTER_HAT_4": "winter_hat_4"
     },
     "MouthType": {
+        "__install__": true,
+        "__enum_path__": "mouth_types.py",
         "__path__": "avatar_parts/mouth",
         "CONCERNED": "concerned",
         "DEFAULT": "default",
@@ -175,10 +199,14 @@
         "VOMIT": "vomit"
     },
     "NoseType": {
+        "__install__": true,
+        "__enum_path__": "nose_types.py",
         "__path__": "avatar_parts/nose",
         "DEFAULT": "default"
     },
     "SkinColor": {
+        "__install__": true,
+        "__enum_path__": "skin_colors.py",
         "TANNED": "#FD9841",
         "YELLOW": "#F8D25C",
         "PALE": "#FFDBB4",
