@@ -101,7 +101,7 @@ class Avatar:
             clothing=ClothingType.pick_random() if clothing is None else clothing,
             clothing_color=ClothingColor.pick_random() if clothing_color is None else clothing_color,
             shirt_graphic=ClothingGraphic.pick_random() if shirt_graphic is None else shirt_graphic,
-            shirt_text = shirt_text,
+            shirt_text=shirt_text,
         )
 
     def render(self, path=None):
