@@ -1,9 +1,9 @@
 # python_avatars
 Avatar library in Python
 
-![Example avatar 1](/avatar_0.svg "Example avatar")
-![Example avatar 2](/avatar_1.svg "Example avatar")
-![Example avatar 3](/avatar_2.svg "Example avatar")
+![Example avatar 1](/examples/random/avatar_0.svg "Example avatar")
+![Example avatar 2](/examples/random/avatar_4.svg "Example avatar")
+![Example avatar 3](/examples/random/avatar_7.svg "Example avatar")
 
 ## Features
 * Highly customizable. Design your own clothes, hair styles, eyes... and add them to the library copying the svg files into a directory
