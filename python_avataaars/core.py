@@ -5,6 +5,10 @@ import json
 
 from .base_enums import AvatarPart, AvatarColor
 
+_package_path = os.path.dirname(__file__)
+_default_path = os.path.join(_package_path, 'default.json')
+_installed_path = os.path.join(_package_path, 'installed.json')
+
 def install_part(part_path, part_type, print_messages=False):
 
     if not part_type.__install__:
@@ -14,22 +18,18 @@ def install_part(part_path, part_type, print_messages=False):
         raise RuntimeError("Installation path not found")
 
     file_name = os.path.splitext(os.path.basename(part_path))[0]
-    const_name = _sanitize(file_name)
-
-    package_path = os.path.dirname(__file__)
-    default_path = os.path.join(package_path, 'default.json')
-    installed_path = os.path.join(package_path, 'installed.json')
-
+    const_name = _sanitize(file_name) 
+    
     # Load defaults
-    with open(default_path, 'r') as f:
+    with open(_default_path, 'r') as f:
         default_values = json.load(f)
 
     # Load installed
-    if not os.path.isfile(installed_path):
-        with open(installed_path, 'w') as f:
+    if not os.path.isfile(_installed_path):
+        with open(_installed_path, 'w') as f:
             json.dump({}, f)
 
-    with open(installed_path, 'r') as f:
+    with open(_installed_path, 'r') as f:
         installed_values = json.load(f)
 
     # Combine installed with default
@@ -47,7 +47,7 @@ def install_part(part_path, part_type, print_messages=False):
     installed_values[part_type.__name__][const_name] = file_name
 
     # Save installed
-    with open(installed_path, 'w') as f:
+    with open(_installed_path, 'w') as f:
         json.dump(installed_values, f, indent=4)
 
     # Copy the file
@@ -56,33 +56,68 @@ def install_part(part_path, part_type, print_messages=False):
 
     # Overwrite the enum file
     combined = {**default_values[part_type.__name__], **installed_values[part_type.__name__]}
-    _write_enum(part_type.__enum_path__, part_type.__name__, part_type.__path__, part_type.__install__, combined, AvatarPart)
+    _write_enum(part_type, combined, AvatarPart)
 
     if print_messages:
-        print('"{}" installed at "{}" as {}.{}. Reload the library to use it'.format(part_path, destination, part_type.__name__, file_name))
+        print('"{}" installed at "{}" as {}.{}. Reload the library to use it'.format(part_path, destination, part_type.__name__, const_name))
 
 def uninstall_part(part, confirm=True):
-    # TODO
-    raise NotImplementedError("TODO")
+    if os.path.isfile(_installed_path):
+        # Load installed
+        with open(_installed_path, 'r') as f:
+            installed_values = json.load(f)
+
+        # Load default
+        with open(_default_path, 'r') as f:
+            default_values = json.load(f)
+
+        
+        if confirm:
+            confirm_resp = input('Do you really want to uninstall {}.{}? y/n: '.format(part.__class__.__name__, part.name))
+            if confirm_resp.lower().strip() != 'y':
+                return False
+
+        # Delete svg
+        os.remove(_get_path(part.__class__, part.value))
+
+        # Delete from installed
+        del installed_values[part.__class__.__name__][part.name]
+
+        # Combine installed + default
+        combined = {**default_values[part.__class__.__name__], **installed_values[part.__class__.__name__]}
+
+        # Update installed
+        with open(_installed_path, 'w') as f:
+            json.dump(installed_values, f)
+
+        # Rewrite enum
+        _write_enum(part.__class__, combined, AvatarPart)
+        return True
 
 def install_color(name, value, print_messages=False):
-    # TODO
-    raise NotImplementedError("TODO")
+    raise NotImplementedError("TODO")   # TODO
+    # Load installed.json
+    # Load default.json
+    # Combine installed + default
+    # Check conflicts
+    # Check installable
+    # Add value to installed
+    # Combine installed + default
+    # Rewrite enum
 
 def uninstall_color(color, confirm=True):
-    # TODO
-    raise NotImplementedError("TODO")
+    raise NotImplementedError("TODO")   # TODO
+    # Load installed.json
+    # Delete from installed
+    # Combine installed + default
+    # Rewrite enum
 
 def factory_reset(confirm=True):
-    # TODO
-    raise NotImplementedError("TODO")
-    package_path = os.path.dirname(__file__)
-    default_path = os.path.join(package_path, 'default.json')
-    installed_path = os.path.join(package_path, 'installed.json')
+    raise NotImplementedError("TODO")   # TODO
 
     # Load installed and remove svgs
-    if os.path.isfile(installed_path):
-        with open(installed_path, 'r') as f:
+    if os.path.isfile(_installed_path):
+        with open(_installed_path, 'r') as f:
             installed_values = json.load(f)
 
         for enum_name, enum_values_dict in installed_values.items():
@@ -90,15 +125,15 @@ def factory_reset(confirm=True):
                 _get_path()
 
     # Load defaults
-    with open(default_path, 'r') as f:
+    with open(_default_path, 'r') as f:
         default_values = json.load(f)
 
     for enum_name, enum_values_dict in default_values.items():
+        enum_path = os.path.join(_package_path, enum_values_dict['__path__'])
         _write_enum()
 
 def _get_path(enum_cls, value):
-    package_path = os.path.dirname(__file__)
-    p = os.path.join(package_path, enum_cls.__path__, '{}.svg'.format(value))
+    p = os.path.join(_package_path, enum_cls.__path__, '{}.svg'.format(value))
     return p
 
 def _sanitize(value):
@@ -106,19 +141,27 @@ def _sanitize(value):
     value = value.lstrip('0123456789')              # Remove digits fro the beginning
     return value.upper()                            # Return uppercase
 
-def _write_enum(filename, name, path, install, values_dict, t):
-    package_path = os.path.dirname(__file__)
-    file_path = os.path.join(package_path, filename)
+def _write_enum(e, values_dict, t):
+
+    filename = e.__enum_path__
+    name = e.__name__
+    path = e.__path__
+    install = e.__install__
+    docstring = e.__doc__
+
+    file_path = os.path.join(_package_path, filename)
 
     with open(file_path, 'w') as f:
         if t is AvatarColor:
             f.write('from .base_enums import AvatarColor\n\n\n')
-            f.write('class {}(AvatarColor):\n\n'.format(name))
+            f.write('class {}(AvatarColor):\n'.format(name))
         elif t is AvatarPart:
             f.write('from .base_enums import AvatarPart\n\n\n')
-            f.write('class {}(AvatarPart):\n\n'.format(name))
+            f.write('class {}(AvatarPart):\n'.format(name))
         else:
             raise RuntimeError()
+
+        f.write('    """{}"""\n\n'.format(docstring))
 
         f.write("    __install__ = {}\n".format(install))
         f.write("    __enum_path__ = '{}'\n".format(filename))
