@@ -9,6 +9,7 @@ _package_path = os.path.dirname(__file__)
 _default_path = os.path.join(_package_path, 'default.json')
 _installed_path = os.path.join(_package_path, 'installed.json')
 
+
 def _check(condition, message):
     """
     Check wether a condition holds or not. If the condition is false, raises a RuntimeError with the provided message
@@ -23,6 +24,7 @@ def _check(condition, message):
     """
     if condition:
         raise RuntimeError(message)
+
 
 def _install_enum(name, value, part_type, enum_type):
     """
@@ -43,10 +45,11 @@ def _install_enum(name, value, part_type, enum_type):
 
     :return: :class:`AvatarEnum` with the new value added
     """
-    _check(not part_type.__install__, "{} cannot be expanded".format(part_type.__name__))
-    
-    const_name = _sanitize(name) 
-    
+    _check(not part_type.__install__,
+           "{} cannot be expanded".format(part_type.__name__))
+
+    const_name = _sanitize(name)
+
     # Load defaults
     with open(_default_path, 'r') as f:
         default_values = json.load(f)
@@ -61,13 +64,15 @@ def _install_enum(name, value, part_type, enum_type):
 
     # Combine installed with default
     if part_type.__name__ in installed_values:
-        combined = {**default_values[part_type.__name__], **installed_values[part_type.__name__]}
+        combined = {**default_values[part_type.__name__],
+                    **installed_values[part_type.__name__]}
     else:
         combined = default_values[part_type.__name__]
         installed_values[part_type.__name__] = {}
 
     # Check wether the value exists or not
-    _check(const_name in combined, "{}.{} already exists".format(part_type.__name__, const_name))
+    _check(const_name in combined, 
+           "{}.{} already exists".format(part_type.__name__, const_name))
 
     # Add to installed
     installed_values[part_type.__name__][const_name] = value
@@ -77,10 +82,12 @@ def _install_enum(name, value, part_type, enum_type):
         json.dump(installed_values, f, indent=4)
 
     # Overwrite the enum file
-    combined = {**default_values[part_type.__name__], **installed_values[part_type.__name__]}
+    combined = {**default_values[part_type.__name__],
+                **installed_values[part_type.__name__]}
     _write_enum(part_type, combined, enum_type)
 
     return True
+
 
 def _prompt_confirmation(class_name, enum_name):
     """
@@ -94,8 +101,10 @@ def _prompt_confirmation(class_name, enum_name):
 
     :return: bool
     """
-    confirm_resp = input('Do you really want to uninstall {}.{}? y/n: '.format(class_name, enum_name))
+    confirm_resp = input(
+        'Do you really want to uninstall {}.{}? y/n: '.format(class_name, enum_name))
     return confirm_resp.lower().strip() == 'y'
+
 
 def _uninstall_enum(part, enum_type):
     """
@@ -122,7 +131,8 @@ def _uninstall_enum(part, enum_type):
         del installed_values[part.__class__.__name__][part.name]
 
         # Combine installed + default
-        combined = {**default_values[part.__class__.__name__], **installed_values[part.__class__.__name__]}
+        combined = {**default_values[part.__class__.__name__],
+                    **installed_values[part.__class__.__name__]}
 
         # Update installed
         with open(_installed_path, 'w') as f:
@@ -132,6 +142,7 @@ def _uninstall_enum(part, enum_type):
         _write_enum(part.__class__, combined, enum_type)
         return True
     return False
+
 
 def install_part(part_path, part_type):
     """
@@ -161,6 +172,7 @@ def install_part(part_path, part_type):
     # Return the enum with the new value
     return new_enum
 
+
 def uninstall_part(part, confirm=True):
     """
     Removes an installed part. Returns ``True`` on success, ``False`` otherwise
@@ -177,6 +189,7 @@ def uninstall_part(part, confirm=True):
         os.remove(_get_path(part.__class__, part.value))
         return True
     return False
+
 
 def install_color(name, value, part_type):
     """
@@ -195,8 +208,10 @@ def install_color(name, value, part_type):
     :return: bool
 
     """
-    _check(part_type.__path__ != '', "{} is not a color".format(part_type.__name__))
+    _check(part_type.__path__ != '',
+           "{} is not a color".format(part_type.__name__))
     return _install_enum(name, value, part_type, AvatarColor)
+
 
 def uninstall_color(color, confirm=True):
     """
@@ -239,7 +254,9 @@ def factory_reset(confirm=True):
 
     for enum_name, enum_values_dict in default_values.items():
         enum_cls = type(enum_name, (object,), enum_values_dict)
-        _write_enum(enum_cls, enum_values_dict, AvatarPart if "__path__" in enum_values_dict else AvatarColor)
+        _write_enum(enum_cls, enum_values_dict,
+                    AvatarPart if "__path__" in enum_values_dict else AvatarColor)
+
 
 def _get_path(enum_cls, value):
     """
@@ -253,6 +270,7 @@ def _get_path(enum_cls, value):
     p = os.path.join(_package_path, enum_cls.__path__, '{}.svg'.format(value))
     return p
 
+
 def _sanitize(value):
     """
     Prepares a string to be used as a Python identifier
@@ -260,12 +278,15 @@ def _sanitize(value):
     :param value: The string to convert to a valid Python identifier
 
     :type value: str
-    
+
     :return: str
     """
-    value = re.sub('[^A-Za-z0-9_]+', '_', value)    # Remove invalid Python identifier chars
-    value = value.lstrip('0123456789')              # Remove digits from the beginning
+    value = re.sub('[^A-Za-z0-9_]+', '_',
+                   value)    # Remove invalid Python identifier chars
+    # Remove digits from the beginning
+    value = value.lstrip('0123456789')
     return value.upper()                            # Return uppercase
+
 
 def _write_enum(e, values_dict, t):
     """
@@ -307,4 +328,3 @@ def _write_enum(e, values_dict, t):
         for name, value in values_dict.items():
             if name[:2] != '__':
                 f.write("    {} = '{}'\n".format(name, value))
-        

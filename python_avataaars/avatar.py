@@ -19,6 +19,7 @@ from .top_types import TopType
 from . svg_parser import SVGParser
 from . core import _get_path
 
+
 class Avatar:
     '''
     Avatar. Create a new avatar using this class.
@@ -50,7 +51,7 @@ class Avatar:
         self.nose = nose
         self.mouth = mouth
         self.facial_hair = facial_hair
-        
+
         self.skin_color = skin_color
         self.hair_color = hair_color
         self.facial_hair_color = facial_hair_color
@@ -80,8 +81,9 @@ class Avatar:
         shirt_text=None,
     ):
         """
-        Generates a random avatar. The parameters for this method are exactly the same as for the constructor.
-        If none of them are specified, the values are chosen randomly. The values for the specified parameters will stay fixed
+        Generates a random avatar. The parameters for this method are exactly the same
+        as for the constructor. If none of them are specified, the values are chosen
+        randomly. The values for the specified parameters will stay fixed
         """
         return Avatar(
             style=AvatarStyle.pick_random() if style is None else style,
@@ -94,13 +96,16 @@ class Avatar:
 
             skin_color=SkinColor.pick_random() if skin_color is None else skin_color,
             hair_color=HairColor.pick_random() if hair_color is None else hair_color,
-            facial_hair_color=HairColor.pick_random() if facial_hair_color is None else facial_hair_color,
+            facial_hair_color=HairColor.pick_random(
+            ) if facial_hair_color is None else facial_hair_color,
 
 
             accessory=AccessoryType.pick_random() if accessory is None else accessory,
             clothing=ClothingType.pick_random() if clothing is None else clothing,
-            clothing_color=ClothingColor.pick_random() if clothing_color is None else clothing_color,
-            shirt_graphic=ClothingGraphic.pick_random() if shirt_graphic is None else shirt_graphic,
+            clothing_color=ClothingColor.pick_random(
+            ) if clothing_color is None else clothing_color,
+            shirt_graphic=ClothingGraphic.pick_random(
+            ) if shirt_graphic is None else shirt_graphic,
             shirt_text=shirt_text,
         )
 
@@ -117,14 +122,19 @@ class Avatar:
         avatar = SVGParser(_get_path(AvatarStyle, self.style))
 
         # Set skin color
-        avatar.get_element_by_id('Skin-Color').set_attr('fill', self.skin_color)
+        avatar.get_element_by_id(
+            'Skin-Color').set_attr('fill', self.skin_color)
 
         # Set top
         if not self.__is_empty(self.top):
-            
+
             if isinstance(self.top, HairType):
                 top = SVGParser(_get_path(HairType, self.top))
-                top.get_element_by_id('Hair-Color').set_attr('fill', self.hair_color)
+
+                top.get_element_by_id(
+                    'Hair-Color'
+                ).set_attr('fill', self.hair_color)
+
             else:
                 top = SVGParser(_get_path(HatType, self.top))
                 # TODO change hat color
@@ -133,13 +143,20 @@ class Avatar:
             if not self.__is_empty(self.facial_hair):
                 top_facial_hair = top.get_element_by_id('Facial-Hair')
                 if top_facial_hair:
-                    facial_hair = SVGParser(_get_path(FacialHairType, self.facial_hair))
-                    facial_hair.get_element_by_id('Facial-Hair-Color').set_attr('fill', self.facial_hair_color)
+                    facial_hair = SVGParser(
+                        _get_path(FacialHairType, self.facial_hair)
+                    )
+
+                    facial_hair.get_element_by_id(
+                        'Facial-Hair-Color'
+                    ).set_attr('fill', self.facial_hair_color)
+
                     top_facial_hair.set_content(facial_hair.children())
 
             # Set accessories (top)
             if not self.__is_empty(self.accessory):
-                accessories = SVGParser(_get_path(AccessoryType, self.accessory))
+                accessories = SVGParser(
+                    _get_path(AccessoryType, self.accessory))
                 top.get_element_by_id('Accessory').set_content(
                     accessories.children())
 
@@ -174,14 +191,22 @@ class Avatar:
 
             # TODO Set graphic to all clothes
             if self.clothing == ClothingType.GRAPHIC_SHIRT and not self.__is_empty(self.shirt_graphic):
-                graphic = SVGParser(_get_path(ClothingGraphic, self.shirt_graphic))
+                graphic = SVGParser(
+                    _get_path(ClothingGraphic, self.shirt_graphic)
+                )
+
                 if self.shirt_graphic == ClothingGraphic.CUSTOM_TEXT:
-                    graphic.get_element_by_id('Graphic-Text').children('tspan')[0].set_content(self.shirt_text)
+                    graphic.get_element_by_id(
+                        'Graphic-Text'
+                    ).children('tspan')[0].set_content(self.shirt_text)
 
-                clothes.get_element_by_id('Graphic').set_content(graphic.children())
+                clothes.get_element_by_id(
+                    'Graphic'
+                ).set_content(graphic.children())
 
-            avatar.get_element_by_id('Clothing').set_content(clothes.children())
-        
+            avatar.get_element_by_id(
+                'Clothing'
+            ).set_content(clothes.children())
 
         return avatar.render(path)
 
