@@ -1,5 +1,6 @@
 {
     "AccessoryType": {
+        "__doc__": "Accessories (Glasses)",
         "__install__": true,
         "__enum_path__": "accessory_types.py",
         "__path__": "avatar_parts/accessories",
@@ -13,6 +14,7 @@
         "WAYFARERS": "wayfarers"
     },
     "AvatarStyle": {
+        "__doc__": "Avatar styles",
         "__install__": true,
         "__enum_path__": "avatar_styles.py",
         "__path__": "avatar_parts/styles",
@@ -20,6 +22,7 @@
         "CIRCLE": "circle"
     },
     "ClothingColor": {
+        "__doc__": "Clothing colors. You can use any other color using its hex code",
         "__install__": true,
         "__enum_path__": "clothing_colors.py",
         "BLACK": "#262E33",
@@ -38,6 +41,7 @@
         "WHITE": "#FFFFFF"
     },
     "ClothingGraphic": {
+        "__doc__": "Clothing graphics. The graphics printed on the clothing if the selected\nclothing type is ClothingType.GRAPHIC_SHIRT",
         "__install__": true,
         "__enum_path__": "clothing_graphics.py",
         "__path__": "avatar_parts/clothes/graphic",
@@ -56,6 +60,7 @@
         "SKULL": "skull"
     },
     "ClothingType": {
+        "__doc__": "Clothing types",
         "__install__": true,
         "__enum_path__": "clothing_types.py",
         "__path__": "avatar_parts/clothes",
@@ -71,6 +76,7 @@
         "SHIRT_V_NECK": "shirt_v_neck"
     },
     "EyeType": {
+        "__doc__": "Eye types", 
         "__install__": true,
         "__enum_path__": "eye_types.py",
         "__path__": "avatar_parts/eyes",
@@ -88,6 +94,7 @@
         "X_DIZZY": "x_dizzy"
     },
     "EyebrowType": {
+        "__doc__": "Eyebrow types",
         "__install__": true,
         "__enum_path__": "eyebrow_types.py",
         "__path__": "avatar_parts/eyebrows",
@@ -107,6 +114,7 @@
         "UP_DOWN": "up_down"
     },
     "FacialHairType": {
+        "__doc__": "Facial hair types",
         "__install__": true,
         "__enum_path__": "facial_hair_types.py",
         "__path__": "avatar_parts/facial_hair",
@@ -124,6 +132,7 @@
         "X_DIZZY": "x_dizzy"
     },
     "HairColor": {
+        "__doc__": "Hair/facial hair colors. You can use any other color using its hex code",
         "__install__": true,
         "__enum_path__": "hair_colors.py",
         "AUBURN": "#A55728",
@@ -138,6 +147,7 @@
         "SILVER_GRAY": "#E8E1E1"
     },
     "HairType": {
+        "__doc__": "Hair types",
         "__install__": true,
         "__enum_path__": "hair_types.py",
         "__path__": "avatar_parts/top/hair",
@@ -170,6 +180,7 @@
         "STRAIGHT_STRAND": "straight_strand"
     },
     "HatType": {
+        "__doc__": "Hat types",
         "__install__": true,
         "__enum_path__": "hat_types.py",
         "__path__": "avatar_parts/top/hat",
@@ -182,6 +193,7 @@
         "WINTER_HAT_4": "winter_hat_4"
     },
     "MouthType": {
+        "__doc__": "Mouth types",
         "__install__": true,
         "__enum_path__": "mouth_types.py",
         "__path__": "avatar_parts/mouth",
@@ -199,12 +211,14 @@
         "VOMIT": "vomit"
     },
     "NoseType": {
+        "__doc__": "Nose types",
         "__install__": true,
         "__enum_path__": "nose_types.py",
         "__path__": "avatar_parts/nose",
         "DEFAULT": "default"
     },
     "SkinColor": {
+        "__doc__": "Skin colors. You can use any other color using its hex code",
         "__install__": true,
         "__enum_path__": "skin_colors.py",
         "TANNED": "#FD9841",
