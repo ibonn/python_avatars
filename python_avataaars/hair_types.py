@@ -2,11 +2,12 @@ from .base_enums import AvatarPart
 
 
 class HairType(AvatarPart):
-    
+    """Hair types"""
+
     __install__ = True
     __enum_path__ = 'hair_types.py'
     __path__ = 'avatar_parts/top/hair'
-    
+
     NONE = 'no_hair'
     BIG_HAIR = 'big_hair'
     BOB = 'bob'
@@ -24,7 +25,6 @@ class HairType(AvatarPart):
     MIA_WALLACE = 'mia_wallace'
     SHAGGY_MULLET = 'shaggy_mullet'
     SHAGGY = 'shaggy'
-    # SHAVED_SIDES = 'shaved_sides' # FIXME no tiene color y da error al intentar asignarselo
     SHORT_CURLY = 'short_curly'
     SHORT_DREADS_1 = 'short_dreads_1'
     SHORT_DREADS_2 = 'short_dreads_2'

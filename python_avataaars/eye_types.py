@@ -2,13 +2,12 @@ from .base_enums import AvatarPart
 
 
 class EyeType(AvatarPart):
-    '''
-    Eye types
-    '''
+    """Eye types"""
+
     __install__ = True
     __enum_path__ = 'eye_types.py'
     __path__ = 'avatar_parts/eyes'
-    
+
     CLOSED = 'closed'
     CRY = 'cry'
     DEFAULT = 'default'

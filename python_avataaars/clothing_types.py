@@ -2,13 +2,12 @@ from .base_enums import AvatarPart
 
 
 class ClothingType(AvatarPart):
-    '''
-    Clothing types
-    '''
+    """Clothing types"""
+
     __install__ = True
     __enum_path__ = 'clothing_types.py'
     __path__ = 'avatar_parts/clothes'
-    
+
     NONE = ''
     BLAZER_SHIRT = 'blazer_shirt'
     BLAZER_SWEATER = 'blazer_sweater'

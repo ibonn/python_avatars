@@ -2,9 +2,8 @@ from .base_enums import AvatarColor
 
 
 class HairColor(AvatarColor):
-    '''
-    Hair/facial hair colors
-    '''
+    """Hair/facial hair colors. You can use any other color using its hex code"""
+
     __install__ = True
     __enum_path__ = 'hair_colors.py'
 

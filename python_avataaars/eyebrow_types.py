@@ -1,11 +1,9 @@
-
 from .base_enums import AvatarPart
 
 
 class EyebrowType(AvatarPart):
-    '''
-    Eyebrow types
-    '''
+    """Eyebrow types"""
+
     __install__ = True
     __enum_path__ = 'eyebrow_types.py'
     __path__ = 'avatar_parts/eyebrows'

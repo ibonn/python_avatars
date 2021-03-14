@@ -2,14 +2,12 @@ from .base_enums import AvatarPart
 
 
 class AccessoryType(AvatarPart):
-    '''
-    Accessories (Glasses)
-    '''
-    
+    """Accessories (Glasses)"""
+
     __install__ = True
     __enum_path__ = 'accessory_types.py'
     __path__ = 'avatar_parts/accessories'
-    
+
     NONE = ''
     EYEPATCH = 'eyepatch'
     KURT = 'kurt'

@@ -2,6 +2,8 @@ from .base_enums import AvatarPart
 
 
 class HatType(AvatarPart):
+    """Hat types"""
+
     __install__ = True
     __enum_path__ = 'hat_types.py'
     __path__ = 'avatar_parts/top/hat'

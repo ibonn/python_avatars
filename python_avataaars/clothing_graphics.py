@@ -2,7 +2,9 @@ from .base_enums import AvatarPart
 
 
 class ClothingGraphic(AvatarPart):
-    
+    """Clothing graphics. The graphics printed on the clothing if the selected
+clothing type is ClothingType.GRAPHIC_SHIRT"""
+
     __install__ = True
     __enum_path__ = 'clothing_graphics.py'
     __path__ = 'avatar_parts/clothes/graphic'

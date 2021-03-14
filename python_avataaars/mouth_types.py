@@ -2,13 +2,12 @@ from .base_enums import AvatarPart
 
 
 class MouthType(AvatarPart):
-    '''
-    Mouth types
-    '''
+    """Mouth types"""
+
     __install__ = True
     __enum_path__ = 'mouth_types.py'
     __path__ = 'avatar_parts/mouth'
-    
+
     CONCERNED = 'concerned'
     DEFAULT = 'default'
     DISBELIEF = 'disbelief'
