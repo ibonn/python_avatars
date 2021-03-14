@@ -179,10 +179,38 @@ def uninstall_part(part, confirm=True):
     return False
 
 def install_color(name, value, part_type):
+    """
+    Installs a color. Returns ``True`` on success, ``False`` otherwise
+
+    :param name: The name of the color to install
+    :param value: The value of the color, hex encoded (i.e. #AF541B)
+    :param part_type: The enum where the color will be installed
+
+    :type name: str
+    :type value: str
+    :type part_type: :class:`AvatarColor`
+
+    :raises RuntimeError: If ``part_type`` is not an :class:`AvatarColor`
+
+    :return: bool
+
+    """
     _check(part_type.__path__ != '', "{} is not a color".format(part_type.__name__))
     return _install_enum(name, value, part_type, AvatarColor)
 
 def uninstall_color(color, confirm=True):
+    """
+    Unistalls a color. Returns ``True`` on success, ``False`` otherwise
+
+    :param color: The color to remove
+    :param confirm: Does this action require confirmation? If ``True``, the user will be asked to confirm the uninstall
+
+    :type color: :class:`AvatarColor`
+    :type confirm: bool
+
+    :return: bool
+
+    """
     if confirm:
         return _prompt_confirmation(color.__class__.__name__, color.name) and _uninstall_enum(color, AvatarColor)
     return _uninstall_enum(color, AvatarColor)
@@ -237,7 +265,7 @@ def _sanitize(value):
     :return: str
     """
     value = re.sub('[^A-Za-z0-9_]+', '_', value)    # Remove invalid Python identifier chars
-    value = value.lstrip('0123456789')              # Remove digits fro the beginning
+    value = value.lstrip('0123456789')              # Remove digits from the beginning
     return value.upper()                            # Return uppercase
 
 def _write_enum(e, values_dict, t):
