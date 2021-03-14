@@ -105,7 +105,7 @@ class Avatar:
             ) if facial_hair_color is None else facial_hair_color,
 
 
-            accessory=AccessoryType.pick_random() if accessory is None else accessory,
+            accessory=AccessoryType.pick_random(favor=AccessoryType.NONE) if accessory is None else accessory,
             clothing=ClothingType.pick_random() if clothing is None else clothing,
             clothing_color=ClothingColor.pick_random(
             ) if clothing_color is None else clothing_color,
