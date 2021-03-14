@@ -1,6 +1,9 @@
 # python_avatars
 Avatar library in Python
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/0f0ba4f148724111a40681296d0dc740)](https://www.codacy.com/gh/ibonn/python_avatars/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ibonn/python_avatars&amp;utm_campaign=Badge_Grade)
+
+[![PyPi version](https://img.shields.io/pypi/v/python_avataaars)](https://img.shields.io/pypi/v/python_avataaars)
 ![Example avatar 1](/examples/random/avatar_0.svg "Example avatar")
 ![Example avatar 2](/examples/random/avatar_4.svg "Example avatar")
 ![Example avatar 3](/examples/random/avatar_7.svg "Example avatar")
@@ -16,7 +19,7 @@ Avatar library in Python
 ## Install
 Using pip, from PyPi (latest stable release):
 
-    pip install 
+    pip install python_avataaars
 
 Using pip, from this repository (May not be stable!):
 
