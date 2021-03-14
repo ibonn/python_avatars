@@ -79,10 +79,10 @@ class Avatar:
         shirt_graphic=None,
         shirt_text=None,
     ):
-    """
-    Generates a random avatar. The parameters for this method are exactly the same as for the constructor.
-    If none of them are specified, the values are chosen randomly. The values for the specified parameters will stay fixed
-    """
+        """
+        Generates a random avatar. The parameters for this method are exactly the same as for the constructor.
+        If none of them are specified, the values are chosen randomly. The values for the specified parameters will stay fixed
+        """
         return Avatar(
             style=AvatarStyle.pick_random() if style is None else style,
             top=TopType.pick_random() if top is None else top,
