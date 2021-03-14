@@ -1,6 +1,6 @@
 # python_avatars
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/0f0ba4f148724111a40681296d0dc740)](https://www.codacy.com/gh/ibonn/python_avatars/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ibonn/python_avatars&amp;utm_campaign=Badge_Grade)![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ibonn/python_avatars)[![PyPi version](https://img.shields.io/pypi/v/python_avataaars)](https://img.shields.io/pypi/v/python_avataaars)![PyPI - Downloads](https://img.shields.io/pypi/dm/python_avataaars)
+![GitHub top language](https://img.shields.io/github/languages/top/ibonn/python_avatars)[![Codacy Badge](https://app.codacy.com/project/badge/Grade/0f0ba4f148724111a40681296d0dc740)](https://www.codacy.com/gh/ibonn/python_avatars/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ibonn/python_avatars&amp;utm_campaign=Badge_Grade)![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ibonn/python_avatars)[![PyPi version](https://img.shields.io/pypi/v/python_avataaars)](https://img.shields.io/pypi/v/python_avataaars)
 
 ![Example avatar 1](/examples/random/avatar_0.svg "Example avatar")
 ![Example avatar 2](/examples/random/avatar_4.svg "Example avatar")
