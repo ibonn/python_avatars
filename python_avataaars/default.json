@@ -21,6 +21,14 @@
         "TRANSPARENT": "transparent",
         "CIRCLE": "circle"
     },
+    "BackgroundColor": {
+        "__doc__": "Background colors. You can use any other color using its hex code",
+        "__install__": true,
+        "__enum_path__": "background_colors.py",
+        "DEFAULT": "#65C9FF",
+        "BLACK": "#262E33",
+        "WHITE": "#FFFFFF"
+    },
     "ClothingColor": {
         "__doc__": "Clothing colors. You can use any other color using its hex code",
         "__install__": true,
@@ -118,18 +126,12 @@
         "__install__": true,
         "__enum_path__": "facial_hair_types.py",
         "__path__": "avatar_parts/facial_hair",
-        "CLOSED": "closed",
-        "CRY": "cry",
-        "DEFAULT": "default",
-        "EYE_ROLL": "eye_roll",
-        "HAPPY": "happy",
-        "HEART": "heart",
-        "SIDE": "side",
-        "SQUINT": "squint",
-        "SURPRISED": "surprised",
-        "WINK_WACKY": "wink_wacky",
-        "WINK": "wink",
-        "X_DIZZY": "x_dizzy"
+        "NONE": "",
+        "BEARD_LIGHT": "beard_light",
+        "BEARD_MAGESTIC": "beard_magestic",
+        "BEARD_MEDIUM": "beard_medium",
+        "MOUSTACHE_FANCY": "moustache_fancy",
+        "MOUSTACHE_MAGNUM": "moustache_magnum"
     },
     "HairColor": {
         "__doc__": "Hair/facial hair colors. You can use any other color using its hex code",
