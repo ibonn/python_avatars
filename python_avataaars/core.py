@@ -223,7 +223,6 @@ def factory_reset(confirm=True):
     :param confirm: Does this action require confirmation? If ``True``, the user will be asked to confirm the reset
     :type confirm: bool
     """
-    raise NotImplementedError("TODO")   # TODO
 
     # Load installed and remove svgs
     if os.path.isfile(_installed_path):
@@ -239,8 +238,8 @@ def factory_reset(confirm=True):
         default_values = json.load(f)
 
     for enum_name, enum_values_dict in default_values.items():
-        enum_path = os.path.join(_package_path, enum_values_dict['__path__'])
-        _write_enum()
+        enum_cls = type(enum_name, (object,), enum_values_dict)
+        _write_enum(enum_cls, enum_values_dict, AvatarPart if "__path__" in enum_values_dict else AvatarColor)
 
 def _get_path(enum_cls, value):
     """
@@ -282,7 +281,7 @@ def _write_enum(e, values_dict, t):
     """
     filename = e.__enum_path__
     name = e.__name__
-    path = e.__path__
+    path = e.__path__ if hasattr(e, "__path__") else None
     install = e.__install__
     docstring = e.__doc__
 
@@ -302,7 +301,8 @@ def _write_enum(e, values_dict, t):
 
         f.write("    __install__ = {}\n".format(install))
         f.write("    __enum_path__ = '{}'\n".format(filename))
-        f.write("    __path__ = '{}'\n".format(path))
+        if path is not None:
+            f.write("    __path__ = '{}'\n".format(path))
         f.write("\n")
         for name, value in values_dict.items():
             if name[:2] != '__':
