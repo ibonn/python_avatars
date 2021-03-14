@@ -97,7 +97,7 @@ class Avatar:
             eyes=EyeType.pick_random() if eyes is None else eyes,
             nose=NoseType.pick_random() if nose is None else nose,
             mouth=MouthType.pick_random() if mouth is None else mouth,
-            facial_hair=FacialHairType.pick_random() if facial_hair is None else facial_hair,
+            facial_hair=FacialHairType.pick_random(favor=FacialHairType.NONE) if facial_hair is None else facial_hair,
 
             skin_color=SkinColor.pick_random() if skin_color is None else skin_color,
             hair_color=HairColor.pick_random() if hair_color is None else hair_color,
