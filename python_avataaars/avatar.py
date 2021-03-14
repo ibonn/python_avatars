@@ -2,6 +2,7 @@ import enum
 
 from .accessory_types import AccessoryType
 from .avatar_styles import AvatarStyle
+from .background_colors import BackgroundColor
 from .clothing_colors import ClothingColor
 from .clothing_graphics import ClothingGraphic
 from .clothing_types import ClothingType
@@ -28,6 +29,7 @@ class Avatar:
     def __init__(
         self,
         style=AvatarStyle.TRANSPARENT,
+        background_color=BackgroundColor.DEFAULT,
         top=HairType.SHORT_FLAT,
         eyebrows=EyebrowType.DEFAULT,
         eyes=EyeType.DEFAULT,
@@ -44,6 +46,7 @@ class Avatar:
         shirt_text='Hola!',
     ):
         self.style = style
+        self.background_color = background_color
 
         self.top = top
         self.eyebrows = eyebrows
@@ -65,6 +68,7 @@ class Avatar:
     @staticmethod
     def random(
         style=None,
+        background_color=None,
         top=None,
         eyebrows=None,
         eyes=None,
@@ -87,6 +91,7 @@ class Avatar:
         """
         return Avatar(
             style=AvatarStyle.pick_random() if style is None else style,
+            background_color=BackgroundColor.pick_random() if background_color is None else background_color,
             top=TopType.pick_random() if top is None else top,
             eyebrows=EyebrowType.pick_random() if eyebrows is None else eyebrows,
             eyes=EyeType.pick_random() if eyes is None else eyes,
@@ -120,6 +125,11 @@ class Avatar:
 
         # Load the base template based on the avatar style
         avatar = SVGParser(_get_path(AvatarStyle, self.style))
+
+        # Set style params
+        bg_color = avatar.get_element_by_id("Background-Color")
+        if bg_color is not None:
+            bg_color.set_attr("fill", self.background_color)
 
         # Set skin color
         avatar.get_element_by_id(

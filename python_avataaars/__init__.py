@@ -1,6 +1,7 @@
 # Enums
 from .accessory_types import AccessoryType
 from .avatar_styles import AvatarStyle
+from .background_colors import BackgroundColor
 from .clothing_colors import ClothingColor
 from .clothing_graphics import ClothingGraphic
 from .clothing_types import ClothingType

@@ -15,7 +15,7 @@
             <mask id="mask-2" fill="white">
                 <use xlink:href="#path-1"></use>
             </mask>
-            <use id="Circle-Background" fill="#E6E6E6" xlink:href="#path-1"></use>
+            <use id="Background-Color" fill="#E6E6E6" xlink:href="#path-1"></use>
             <g id="Fabric-Color" mask="url(#mask-2)" fill="">
                 <rect id="🖍Color" x="0" y="0" width="240" height="240"></rect>
             </g>
