@@ -52,7 +52,7 @@ my_avatar = pa.Avatar(
     mouth=pa.MouthType.EATING,
     facial_hair=pa.FacialHairType.NONE,
     # You can use hex colors on any color attribute...
-    skin_color='#00FFFF',
+    skin_color="#00FFFF",
     # Or you can use the colors provided by the library
     hair_color=pa.HairColor.BLACK,
     accessory=pa.AccessoryType.NONE,
@@ -93,7 +93,7 @@ You can add it to the library just by running
 from python_avataaars import install_part
 
 # Install the new part
-install_part('suit.svg', pa.ClothingType)
+install_part("suit.svg", pa.ClothingType)
 ```
 And then use it
 ```python
