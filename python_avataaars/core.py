@@ -103,8 +103,7 @@ def _install_enum(name, value, part_type, enum_type):
 
     return True
 
-
-def _prompt_confirmation(class_name, enum_name):
+def _prompt_uninstall_confirmation(class_name, enum_name):
     """
     Prompt a deletion confirmation message. Returns ``True`` when the user accepted and ``False`` when declined
 
@@ -116,8 +115,18 @@ def _prompt_confirmation(class_name, enum_name):
 
     :return: bool
     """
-    confirm_resp = input(
-        'Do you really want to uninstall {}.{}? y/n: '.format(class_name, enum_name))
+    return _prompt_confirmation('Do you really want to uninstall {}.{}?'.format(class_name, enum_name))
+
+def _prompt_confirmation(msg):
+    """
+    Prompt a confirmation message
+
+    :param msg: The message to show
+    :type msg: str
+
+    :return: bool
+    """
+    confirm_resp = input('{} y/n: '.format(msg))
     return confirm_resp.lower().strip() == 'y'
 
 
@@ -201,7 +210,7 @@ def uninstall_part(part, confirm=True):
 
     :return: bool
     """
-    if _prompt_confirmation(part.__class__.__name__, part.name) and _uninstall_enum(part, AvatarPart):
+    if _prompt_uninstall_confirmation(part.__class__.__name__, part.name) and _uninstall_enum(part, AvatarPart):
         os.remove(_get_path(part.__class__, part.value))
         return True
     return False
@@ -243,7 +252,7 @@ def uninstall_color(color, confirm=True):
 
     """
     if confirm:
-        return _prompt_confirmation(color.__class__.__name__, color.name) and _uninstall_enum(color, AvatarColor)
+        return _prompt_uninstall_confirmation(color.__class__.__name__, color.name) and _uninstall_enum(color, AvatarColor)
     return _uninstall_enum(color, AvatarColor)
 
 
@@ -255,28 +264,28 @@ def factory_reset(confirm=True):
     :type confirm: bool
     """
 
-    # Load installed and remove svgs
-    if os.path.isfile(_installed_path):
-        with open(_installed_path, 'r') as f:
-            installed_values = json.load(f)
+    if confirm and _prompt_confirmation('Do you want to uninstall all the installed parts?'):
+        # Load installed and remove svgs
+        if os.path.isfile(_installed_path):
+            with open(_installed_path, 'r') as f:
+                installed_values = json.load(f)
 
-        for enum_name, enum_values_dict in installed_values.items():
-            enum = globals()[enum_name]
-            for name, value in enum_values_dict.items():
-                svg_path = _get_path(enum, value)
-                os.remove(svg_path)
+            for enum_name, enum_values_dict in installed_values.items():
+                enum = globals()[enum_name]
+                for name, value in enum_values_dict.items():
+                    svg_path = _get_path(enum, value)
+                    os.remove(svg_path)
 
-    # Load defaults
-    with open(_default_path, 'r') as f:
-        default_values = json.load(f)
+            os.remove(_installed_path)
 
-    for enum_name, enum_values_dict in default_values.items():
-        enum_cls = type(enum_name, (object,), enum_values_dict)
-        _write_enum(enum_cls, enum_values_dict,
-                    AvatarPart if "__path__" in enum_values_dict else AvatarColor)
+        # Load defaults
+        with open(_default_path, 'r') as f:
+            default_values = json.load(f)
 
-    os.remove(_installed_path)
-
+        for enum_name, enum_values_dict in default_values.items():
+            enum_cls = type(enum_name, (object,), enum_values_dict)
+            _write_enum(enum_cls, enum_values_dict,
+                        AvatarPart if "__path__" in enum_values_dict else AvatarColor)
 
 def _get_path(enum_cls, value):
     """
