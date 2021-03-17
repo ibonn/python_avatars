@@ -3,6 +3,21 @@ import re
 import shutil
 import json
 
+from .accessory_types import AccessoryType
+from .avatar_styles import AvatarStyle
+from .background_colors import BackgroundColor
+from .clothing_colors import ClothingColor
+from .clothing_graphics import ClothingGraphic
+from .clothing_types import ClothingType
+from .eye_types import EyeType
+from .eyebrow_types import EyebrowType
+from .facial_hair_types import FacialHairType
+from .hair_colors import HairColor
+from .hair_types import HairType
+from .hat_types import HatType
+from .mouth_types import MouthType
+from .nose_types import NoseType
+from .skin_colors import SkinColor
 from .base_enums import AvatarPart, AvatarColor
 
 _package_path = os.path.dirname(__file__)
@@ -246,8 +261,10 @@ def factory_reset(confirm=True):
             installed_values = json.load(f)
 
         for enum_name, enum_values_dict in installed_values.items():
+            enum = globals()[enum_name]
             for name, value in enum_values_dict.items():
-                _get_path()  # FIXME delete installed svgs
+                svg_path = _get_path(enum, value)
+                os.remove(svg_path)
 
     # Load defaults
     with open(_default_path, 'r') as f:
@@ -257,6 +274,8 @@ def factory_reset(confirm=True):
         enum_cls = type(enum_name, (object,), enum_values_dict)
         _write_enum(enum_cls, enum_values_dict,
                     AvatarPart if "__path__" in enum_values_dict else AvatarColor)
+
+    os.remove(_installed_path)
 
 
 def _get_path(enum_cls, value):

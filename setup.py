@@ -5,7 +5,7 @@ with open('README.md') as readme_file:
 
 setup_args = dict(
     name='python_avataaars',
-    version='1.0.1',
+    version='1.1.0',
     description='SVG Avatar library for Python',
     long_description_content_type="text/markdown",
     long_description=README,
