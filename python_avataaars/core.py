@@ -71,7 +71,7 @@ def _install_enum(name, value, part_type, enum_type):
         installed_values[part_type.__name__] = {}
 
     # Check wether the value exists or not
-    _check(const_name in combined, 
+    _check(const_name in combined,
            "{}.{} already exists".format(part_type.__name__, const_name))
 
     # Add to installed
@@ -159,6 +159,7 @@ def install_part(part_path, part_type):
     :return: :class:`AvatarPart`
     """
     _check(part_type.__path__ == '', "Installation path not found")
+    _check(not os.path.isfile(part_path), "{} does not exist".format(part_path))
     file_name = os.path.splitext(os.path.basename(part_path))[0]
 
     new_enum = _install_enum(file_name, file_name, part_type, AvatarPart)
@@ -246,7 +247,7 @@ def factory_reset(confirm=True):
 
         for enum_name, enum_values_dict in installed_values.items():
             for name, value in enum_values_dict.items():
-                _get_path()
+                _get_path()  # FIXME delete installed svgs
 
     # Load defaults
     with open(_default_path, 'r') as f:
