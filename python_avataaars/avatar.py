@@ -257,7 +257,7 @@ class Avatar:
         return hash(self) == hash(other)
 
     def __ne__(self, other):
-        return not self.__ne__(other)
+        return not self.__eq__(other)
 
     def __str__(self):
         """
