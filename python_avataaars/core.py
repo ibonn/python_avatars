@@ -159,7 +159,7 @@ def install_part(part_path, part_type):
     :return: :class:`AvatarPart`
     """
     _check(part_type.__path__ == '', "Installation path not found")
-    _check(os.path.isfile(part_path), "{} does not exist".format(part_path))
+    _check(not os.path.isfile(part_path), "{} does not exist".format(part_path))
     file_name = os.path.splitext(os.path.basename(part_path))[0]
 
     new_enum = _install_enum(file_name, file_name, part_type, AvatarPart)

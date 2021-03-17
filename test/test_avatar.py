@@ -21,18 +21,18 @@ def test_random_avatar():
 
 def test_not_installable():
     with pytest.raises(RuntimeError):
-        pa.install_part("../examples/install/suit.svg", pa.TopType)
+        pa.install_part("examples/install/suit.svg", pa.TopType)
 
 
 def test_install_installed_part():
-    pa.install_part("../examples/install/suit.svg", pa.ClothingType)
+    pa.install_part("examples/install/suit.svg", pa.ClothingType)
     with pytest.raises(RuntimeError):
-        pa.install_part("../examples/install/suit.svg", pa.ClothingType)
+        pa.install_part("examples/install/suit.svg", pa.ClothingType)
 
 
 def test_cross_install():
     with pytest.raises(RuntimeError):
-        pa.install_part("../examples/install/suit.svg", pa.HairColor)
+        pa.install_part("examples/install/suit.svg", pa.HairColor)
 
 
 def test_bad_install():
