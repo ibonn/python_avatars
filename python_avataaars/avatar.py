@@ -22,9 +22,9 @@ from . core import _get_path
 
 
 class Avatar:
-    '''
+    """
     Avatar. Create a new avatar using this class.
-    '''
+    """
 
     def __init__(
         self,
@@ -230,6 +230,34 @@ class Avatar:
         :return: bool
         """
         return value is None or value == '' or isinstance(value, enum.Enum) and value.value == ''
+
+    def __hash__(self):
+        return hash(
+            (
+                self.style, 
+                self.background_color,
+                self.top,
+                self.eyebrows,
+                self.eyes,
+                self.nose,
+                self.mouth,
+                self.facial_hair,
+                self.skin_color,
+                self.hair_color,
+                self.facial_hair_color,
+                self.accessory,
+                self.clothing,
+                self.clothing_color,
+                self.shirt_graphic,
+                self.shirt_text,
+            )
+        )
+
+    def __eq__(self, other):
+        return hash(self) == hash(other)
+
+    def __ne__(self, other):
+        return not self.__ne__(other)
 
     def __str__(self):
         """
