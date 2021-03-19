@@ -21,7 +21,7 @@
                     <use xlink:href="#path-3"></use>
                 </mask>
                 <use id="Turban-Mask" fill="#124C74" xlink:href="#path-3"></use>
-                <g id="Color/Palette/Blue-03" mask="url(#mask-4)" fill="#25557C">
+                <g id="Fabric-Color" mask="url(#mask-4)" fill="#25557C">
                     <g transform="translate(-48.000000, -3.000000)" id="🖍Color">
                         <rect x="0" y="0" width="264" height="280"></rect>
                     </g>
