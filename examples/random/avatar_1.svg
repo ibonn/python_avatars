@@ -64,9 +64,9 @@
     </defs>
     <g id="concerned_Mouth/Concerned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <mask id="concerned_mask-2" fill="white">
-            <use xlink:href="#concerned_path-1" />
+            <use xlink:href="#concerned_path-1" transform="translate(54.003637, 22.500000) scale(1, -1) translate(-54.003637, -22.500000)" />
         </mask>
-        <use id="concerned_Mouth" fill-opacity="0.699999988" fill="#000000" transform="translate(54.003637, 22.500000) scale(1, -1) translate(-54.003637, -22.500000) " xlink:href="#concerned_path-1" />
+        <use id="concerned_Mouth" fill-opacity="0.699999988" fill="#000000" transform="translate(54.003637, 22.500000) scale(1, -1) translate(-54.003637, -22.500000)" xlink:href="#concerned_path-1" />
         <path d="M44,2 L65,2 C67.7614237,2 70,4.23857625 70,7 L70,13 C70,15.7614237 67.7614237,18 65,18 L44,18 C41.2385763,18 39,15.7614237 39,13 L39,7 C39,4.23857625 41.2385763,2 44,2 Z" id="concerned_Teeth" fill="#FFFFFF" mask="url(#concerned_mask-2)" />
         <g id="concerned_Tongue" mask="url(#concerned_mask-2)" fill="#FF4F6D">
             <g transform="translate(38.000000, 24.000000)">
