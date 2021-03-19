@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ibonn/python_avatars.svg?branch=main)](https://travis-ci.org/ibonn/python_avatars) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0f0ba4f148724111a40681296d0dc740)](https://www.codacy.com/gh/ibonn/python_avatars/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ibonn/python_avatars&amp;utm_campaign=Badge_Grade) ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ibonn/python_avatars) [![PyPi version](https://img.shields.io/pypi/v/python_avataaars)](https://img.shields.io/pypi/v/python_avataaars) ![PyPI - Downloads](https://img.shields.io/pypi/dm/python_avataaars) ![GitHub top language](https://img.shields.io/github/languages/top/ibonn/python_avatars) 
 
-![Randomly generated avatar 1. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/random/avatar_0.svg)](/examples/random/avatar_0.svg "Example avatar")
-![Randomly generated avatar 2. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/random/avatar_4.svg)](/examples/random/avatar_4.svg "Example avatar")
-![Randomly generated avatar 3. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/random/avatar_7.svg)](/examples/random/avatar_7.svg "Example avatar")
+[![Randomly generated avatars. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)](/examples/random_gif_apng/avatars.png)](https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)
 
 > Avatar library in Python
 
@@ -14,6 +12,7 @@
 3. [Usage](#usage)
     * [Create your own avatar](#create-your-own-avatar)
     * [Create a random avatar](#create-a-random-avatar)
+    * [Custom shirt text](#custom-shirt-text)
     * [Expand the library](#expand-the-library)
 4. [License](#license)
 5. [Acknowledgments](#acknowledgments)
@@ -80,13 +79,34 @@ random_avatar_3 = pa.Avatar(
     accessory=pa.AccessoryType.NONE,
     clothing=pa.ClothingType.pick_random(), # The clothes are chosen randomly
 )
-
 ```
+
+### Custom shirt text
+When using the graphic shirt, - _ClothingType.GRAPHIC_ - you can set a custom text if you want to.
+
+```python
+import python_avataaars as pa
+
+pa.Avatar(
+    style=pa.AvatarStyle.CIRCLE,
+    background_color='#FF00FF',
+    # Choose graphic shirt
+    clothing=pa.ClothingType.GRAPHIC_SHIRT,
+    clothing_color=pa.ClothingColor.GRAY_02,
+    # Important to choose this as shirt_graphic, otherwise shirt_text will be ignored
+    shirt_graphic=pa.ClothingGraphic.CUSTOM_TEXT,
+    shirt_text='Chess'
+).render("avatar_text.svg")
+```
+will output the file _avatar\_text.svg_:
+
+[![Avatar wearing shirt with custom text. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/shirt_text/avatar_text.svg)](/examples/shirt_text/avatar_text.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/shirt_text/avatar_text.svg)
+
 ### Expand the library
 Suppose you have a file called _suit.svg_
 that looks like this
 
-![Suit ready to be used by the avatar. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/install/suit.svg)](/examples/install/suit.svg)
+[![Suit ready to be used by the avatar. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/install/suit.svg)](/examples/install/suit.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/install/suit.svg)
 
 You can add it to the library just by running
 ```python
@@ -105,7 +125,7 @@ suit_avatar.render("suit_avatar.svg")
 ```
 Which outputs the file _suit\_avatar.svg_ that looks like this
 
-![Randomly generated avatar wearing the installed suit. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/install/avatar_suit.svg)](/examples/install/avatar_suit.svg)
+[![Randomly generated avatar wearing the installed suit. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/install/avatar_suit.svg)](/examples/install/avatar_suit.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/install/avatar_suit.svg)
 
 Uninstalling the installed part is as easy as installing it
 ```python
