@@ -17,7 +17,6 @@
         <path d="M44,0 L65,0 C67.7614237,-5.07265313e-16 70,2.23857625 70,5 L70,11 C70,13.7614237 67.7614237,16 65,16 L44,16 C41.2385763,16 39,13.7614237 39,11 L39,5 C39,2.23857625 41.2385763,5.07265313e-16 44,0 Z" id="Teeth" fill="#FFFFFF" mask="url(#mask-2)"></path>
         <g id="Vomit-Stuff">
             <use fill="#88C553" fill-rule="evenodd" xlink:href="#path-3"></use>
-            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
         </g>
     </g>
 </svg>
