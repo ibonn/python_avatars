@@ -5,9 +5,9 @@
     </defs>
     <g id="Mouth/Scream-Open" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <mask id="mask-2" fill="white">
-            <use xlink:href="#path-1"></use>
+            <use xlink:href="#path-1" transform="translate(54.000000, 26.999998) scale(1, -1) translate(-54.000000, -26.999998)"></use>
         </mask>
-        <use id="Mouth" fill-opacity="0.699999988" fill="#000000" transform="translate(54.000000, 26.999998) scale(1, -1) translate(-54.000000, -26.999998) " xlink:href="#path-1"></use>
+        <use id="Mouth" fill-opacity="0.699999988" fill="#000000" transform="translate(54.000000, 26.999998) scale(1, -1) translate(-54.000000, -26.999998)" xlink:href="#path-1"></use>
         <path d="M44,2 L65,2 C67.7614237,2 70,4.23857625 70,7 L70,13 C70,15.7614237 67.7614237,18 65,18 L44,18 C41.2385763,18 39,15.7614237 39,13 L39,7 C39,4.23857625 41.2385763,2 44,2 Z" id="Teeth" fill="#FFFFFF" mask="url(#mask-2)"></path>
         <g id="Tongue" mask="url(#mask-2)" fill="#FF4F6D">
             <g transform="translate(38.000000, 32.000000)" id="Say-ahhhh">
