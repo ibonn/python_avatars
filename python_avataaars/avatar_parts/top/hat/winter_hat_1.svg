@@ -8,6 +8,7 @@
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
         </filter>
     </defs>
+    <g id="Facial-Hair" transform="translate(49.000000, 72.000000)"></g>
     <g id="Top/Accessories/Winter-Hat-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="hat" transform="translate(63.000000, 20.000000)">
             <path d="M23.6714286,48 L23.6714286,153.664286 C23.6714286,159.924828 18.5962564,165 12.3357143,165 C6.07517216,165 1,159.924828 1,153.664286 L1,48 L23.6714286,48 Z M139,48 L139,153.664286 C139,159.924828 133.924828,165 127.664286,165 C121.403744,165 116.328571,159.924828 116.328571,153.664286 L116.328571,48 L139,48 Z" id="inside" fill="#F4F4F4"></path>
@@ -25,7 +26,6 @@
             <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
             <use fill="#F4F4F4" fill-rule="evenodd" xlink:href="#path-3"></use>
         </g>
-        <g id="Facial-Hair" transform="translate(49.000000, 72.000000)"></g>
         <g id="Accessory" transform="translate(62.000000, 85.000000)"></g>
     </g>
 </svg>
