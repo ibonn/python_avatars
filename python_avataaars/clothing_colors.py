@@ -17,7 +17,7 @@ class ClothingColor(AvatarColor):
     PASTEL_BLUE = '#B1E2FF'
     PASTEL_GREEN = '#A7FFC4'
     PASTEL_ORANGE = '#FFDEB5'
-    PASTEL_YELLOW = '#FFAFB9'
+    PASTEL_YELLOW = '#FFFFB1'
     PINK = '#FF488E'
     RED = '#FF5C5C'
     WHITE = '#FFFFFF'
