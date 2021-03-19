@@ -6,7 +6,7 @@
     <g id="Top/Long-Hair/Dreads" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="template-for-hairstyles" transform="translate(63.000000, 87.000000)"></g>
         <g id="Facial-Hair" transform="translate(49.000000, 72.000000)"></g>
-        <g id="Hair" transform="translate(16.000000, 14.000000)">
+        <g id="Hair" transform="translate(15.000000, 14.000000)">
             <mask id="mask-2" fill="white">
                 <use xlink:href="#path-1"></use>
             </mask>
