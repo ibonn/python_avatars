@@ -20,12 +20,13 @@ from .nose_types import NoseType
 from .skin_colors import SkinColor
 from .base_enums import AvatarPart, AvatarColor
 
+# Variables for internal usage. Paths to files/folders
 _package_path = os.path.dirname(__file__)
 _default_path = os.path.join(_package_path, 'default.json')
 _installed_path = os.path.join(_package_path, 'installed.json')
 
 
-def _check(condition, message):
+def _check(condition, message, exception=RuntimeError):
     """
     Check wether a condition holds or not. If the condition is false, raises a RuntimeError with the provided message
 
@@ -38,12 +39,12 @@ def _check(condition, message):
     :raises RuntimeError: The error is raised if the condition in ``condition`` is false
     """
     if condition:
-        raise RuntimeError(message)
+        raise exception(message)
 
 
 def _install_enum(name, value, part_type, enum_type):
     """
-    Adds a value to a enum and returns the enum with the new value
+    Adds a value to a enum. Returns True on success. In case if error, an exception is raised
 
     :param name: The name of the value to add
     :param value: The value to add
@@ -56,9 +57,9 @@ def _install_enum(name, value, part_type, enum_type):
     :type enum_type: :class:`Avatarpart` or :class:`AvatarColor`
 
     :raises RuntimeError: The error is raised if the enum cannot be expanded
-    :raises RuntimeError: Raised when the enum contains an item named ``name``
+    :raises FileExistsError: Raised when the enum contains an item named ``name``
 
-    :return: :class:`AvatarEnum` with the new value added
+    :return: bool
     """
     _check(not part_type.__install__,
            "{} cannot be expanded".format(part_type.__name__))
@@ -87,7 +88,7 @@ def _install_enum(name, value, part_type, enum_type):
 
     # Check wether the value exists or not
     _check(const_name in combined,
-           "{}.{} already exists".format(part_type.__name__, const_name))
+           "{}.{} already exists".format(part_type.__name__, const_name, FileExistsError))
 
     # Add to installed
     installed_values[part_type.__name__][const_name] = value
@@ -103,6 +104,7 @@ def _install_enum(name, value, part_type, enum_type):
 
     return True
 
+
 def _prompt_uninstall_confirmation(class_name, enum_name):
     """
     Prompt a deletion confirmation message. Returns ``True`` when the user accepted and ``False`` when declined
@@ -116,6 +118,7 @@ def _prompt_uninstall_confirmation(class_name, enum_name):
     :return: bool
     """
     return _prompt_confirmation('Do you really want to uninstall {}.{}?'.format(class_name, enum_name))
+
 
 def _prompt_confirmation(msg):
     """
@@ -132,7 +135,7 @@ def _prompt_confirmation(msg):
 
 def _uninstall_enum(part, enum_type):
     """
-    Removes a value for a given enum. Returns ``True`` on sucess, ``False`` otherwise
+    Removes a value for a given enum. Returns ``True`` on success
 
     :param part: The name of the value to remove
     :param enum_type: The type of the enum from which the value will be removed
@@ -170,7 +173,7 @@ def _uninstall_enum(part, enum_type):
 
 def install_part(part_path, part_type):
     """
-    Installs a part (clothing, hair type, eye type...). Returns the enum with the new installed value added
+    Installs a part (clothing, hair type, eye type...)
 
     :param part_path: The path to the svg to install
     :param part_type: The enum where the new value will be installed
@@ -179,23 +182,23 @@ def install_part(part_path, part_type):
     :type part_type: :class:`AvatarPart`
 
     :raise RuntimeError: Whenever the part_type does not have an installation path (in other words, when it is not an AvatarPart or when it is not installable)
+    :raise FileNotFoundError: If the file at ``part_path`` does not exist
 
-    :return: :class:`AvatarPart`
+    :return: bool
     """
     _check(part_type.__path__ == '', "Installation path not found")
-    _check(not os.path.isfile(part_path), "{} does not exist".format(part_path))
+    _check(not os.path.isfile(part_path),
+           "{} does not exist".format(part_path), FileNotFoundError)
     file_name = os.path.splitext(os.path.basename(part_path))[0]
 
     new_enum = _install_enum(file_name, file_name, part_type, AvatarPart)
 
     if new_enum:
-
         # Copy the file on success
         destination = _get_path(part_type, file_name)
         shutil.copy(part_path, destination)
 
-    # Return the enum with the new value
-    return new_enum
+    return True
 
 
 def uninstall_part(part, confirm=True):
@@ -218,7 +221,7 @@ def uninstall_part(part, confirm=True):
 
 def install_color(name, value, part_type):
     """
-    Installs a color. Returns ``True`` on success, ``False`` otherwise
+    Installs a color. Returns ``True`` on success
 
     :param name: The name of the color to install
     :param value: The value of the color, hex encoded (i.e. #AF541B)
@@ -287,6 +290,7 @@ def factory_reset(confirm=True):
             _write_enum(enum_cls, enum_values_dict,
                         AvatarPart if "__path__" in enum_values_dict else AvatarColor)
 
+
 def _get_path(enum_cls, value):
     """
     Returns the path to the svg file for an AvatarPart given the enum and the name
@@ -310,11 +314,14 @@ def _sanitize(value):
 
     :return: str
     """
-    value = re.sub('[^A-Za-z0-9_]+', '_',
-                   value)    # Remove invalid Python identifier chars
+    # Remove invalid Python identifier chars
+    value = re.sub('[^A-Za-z0-9_]+', '_', value)
+
     # Remove digits from the beginning
     value = value.lstrip('0123456789')
-    return value.upper()                            # Return uppercase
+
+    # Return uppercase
+    return value.upper()
 
 
 def _write_enum(e, values_dict, t):
