@@ -243,6 +243,7 @@ class Avatar:
                 self.style, 
                 self.background_color,
                 self.top,
+                self.top_color,
                 self.eyebrows,
                 self.eyes,
                 self.nose,
