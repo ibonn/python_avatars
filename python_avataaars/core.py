@@ -88,7 +88,7 @@ def _install_enum(name, value, part_type, enum_type):
 
     # Check wether the value exists or not
     _check(const_name in combined,
-           "{}.{} already exists".format(part_type.__name__, const_name, FileExistsError))
+           "{}.{} already exists".format(part_type.__name__, const_name), FileExistsError)
 
     # Add to installed
     installed_values[part_type.__name__][const_name] = value
