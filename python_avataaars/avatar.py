@@ -45,6 +45,7 @@ class Avatar:
         clothing_color=ClothingColor.HEATHER,
         shirt_graphic=ClothingGraphic.SKULL,
         shirt_text='Hola!',
+        title=None,
     ):
         self.style = style
         self.background_color = background_color
@@ -67,6 +68,8 @@ class Avatar:
         self.shirt_graphic = shirt_graphic
         self.shirt_text = shirt_text
 
+        self.title = title
+
     @staticmethod
     def random(
         style=None,
@@ -86,6 +89,7 @@ class Avatar:
         clothing_color=None,
         shirt_graphic=None,
         shirt_text=None,
+        title=None,
     ):
         """
         Generates a random avatar. The parameters for this method are exactly the same
@@ -111,11 +115,11 @@ class Avatar:
 
             accessory=AccessoryType.pick_random(favor=AccessoryType.NONE) if accessory is None else accessory,
             clothing=ClothingType.pick_random() if clothing is None else clothing,
-            clothing_color=ClothingColor.pick_random(
-            ) if clothing_color is None else clothing_color,
-            shirt_graphic=ClothingGraphic.pick_random(
-            ) if shirt_graphic is None else shirt_graphic,
+            clothing_color=ClothingColor.pick_random() if clothing_color is None else clothing_color,
+            shirt_graphic=ClothingGraphic.pick_random() if shirt_graphic is None else shirt_graphic,
             shirt_text=shirt_text,
+
+            title=title,
         )
 
     def render(self, path=None):
@@ -129,6 +133,9 @@ class Avatar:
 
         # Load the base template based on the avatar style
         avatar = SVGParser(_get_path(AvatarStyle, self.style))
+
+        if self.title is not None:
+            avatar.get_element_by_id("Title").set_content(self.title)
 
         # Set style params
         bg_color = avatar.get_element_by_id("Background-Color")
@@ -257,6 +264,7 @@ class Avatar:
                 self.clothing_color,
                 self.shirt_graphic,
                 self.shirt_text,
+                self.title,
             )
         )
 
