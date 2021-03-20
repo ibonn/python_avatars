@@ -31,7 +31,7 @@ class Avatar:
         style=AvatarStyle.TRANSPARENT,
         background_color=BackgroundColor.DEFAULT,
         top=HairType.SHORT_FLAT,
-        top_color=ClothingColor.HEATHER,
+        hat_color=ClothingColor.HEATHER,
         eyebrows=EyebrowType.DEFAULT,
         eyes=EyeType.DEFAULT,
         nose=NoseType.DEFAULT,
@@ -51,7 +51,7 @@ class Avatar:
         self.background_color = background_color
 
         self.top = top
-        self.top_color = top_color
+        self.hat_color = hat_color
         self.eyebrows = eyebrows
         self.eyes = eyes
         self.nose = nose
@@ -75,7 +75,7 @@ class Avatar:
         style=None,
         background_color=None,
         top=None,
-        top_color=None,
+        hat_color=None,
         eyebrows=None,
         eyes=None,
         nose=None,
@@ -100,7 +100,7 @@ class Avatar:
             style=AvatarStyle.pick_random() if style is None else style,
             background_color=BackgroundColor.pick_random() if background_color is None else background_color,
             top=TopType.pick_random() if top is None else top,
-            top_color=ClothingColor.pick_random() if top_color is None else top_color,
+            hat_color=ClothingColor.pick_random() if hat_color is None else hat_color,
             eyebrows=EyebrowType.pick_random() if eyebrows is None else eyebrows,
             eyes=EyeType.pick_random() if eyes is None else eyes,
             nose=NoseType.pick_random() if nose is None else nose,
@@ -158,9 +158,9 @@ class Avatar:
 
             else:
                 top = SVGParser(_get_path(HatType, self.top))
-                top_color = top.get_element_by_id("Fabric-Color")
-                if top_color is not None:
-                    top_color.set_attr('fill', self.top_color)
+                hat_color = top.get_element_by_id("Fabric-Color")
+                if hat_color is not None:
+                    hat_color.set_attr('fill', self.hat_color)
 
             # Set facial hair (top)
             if not self.__is_empty(self.facial_hair):
@@ -250,7 +250,7 @@ class Avatar:
                 self.style, 
                 self.background_color,
                 self.top,
-                self.top_color,
+                self.hat_color,
                 self.eyebrows,
                 self.eyes,
                 self.nose,
