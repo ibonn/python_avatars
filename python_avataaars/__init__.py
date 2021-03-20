@@ -1,3 +1,9 @@
+"""
+SVG avatar generation library
+"""
+
+__version__ = "1.2.0-a0"
+
 # Enums
 from .accessory_types import AccessoryType
 from .avatar_styles import AvatarStyle
