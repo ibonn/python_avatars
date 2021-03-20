@@ -26,7 +26,7 @@ def test_not_installable():
 
 def test_install_installed_part():
     pa.install_part("examples/install/suit.svg", pa.ClothingType)
-    with pytest.raises(RuntimeError):
+    with pytest.raises(FileExistsError):
         pa.install_part("examples/install/suit.svg", pa.ClothingType)
 
 
@@ -36,5 +36,5 @@ def test_cross_install():
 
 
 def test_bad_install():
-    with pytest.raises(RuntimeError):
+    with pytest.raises(FileNotFoundError):
         pa.install_part("this_file_does_not_exist.svg", pa.HairType)
