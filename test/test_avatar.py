@@ -38,3 +38,14 @@ def test_cross_install():
 def test_bad_install():
     with pytest.raises(FileNotFoundError):
         pa.install_part("this_file_does_not_exist.svg", pa.HairType)
+
+
+def test_invalid_color():
+    with pytest.raises(RuntimeError):
+        pa.install_color("INVALID_1", "#FF00", pa.ClothingColor)
+
+    with pytest.raises(RuntimeError):
+        pa.install_color("INVALID_2", "#fa08g5", pa.ClothingColor)
+
+    with pytest.raises(RuntimeError):
+        pa.install_color("INVALID_WHITE", "ffffff", pa.ClothingColor)

@@ -238,6 +238,10 @@ def install_color(name, value, part_type):
     """
     _check(part_type.__path__ != '',
            "{} is not a color".format(part_type.__name__))
+
+    _check(not re.match(r"^#(?:[a-f0-9]{6}|[a-f0-9]{3})$", value, re.MULTILINE | re.IGNORECASE),
+           "{} is not a valid color".format(value))
+
     return _install_enum(name, value, part_type, AvatarColor)
 
 
