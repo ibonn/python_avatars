@@ -127,6 +127,8 @@ Which outputs the file _suit\_avatar.svg_ that looks like this
 
 [![Randomly generated avatar wearing the installed suit. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/install/avatar_suit.svg)](/examples/install/avatar_suit.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/install/avatar_suit.svg)
 
+The name of the newly added value will be exactly the name of the svg file converted to uppercase replacing all non alphanumeric chars with underscores and removing all leading digits.
+
 Uninstalling the installed part is as easy as installing it
 ```python
 from python_avataaars import uninstall_part, ClothingType
