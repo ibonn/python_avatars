@@ -247,7 +247,7 @@ class Avatar:
     def __hash__(self):
         return hash(
             (
-                self.style, 
+                self.style,
                 self.background_color,
                 self.top,
                 self.hat_color,

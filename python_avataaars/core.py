@@ -275,7 +275,7 @@ def factory_reset(confirm=True):
 
             for enum_name, enum_values_dict in installed_values.items():
                 enum = globals()[enum_name]
-                for name, value in enum_values_dict.items():
+                for value in enum_values_dict.values():
                     svg_path = _get_path(enum, value)
                     os.remove(svg_path)
 
