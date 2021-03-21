@@ -64,7 +64,7 @@ def _install_enum(name, value, part_type, enum_type):
     _check(not part_type.__install__,
            "{} cannot be expanded".format(part_type.__name__))
 
-    const_name = _sanitize(name)
+    const_name = _sanitize(name).upper()
 
     # Load defaults
     with open(_default_path, 'r') as f:
@@ -189,7 +189,7 @@ def install_part(part_path, part_type):
     _check(part_type.__path__ == '', "Installation path not found")
     _check(not os.path.isfile(part_path),
            "{} does not exist".format(part_path), FileNotFoundError)
-    file_name = os.path.splitext(os.path.basename(part_path))[0]
+    file_name = _sanitize(os.path.splitext(os.path.basename(part_path))[0])
 
     new_enum = _install_enum(file_name, file_name, part_type, AvatarPart)
 
@@ -320,8 +320,7 @@ def _sanitize(value):
     # Remove digits from the beginning
     value = value.lstrip('0123456789')
 
-    # Return uppercase
-    return value.upper()
+    return value
 
 
 def _write_enum(e, values_dict, t):
