@@ -1,4 +1,3 @@
-import random
 import os
 
 from apng import APNG
