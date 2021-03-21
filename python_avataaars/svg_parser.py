@@ -21,7 +21,7 @@ class SVGParser:
         elif svg is None:
             tree = ET.parse(path)
             self.tree = tree.getroot()
-            
+
             # Rename IDs
             self.prefix = os.path.splitext(os.path.basename(path))[0]
             self.__rename_ids()
@@ -60,7 +60,6 @@ class SVGParser:
         result = self.tree.findall('''.//*[@id='{}_{}']'''.format(self.prefix, element_id))
 
         if len(result) == 0:
-            # raise Exception('IdNotFoundException: {}'.format(element_id))
             return None
 
         return SVGParser(svg=result[0])
@@ -74,7 +73,6 @@ class SVGParser:
             return [SVGParser(svg=x) for x in self.tree]
 
         else:
-            # TODO get namespace from document
             result = self.tree.findall('{{{}}}{}'.format(SVG_NAMESPACE_URI, tag_name))
 
             if len(result) == 0:
