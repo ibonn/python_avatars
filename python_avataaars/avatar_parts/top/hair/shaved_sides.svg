@@ -5,14 +5,14 @@
         <rect id="path-3" x="0" y="0" width="112" height="150" rx="56"></rect>
     </defs>
     <g id="Top/Long-Hair/Shaved-Sides" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Behind" transform="translate(1.000000, 0.000000)">
+        <g id="Behind">
             <mask id="mask-2" fill="white">
                 <use xlink:href="#path-1"></use>
             </mask>
             <g id="Mask-Hair"></g>
             <path d="M116.179148,40 L146,40 C171.405098,40 192,60.5949015 192,86 L192,154.108712 C192,180.650314 210.758775,204.349179 222.609956,226.05167 C234.461138,247.754161 215.254522,268.242596 195.770735,276.769484 C190.902336,278.900091 185.645645,280 180.331438,280 L135.26309,280 C78.9108161,280 70.2166412,216.309596 67.6972794,146.504423 L70.2166412,84.1431398 C71.212998,59.4805095 91.4964003,40 116.179148,40 Z" id="Hair" fill="#CCB55A" mask="url(#mask-2)"></path>
         </g>
-        <g id="Top" transform="translate(77.000000, 36.000000)">
+        <g id="Top" transform="translate(76.000000, 36.000000)">
             <mask id="mask-4" fill="white">
                 <use xlink:href="#path-3"></use>
             </mask>

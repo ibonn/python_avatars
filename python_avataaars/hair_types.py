@@ -25,6 +25,7 @@ class HairType(AvatarPart):
     MIA_WALLACE = 'mia_wallace'
     SHAGGY_MULLET = 'shaggy_mullet'
     SHAGGY = 'shaggy'
+    SHAVED_SIDES = 'shaved_sides'
     SHORT_CURLY = 'short_curly'
     SHORT_DREADS_1 = 'short_dreads_1'
     SHORT_DREADS_2 = 'short_dreads_2'
