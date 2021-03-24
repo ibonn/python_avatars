@@ -1,8 +1,10 @@
 """
 SVG avatar generation library
+
+More info @ https://github.com/ibonn/python_avatars
 """
 
-__version__ = "1.2.0"
+__version__ = "1.2.1-dev"
 
 # Enums
 from .accessory_types import AccessoryType
