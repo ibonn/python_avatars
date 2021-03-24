@@ -152,9 +152,12 @@ class Avatar:
             if isinstance(self.top, HairType):
                 top = SVGParser(_get_path(HairType, self.top))
 
-                top.get_element_by_id(
+                hair_color = top.get_element_by_id(
                     'Hair-Color'
-                ).set_attr('fill', self.hair_color)
+                )
+
+                if hair_color is not None:
+                    hair_color.set_attr('fill', self.hair_color)
 
             else:
                 top = SVGParser(_get_path(HatType, self.top))
