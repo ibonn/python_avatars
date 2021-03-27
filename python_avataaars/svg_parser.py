@@ -9,6 +9,7 @@ XLINK_NAMESPACE_URI = 'http://www.w3.org/1999/xlink'
 ET.register_namespace('', SVG_NAMESPACE_URI)
 ET.register_namespace('xlink', XLINK_NAMESPACE_URI)
 
+
 class SVGParser:
 
     def __init__(self, path=None, svg=None):
@@ -30,26 +31,18 @@ class SVGParser:
 
         xlink_href = '{{{}}}href'.format(XLINK_NAMESPACE_URI)
 
+        attrs = ['clip_path', 'filter', 'mask']
+
         for x in self.tree.iter():
             if x.get('id') is not None:
                 new_id = '{}_{}'.format(self.prefix, x.get('id'))
                 x.set('id', new_id)
-            
-            if x.get('clip-path') is not None:
-                match = re.match('url\(#(.+)\)', x.get('clip-path'))
-                new_id = 'url(#{}_{})'.format(self.prefix, match.group(1))
-                x.set('clip-path', new_id)
 
-            if x.get('filter') is not None:
-                match = re.match('url\(#(.+)\)', x.get('filter'))
-                new_id = 'url(#{}_{})'.format(self.prefix, match.group(1))
-                x.set('filter', new_id)
-
-            if x.get('mask') is not None:
-                match = re.match('url\(#(.+)\)', x.get('mask'))
-                new_id = 'url(#{}_{})'.format(self.prefix, match.group(1))
-                x.set('mask', new_id)
-
+            for attr in attrs:
+                if x.get(attr) is not None:
+                    match = re.match('url\(#(.+)\)', x.get(attr))
+                    new_id = 'url(#{}_{})'.format(self.prefix, match.group(1))
+                    x.set(attr, new_id)
 
             if x.get(xlink_href) is not None:
                 match = re.match('#(.+)', x.get(xlink_href))
@@ -57,7 +50,8 @@ class SVGParser:
                 x.set(xlink_href, new_id)
 
     def get_element_by_id(self, element_id):
-        result = self.tree.findall('''.//*[@id='{}_{}']'''.format(self.prefix, element_id))
+        result = self.tree.findall(
+            '''.//*[@id='{}_{}']'''.format(self.prefix, element_id))
 
         if len(result) == 0:
             return None
@@ -73,11 +67,12 @@ class SVGParser:
             return [SVGParser(svg=x) for x in self.tree]
 
         else:
-            result = self.tree.findall('{{{}}}{}'.format(SVG_NAMESPACE_URI, tag_name))
+            result = self.tree.findall(
+                '{{{}}}{}'.format(SVG_NAMESPACE_URI, tag_name))
 
             if len(result) == 0:
                 raise Exception('TagNotFoundException: {}'.format(tag_name))
-            
+
             return [SVGParser(svg=x) for x in result]
 
     def render(self, path=None):
@@ -108,6 +103,7 @@ class SVGParser:
 if __name__ == '__main__':
     parser = SVGParser(path='avatar_parts/styles/avataaar_circle.svg')
     hair = SVGParser(path='avatar_parts/top/bun.svg')
-    hair.get_element_by_id('Hair-Color').children('path')[0].set_attr('fill', '#FF0000')
+    hair.get_element_by_id(
+        'Hair-Color').children('path')[0].set_attr('fill', '#FF0000')
     parser.get_element_by_id('Top').set_content(hair.children())
     parser.render('test.svg')
