@@ -4,7 +4,7 @@ SVG avatar generation library
 More info @ https://github.com/ibonn/python_avatars
 """
 
-__version__ = "1.3.0-dev"
+__version__ = "1.3.0-dev270321"
 
 # Enums
 from .accessory_types import AccessoryType
