@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ibonn/python_avatars.svg?branch=main)](https://travis-ci.org/ibonn/python_avatars) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0f0ba4f148724111a40681296d0dc740)](https://www.codacy.com/gh/ibonn/python_avatars/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ibonn/python_avatars&amp;utm_campaign=Badge_Grade) ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ibonn/python_avatars) [![PyPi version](https://img.shields.io/pypi/v/python_avataaars)](https://img.shields.io/pypi/v/python_avataaars) ![PyPI - Downloads](https://img.shields.io/pypi/dm/python_avataaars) ![GitHub top language](https://img.shields.io/github/languages/top/ibonn/python_avatars) 
 
-[![Randomly generated avatars. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)](/examples/random_gif_apng/avatars.png)](https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)
+[![Randomly generated avatars. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)](https://raw.githubusercontent.com/ibonn/python_avatars/main/examples/random_gif_apng/avatars.png)](https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)
 
 > Avatar library in Python
 
@@ -100,13 +100,13 @@ pa.Avatar(
 ```
 will output the file _avatar\_text.svg_:
 
-[![Avatar wearing shirt with custom text. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/shirt_text/avatar_text.svg)](/examples/shirt_text/avatar_text.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/shirt_text/avatar_text.svg)
+[![Avatar wearing shirt with custom text. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/shirt_text/avatar_text.svg)](https://raw.githubusercontent.com/ibonn/python_avatars/main/examples/shirt_text/avatar_text.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/shirt_text/avatar_text.svg)
 
 ### Expand the library
 Suppose you have a file called _suit.svg_
 that looks like this
 
-[![Suit ready to be used by the avatar. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/install/suit.svg)](/examples/install/suit.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/install/suit.svg)
+[![Suit ready to be used by the avatar. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/install/suit.svg)](https://raw.githubusercontent.com/ibonn/python_avatars/main/examples/install/suit.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/install/suit.svg)
 
 You can add it to the library just by running
 ```python
@@ -125,7 +125,7 @@ suit_avatar.render("suit_avatar.svg")
 ```
 Which outputs the file _suit\_avatar.svg_ that looks like this
 
-[![Randomly generated avatar wearing the installed suit. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/install/avatar_suit.svg)](/examples/install/avatar_suit.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/install/avatar_suit.svg)
+[![Randomly generated avatar wearing the installed suit. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/install/avatar_suit.svg)](https://raw.githubusercontent.com/ibonn/python_avatars/main/examples/install/avatar_suit.svg)](https://github.com/ibonn/python_avatars/blob/main/examples/install/avatar_suit.svg)
 
 The name of the newly added value will be exactly the name of the svg file converted to uppercase replacing all non alphanumeric chars with underscores and removing all leading digits.
 
