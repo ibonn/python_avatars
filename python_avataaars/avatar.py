@@ -98,14 +98,16 @@ class Avatar:
         """
         return Avatar(
             style=AvatarStyle.pick_random() if style is None else style,
-            background_color=BackgroundColor.pick_random() if background_color is None else background_color,
+            background_color=BackgroundColor.pick_random(
+            ) if background_color is None else background_color,
             top=TopType.pick_random() if top is None else top,
             hat_color=ClothingColor.pick_random() if hat_color is None else hat_color,
             eyebrows=EyebrowType.pick_random() if eyebrows is None else eyebrows,
             eyes=EyeType.pick_random() if eyes is None else eyes,
             nose=NoseType.pick_random() if nose is None else nose,
             mouth=MouthType.pick_random() if mouth is None else mouth,
-            facial_hair=FacialHairType.pick_random(favor=FacialHairType.NONE) if facial_hair is None else facial_hair,
+            facial_hair=FacialHairType.pick_random(
+                favor=FacialHairType.NONE) if facial_hair is None else facial_hair,
 
             skin_color=SkinColor.pick_random() if skin_color is None else skin_color,
             hair_color=HairColor.pick_random() if hair_color is None else hair_color,
@@ -113,10 +115,13 @@ class Avatar:
             ) if facial_hair_color is None else facial_hair_color,
 
 
-            accessory=AccessoryType.pick_random(favor=AccessoryType.NONE) if accessory is None else accessory,
+            accessory=AccessoryType.pick_random(
+                favor=AccessoryType.NONE) if accessory is None else accessory,
             clothing=ClothingType.pick_random() if clothing is None else clothing,
-            clothing_color=ClothingColor.pick_random() if clothing_color is None else clothing_color,
-            shirt_graphic=ClothingGraphic.pick_random() if shirt_graphic is None else shirt_graphic,
+            clothing_color=ClothingColor.pick_random(
+            ) if clothing_color is None else clothing_color,
+            shirt_graphic=ClothingGraphic.pick_random(
+            ) if shirt_graphic is None else shirt_graphic,
             shirt_text=shirt_text,
 
             title=title,
@@ -215,7 +220,6 @@ class Avatar:
             if fabric_color:
                 fabric_color.set_attr('fill', self.clothing_color)
 
-            # TODO Set graphic to all clothes
             if self.clothing == ClothingType.GRAPHIC_SHIRT and not self.__is_empty(self.shirt_graphic):
                 graphic = SVGParser(
                     _get_path(ClothingGraphic, self.shirt_graphic)
