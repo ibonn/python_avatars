@@ -31,7 +31,7 @@ class SVGParser:
 
         xlink_href = '{{{}}}href'.format(XLINK_NAMESPACE_URI)
 
-        attrs = ['clip_path', 'filter', 'mask']
+        attrs = ['clip-path', 'filter', 'mask']
 
         for x in self.tree.iter():
             if x.get('id') is not None:
