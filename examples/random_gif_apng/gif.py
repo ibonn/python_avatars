@@ -2,7 +2,7 @@ import os
 
 from PIL import Image
 from cairosvg import svg2png
-from python_avataaars import Avatar
+from python_avatars import Avatar
 
 # IMPORTANT: This example requires 'PIL (Pillow)' to work
 #

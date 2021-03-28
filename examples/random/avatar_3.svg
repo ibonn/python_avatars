@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="264px" height="280px" viewBox="0 0 264 280" version="1.1">
     <title>Avataaar/Circle</title>
-    <desc>Created with python_avataaars</desc>
+    <desc>Created with python_avatars</desc>
     <defs>
         <circle id="circle_path-1" cx="120" cy="120" r="120" />
         <path d="M-3.19744231e-14,160 L-3.19744231e-14,-1.42108547e-14 L264,-1.42108547e-14 L264,160 L252,160 C252,226.27417 198.27417,280 132,280 C65.72583,280 12,226.27417 12,160 L12,160 L-3.19744231e-14,160 Z" id="circle_path-3" />

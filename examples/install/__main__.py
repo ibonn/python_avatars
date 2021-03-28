@@ -1,4 +1,4 @@
-import python_avataaars as pa
+import python_avatars as pa
 
 # IMPORTANT: You should run install.py before running this script, otherwise it won't work.
 

@@ -1,22 +1,22 @@
 from setuptools import setup
 
-from python_avataaars import __version__
+from python_avatars import __version__
 
 with open('README.md') as readme_file:
     README = readme_file.read()
 
 setup_args = dict(
-    name='python_avataaars',
+    name='python_avatars',
     version=__version__,
     description='SVG avatar library for Python',
     long_description_content_type="text/markdown",
     long_description=README,
     license='MIT',
-    packages=['python_avataaars'],
+    packages=['python_avatars'],
     package_dir={
-        'python_avataaars': 'python_avataaars'
+        'python_avatars': 'python_avatars'
     },
-    package_data={'python_avataaars': [
+    package_data={'python_avatars': [
         '*.json',
         'avatar_parts/**/*.svg',
         'avatar_parts/**/**/*.svg'

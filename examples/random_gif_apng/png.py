@@ -2,7 +2,7 @@ import os
 
 from apng import APNG
 from cairosvg import svg2png
-from python_avataaars import Avatar
+from python_avatars import Avatar
 
 # IMPORTANT: This example requires 'apng' and 'cairosvg' to work
 #

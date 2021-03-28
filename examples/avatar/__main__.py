@@ -1,4 +1,4 @@
-import python_avataaars as pa
+import python_avatars as pa
 
 pa.Avatar(
     style=pa.AvatarStyle.CIRCLE,

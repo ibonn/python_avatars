@@ -2,7 +2,7 @@ import os
 import random
 import pytest
 
-import python_avataaars as pa
+import python_avatars as pa
 
 
 def test_avatar_generation():

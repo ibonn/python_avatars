@@ -3,7 +3,7 @@ import os
 from PIL import Image
 from cairosvg import svg2png
 
-import python_avataaars as pa
+import python_avatars as pa
 
 # The script used to generate the social preview image for this repository
 

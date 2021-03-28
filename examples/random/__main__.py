@@ -1,6 +1,6 @@
 import random
 
-from python_avataaars import Avatar
+from python_avatars import Avatar
 
 # Set a seed
 random.seed(123)

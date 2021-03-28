@@ -240,6 +240,33 @@ class Avatar:
 
         return avatar.render(path)
 
+    def happy(self):
+        pass
+
+    def sad(self):
+        pass
+
+    def frightened(self):
+        pass
+
+    def disgusted(self):
+        pass
+
+    def angry(self):
+        pass
+
+    def surprised(self):
+        pass
+
+    def confused(self):
+        pass
+
+    def shocked(self):
+        return self.surprised()
+
+    def worried(self):
+        pass
+
     @staticmethod
     def __is_empty(value):
         """

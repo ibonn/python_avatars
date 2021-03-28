@@ -1,6 +1,6 @@
 # python_avatars
 
-[![Build Status](https://travis-ci.org/ibonn/python_avatars.svg?branch=main)](https://travis-ci.org/ibonn/python_avatars) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0f0ba4f148724111a40681296d0dc740)](https://www.codacy.com/gh/ibonn/python_avatars/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ibonn/python_avatars&amp;utm_campaign=Badge_Grade) ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ibonn/python_avatars) [![PyPi version](https://img.shields.io/pypi/v/python_avataaars)](https://img.shields.io/pypi/v/python_avataaars) ![PyPI - Downloads](https://img.shields.io/pypi/dm/python_avataaars) ![GitHub top language](https://img.shields.io/github/languages/top/ibonn/python_avatars) 
+[![Build Status](https://travis-ci.org/ibonn/python_avatars.svg?branch=main)](https://travis-ci.org/ibonn/python_avatars) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0f0ba4f148724111a40681296d0dc740)](https://www.codacy.com/gh/ibonn/python_avatars/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ibonn/python_avatars&amp;utm_campaign=Badge_Grade) ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ibonn/python_avatars) [![PyPi version](https://img.shields.io/pypi/v/python_avatars)](https://img.shields.io/pypi/v/python_avatars) ![PyPI - Downloads](https://img.shields.io/pypi/dm/python_avatars) ![GitHub top language](https://img.shields.io/github/languages/top/ibonn/python_avatars) 
 
 [![Randomly generated avatars. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)](https://raw.githubusercontent.com/ibonn/python_avatars/main/examples/random_gif_apng/avatars.png)](https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)
 
@@ -28,7 +28,7 @@
 ## Install
 Using pip, from PyPi (latest stable release):
 
-    pip install python_avataaars
+    pip install python_avatars
 
 Using pip, from this repository (May not be stable!):
 
@@ -39,11 +39,11 @@ Using pip, from this repository (May not be stable!):
 ## Usage
 ### Create your own avatar
 ```python
-import python_avataaars as pa
+import python_avatars as pa
 
 my_avatar = pa.Avatar(
     style=pa.AvatarStyle.CIRCLE,
-    background_color:pa.BackgroundColor.BLACK,
+    background_color=pa.BackgroundColor.BLACK,
     top=pa.HairType.STRAIGHT_2,
     eyebrows=pa.EyebrowType.DEFAULT_NATURAL,
     eyes=pa.EyeType.DEFAULT,
@@ -64,7 +64,7 @@ my_avatar.render("my_avatar.svg")
 ```
 ### Create a random avatar
 ```python
-import python_avataaars as pa
+import python_avatars as pa
 
 # Completely random avatar
 random_avatar_1 = pa.Avatar.random()
@@ -85,7 +85,7 @@ random_avatar_3 = pa.Avatar(
 When using the graphic shirt, - _ClothingType.GRAPHIC_ - you can set a custom text if you want to.
 
 ```python
-import python_avataaars as pa
+import python_avatars as pa
 
 pa.Avatar(
     style=pa.AvatarStyle.CIRCLE,
@@ -110,7 +110,7 @@ that looks like this
 
 You can add it to the library just by running
 ```python
-from python_avataaars import install_part
+from python_avatars import install_part
 
 # Install the new part
 install_part("suit.svg", pa.ClothingType)
@@ -131,7 +131,7 @@ The name of the newly added value will be exactly the name of the svg file conve
 
 Uninstalling the installed part is as easy as installing it
 ```python
-from python_avataaars import uninstall_part, ClothingType
+from python_avatars import uninstall_part, ClothingType
 
 uninstall_part(ClothingType.SUIT, confirm=False)    # confirm=False will not prompt for confirmation
 ```
