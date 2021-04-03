@@ -39,15 +39,15 @@ class SVGParser:
                 x.set('id', new_id)
 
             for attr in attrs:
-                if x.get(attr) is not None:
-                    match = re.match('url\(#(.+)\)', x.get(attr))
-                    new_id = 'url(#{}_{})'.format(self.prefix, match.group(1))
-                    x.set(attr, new_id)
+                self.__replace(x, attr, r'url\(#(.+)\)', r'url(#{}_{})')
 
-            if x.get(xlink_href) is not None:
-                match = re.match('#(.+)', x.get(xlink_href))
-                new_id = '#{}_{}'.format(self.prefix, match.group(1))
-                x.set(xlink_href, new_id)
+            self.__replace(x, xlink_href, r'#(.+)', r'#{}_{}')
+
+    def __replace(self, x, attr, regex, replacement):
+        if x.get(attr) is not None:
+            match = re.match(regex, x.get(attr))
+            new_id = replacement.format(self.prefix, match.group(1))
+            x.set(attr, new_id)
 
     def get_element_by_id(self, element_id):
         result = self.tree.findall(
