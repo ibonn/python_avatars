@@ -234,17 +234,12 @@ class Avatar:
             avatar.get_element_by_id(svg_id).set_content(part_svg.children())
 
     def happy(self):
-        if 'natural' in self.eyebrows.name.lower():
-            eyebrows = EyebrowType.RAISED_EXCITED_NATURAL
-        else:
-            eyebrows = EyebrowType.RAISED_EXCITED
-
         return Avatar(
             style=self.style,
             background_color=self.background_color,
             top=self.top,
             hat_color=self.hat_color,
-            eyebrows=eyebrows,
+            eyebrows=self.__get_eyebrows(EyebrowType.RAISED_EXCITED_NATURAL, EyebrowType.RAISED_EXCITED),
             eyes=EyeType.HAPPY,
             nose=self.nose,
             mouth=MouthType.SMILE,
@@ -260,17 +255,12 @@ class Avatar:
         )
 
     def sad(self):
-        if 'natural' in self.eyebrows.name.lower():
-            eyebrows = EyebrowType.SAD_CONCERNED_NATURAL
-        else:
-            eyebrows = EyebrowType.SAD_CONCERNED
-
         return Avatar(
             style=self.style,
             background_color=self.background_color,
             top=self.top,
             hat_color=self.hat_color,
-            eyebrows=eyebrows,
+            eyebrows=self.__get_eyebrows(EyebrowType.SAD_CONCERNED_NATURAL, EyebrowType.SAD_CONCERNED),
             eyes=EyeType.DEFAULT,
             nose=self.nose,
             mouth=MouthType.SAD,
@@ -286,17 +276,12 @@ class Avatar:
         )
 
     def frightened(self):
-        if 'natural' in self.eyebrows.name.lower():
-            eyebrows = EyebrowType.RAISED_EXCITED_NATURAL
-        else:
-            eyebrows = EyebrowType.RAISED_EXCITED
-
         return Avatar(
             style=self.style,
             background_color=self.background_color,
             top=self.top,
             hat_color=self.hat_color,
-            eyebrows=eyebrows,
+            eyebrows=self.__get_eyebrows(EyebrowType.RAISED_EXCITED_NATURAL, EyebrowType.RAISED_EXCITED),
             eyes=EyeType.SQUINT,
             nose=self.nose,
             mouth=MouthType.SCREAM_OPEN,
@@ -312,17 +297,12 @@ class Avatar:
         )
 
     def disgusted(self):
-        if 'natural' in self.eyebrows.name.lower():
-            eyebrows = EyebrowType.SAD_CONCERNED_NATURAL
-        else:
-            eyebrows = EyebrowType.SAD_CONCERNED
-
         return Avatar(
             style=self.style,
             background_color=self.background_color,
             top=self.top,
             hat_color=self.hat_color,
-            eyebrows=eyebrows,
+            eyebrows=self.__get_eyebrows(EyebrowType.SAD_CONCERNED_NATURAL, EyebrowType.SAD_CONCERNED),
             eyes=EyeType.HAPPY,
             nose=self.nose,
             mouth=MouthType.VOMIT,
@@ -338,17 +318,12 @@ class Avatar:
         )
 
     def angry(self):
-        if 'natural' in self.eyebrows.name.lower():
-            eyebrows = EyebrowType.ANGRY_NATURAL
-        else:
-            eyebrows = EyebrowType.ANGRY
-
         return Avatar(
             style=self.style,
             background_color=self.background_color,
             top=self.top,
             hat_color=self.hat_color,
-            eyebrows=eyebrows,
+            eyebrows=self.__get_eyebrows(EyebrowType.ANGRY_NATURAL, EyebrowType.ANGRY),
             eyes=self.eyes,
             nose=self.nose,
             mouth=MouthType.SAD,
@@ -364,17 +339,12 @@ class Avatar:
         )
 
     def surprised(self):
-        if 'natural' in self.eyebrows.name.lower():
-            eyebrows = EyebrowType.RAISED_EXCITED_NATURAL
-        else:
-            eyebrows = EyebrowType.RAISED_EXCITED
-
         return Avatar(
             style=self.style,
             background_color=self.background_color,
             top=self.top,
             hat_color=self.hat_color,
-            eyebrows=eyebrows,
+            eyebrows=self.__get_eyebrows(EyebrowType.RAISED_EXCITED_NATURAL, EyebrowType.RAISED_EXCITED),
             eyes=EyeType.SURPRISED,
             nose=self.nose,
             mouth=MouthType.DISBELIEF,
@@ -390,17 +360,12 @@ class Avatar:
         )
 
     def confused(self):
-        if 'natural' in self.eyebrows.name.lower():
-            eyebrows = EyebrowType.UP_DOWN_NATURAL
-        else:
-            eyebrows = EyebrowType.UP_DOWN_NATURAL
-
         return Avatar(
             style=self.style,
             background_color=self.background_color,
             top=self.top,
             hat_color=self.hat_color,
-            eyebrows=eyebrows,
+            eyebrows=self.__get_eyebrows(EyebrowType.UP_DOWN_NATURAL, EyebrowType.UP_DOWN),
             eyes=EyeType.SQUINT,
             nose=self.nose,
             mouth=MouthType.SERIOUS,    # TODO find adequate mouth type
@@ -416,17 +381,12 @@ class Avatar:
         )
 
     def worried(self):
-        if 'natural' in self.eyebrows.name.lower():
-            eyebrows = EyebrowType.SAD_CONCERNED_NATURAL
-        else:
-            eyebrows = EyebrowType.SAD_CONCERNED
-
         return Avatar(
             style=self.style,
             background_color=self.background_color,
             top=self.top,
             hat_color=self.hat_color,
-            eyebrows=eyebrows,
+            eyebrows=self.__get_eyebrows(EyebrowType.SAD_CONCERNED_NATURAL, EyebrowType.SAD_CONCERNED),
             eyes=EyeType.SQUINT,
             nose=self.nose,
             mouth=MouthType.CONCERNED,
@@ -442,17 +402,12 @@ class Avatar:
         )
 
     def neutral(self):
-        if 'natural' in self.eyebrows.name.lower():
-            eyebrows = EyebrowType.DEFAULT_NATURAL
-        else:
-            eyebrows = EyebrowType.DEFAULT
-
         return Avatar(
             style=self.style,
             background_color=self.background_color,
             top=self.top,
             hat_color=self.hat_color,
-            eyebrows=eyebrows,
+            eyebrows=self.__get_eyebrows(EyebrowType.DEFAULT_NATURAL, EyebrowType.DEFAULT),
             eyes=EyeType.DEFAULT,
             nose=self.nose,
             mouth=MouthType.SERIOUS,
@@ -475,6 +430,12 @@ class Avatar:
 
     def shocked(self):
         return self.surprised()
+
+    def __get_eyebrows(self, natural, default):
+        if 'natural' in self.eyebrows.name.lower():
+            return natural
+        else:
+            return default
 
     @staticmethod
     def __is_empty(value):
