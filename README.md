@@ -28,7 +28,7 @@
 ## Install
 Using pip, from PyPi (latest stable release):
 
-    pip install python_avatars
+    pip install python-avatars
 
 Using pip, from this repository (May not be stable!):
 
