@@ -234,31 +234,247 @@ class Avatar:
             avatar.get_element_by_id(svg_id).set_content(part_svg.children())
 
     def happy(self):
-        pass
+        if 'natural' in self.eyebrows.name.lower():
+            eyebrows = EyebrowType.RAISED_EXCITED_NATURAL
+        else:
+            eyebrows = EyebrowType.RAISED_EXCITED
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=EyeType.HAPPY,
+            nose=self.nose,
+            mouth=MouthType.SMILE,
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
 
     def sad(self):
-        pass
+        if 'natural' in self.eyebrows.name.lower():
+            eyebrows = EyebrowType.SAD_CONCERNED_NATURAL
+        else:
+            eyebrows = EyebrowType.SAD_CONCERNED
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=EyeType.DEFAULT,
+            nose=self.nose,
+            mouth=MouthType.SAD,
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
 
     def frightened(self):
-        pass
+        if 'natural' in self.eyebrows.name.lower():
+            eyebrows = EyebrowType.RAISED_EXCITED_NATURAL
+        else:
+            eyebrows = EyebrowType.RAISED_EXCITED
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=EyeType.SQUINT,
+            nose=self.nose,
+            mouth=MouthType.SCREAM_OPEN,
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
 
     def disgusted(self):
-        pass
+        if 'natural' in self.eyebrows.name.lower():
+            eyebrows = EyebrowType.SAD_CONCERNED_NATURAL
+        else:
+            eyebrows = EyebrowType.SAD_CONCERNED
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=EyeType.HAPPY,
+            nose=self.nose,
+            mouth=MouthType.VOMIT,
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
 
     def angry(self):
-        pass
+        if 'natural' in self.eyebrows.name.lower():
+            eyebrows = EyebrowType.ANGRY_NATURAL
+        else:
+            eyebrows = EyebrowType.ANGRY
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=self.eyes,
+            nose=self.nose,
+            mouth=MouthType.SAD,
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
 
     def surprised(self):
-        pass
+        if 'natural' in self.eyebrows.name.lower():
+            eyebrows = EyebrowType.RAISED_EXCITED_NATURAL
+        else:
+            eyebrows = EyebrowType.RAISED_EXCITED
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=EyeType.SURPRISED,
+            nose=self.nose,
+            mouth=MouthType.DISBELIEF,
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
 
     def confused(self):
-        pass
+        if 'natural' in self.eyebrows.name.lower():
+            eyebrows = EyebrowType.UP_DOWN_NATURAL
+        else:
+            eyebrows = EyebrowType.UP_DOWN_NATURAL
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=EyeType.SQUINT,
+            nose=self.nose,
+            mouth=MouthType.SERIOUS,    # TODO find adequate mouth type
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
+
+    def worried(self):
+        if 'natural' in self.eyebrows.name.lower():
+            eyebrows = EyebrowType.SAD_CONCERNED_NATURAL
+        else:
+            eyebrows = EyebrowType.SAD_CONCERNED
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=EyeType.SQUINT,
+            nose=self.nose,
+            mouth=MouthType.CONCERNED,
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
+
+    def neutral(self):
+        if 'natural' in self.eyebrows.name.lower():
+            eyebrows = EyebrowType.DEFAULT_NATURAL
+        else:
+            eyebrows = EyebrowType.DEFAULT
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=EyeType.DEFAULT,
+            nose=self.nose,
+            mouth=MouthType.SERIOUS,
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
+
+    def serious(self):
+        return self.neutral()
+
+    def scared(self):
+        return self.frightened()
 
     def shocked(self):
         return self.surprised()
-
-    def worried(self):
-        pass
 
     @staticmethod
     def __is_empty(value):
