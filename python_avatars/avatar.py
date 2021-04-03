@@ -23,7 +23,7 @@ from . core import _get_path
 
 class Avatar:
     """
-    Avatar. Create a new avatar using this class.
+    Create a new avatar using this class.
     """
 
     def __init__(
@@ -229,11 +229,17 @@ class Avatar:
         return avatar.render(path)
 
     def __get_part(self, avatar, part, part_enum, svg_id):
+        """
+        Get the specified part as svg and set it to the avatar. Used in render().
+        """
         if not self.__is_empty(part):
             part_svg = SVGParser(_get_path(part_enum, part))
             avatar.get_element_by_id(svg_id).set_content(part_svg.children())
 
     def happy(self):
+        """
+        Get the avatar with a happy face
+        """
         return Avatar(
             style=self.style,
             background_color=self.background_color,
@@ -255,6 +261,9 @@ class Avatar:
         )
 
     def sad(self):
+        """
+        Get a sad version of the avatar
+        """
         return Avatar(
             style=self.style,
             background_color=self.background_color,
@@ -276,6 +285,9 @@ class Avatar:
         )
 
     def frightened(self):
+        """
+        Get a frightened version of the avatar
+        """
         return Avatar(
             style=self.style,
             background_color=self.background_color,
@@ -297,6 +309,9 @@ class Avatar:
         )
 
     def disgusted(self):
+        """
+        Get a disgusted version of the avatar
+        """
         return Avatar(
             style=self.style,
             background_color=self.background_color,
@@ -318,6 +333,9 @@ class Avatar:
         )
 
     def angry(self):
+        """
+        Get an angry version of the avatar
+        """
         return Avatar(
             style=self.style,
             background_color=self.background_color,
@@ -339,6 +357,9 @@ class Avatar:
         )
 
     def surprised(self):
+        """
+        Get a surprised version of the avatar
+        """
         return Avatar(
             style=self.style,
             background_color=self.background_color,
@@ -360,6 +381,9 @@ class Avatar:
         )
 
     def confused(self):
+        """
+        Get a confused version of the avatar
+        """
         return Avatar(
             style=self.style,
             background_color=self.background_color,
@@ -381,6 +405,9 @@ class Avatar:
         )
 
     def worried(self):
+        """
+        Get a worried version of the avatar
+        """
         return Avatar(
             style=self.style,
             background_color=self.background_color,
@@ -402,6 +429,9 @@ class Avatar:
         )
 
     def neutral(self):
+        """
+        Get a neutral version of the avatar
+        """
         return Avatar(
             style=self.style,
             background_color=self.background_color,
@@ -423,15 +453,27 @@ class Avatar:
         )
 
     def serious(self):
+        """
+        Get a serious version of the avatar. Same as neutral()
+        """
         return self.neutral()
 
     def scared(self):
+        """
+        Get a scared version of the avatar. Same as frightened()
+        """
         return self.frightened()
 
     def shocked(self):
+        """
+        Get a shocked version of the avatar. Same as surprised()
+        """
         return self.surprised()
 
     def __get_eyebrows(self, natural, default):
+        """
+        Get on type or another of eyebrows. Used in all facial expression methods
+        """
         if 'natural' in self.eyebrows.name.lower():
             return natural
         else:
@@ -449,6 +491,9 @@ class Avatar:
         return value is None or value == '' or isinstance(value, enum.Enum) and value.value == ''
 
     def __hash__(self):
+        """
+        Get the unique hash for the avatar
+        """
         return hash(
             (
                 self.style,
@@ -473,9 +518,15 @@ class Avatar:
         )
 
     def __eq__(self, other):
+        """
+        == operator. Compare 2 avatars and determine wether they are equal or not
+        """
         return hash(self) == hash(other)
 
     def __ne__(self, other):
+        """
+        != operator. Compare 2 avatars and determine wether they are different or not
+        """
         return not self.__eq__(other)
 
     def __str__(self):
