@@ -20,4 +20,3 @@ class EyeType(AvatarPart):
     WINK_WACKY = 'wink_wacky'
     WINK = 'wink'
     X_DIZZY = 'x_dizzy'
-    FIRE = 'fire'
