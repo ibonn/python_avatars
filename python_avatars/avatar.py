@@ -185,33 +185,21 @@ class Avatar:
                     top_facial_hair.set_content(facial_hair.children())
 
             # Set accessories (top)
-            if not self.__is_empty(self.accessory):
-                accessories = SVGParser(
-                    _get_path(AccessoryType, self.accessory))
-                top.get_element_by_id('Accessory').set_content(
-                    accessories.children())
+            self.__get_part(top, self.accessory, AccessoryType, 'Accessory')
 
             avatar.get_element_by_id('Top').set_content(top.children())
 
         # Set eyebrows
-        if not self.__is_empty(self.eyebrows):
-            eyebrow = SVGParser(_get_path(EyebrowType, self.eyebrows))
-            avatar.get_element_by_id('Eyebrow').set_content(eyebrow.children())
+        self.__get_part(avatar, self.eyebrows, EyebrowType, 'Eyebrow')
 
         # Set eyes
-        if not self.__is_empty(self.eyes):
-            eyes = SVGParser(_get_path(EyeType, self.eyes))
-            avatar.get_element_by_id('Eyes').set_content(eyes.children())
+        self.__get_part(avatar, self.eyes, EyeType, 'Eyes')
 
         # Set nose
-        if not self.__is_empty(self.nose):
-            nose = SVGParser(_get_path(NoseType, self.nose))
-            avatar.get_element_by_id('Nose').set_content(nose.children())
+        self.__get_part(avatar, self.nose, NoseType, 'Nose')
 
         # Set mouth
-        if not self.__is_empty(self.mouth):
-            mouth = SVGParser(_get_path(MouthType, self.mouth))
-            avatar.get_element_by_id('Mouth').set_content(mouth.children())
+        self.__get_part(avatar, self.mouth, MouthType, 'Mouth')
 
         # Set clothes
         if not self.__is_empty(self.clothing):
@@ -239,6 +227,11 @@ class Avatar:
             ).set_content(clothes.children())
 
         return avatar.render(path)
+
+    def __get_part(self, avatar, part, part_enum, svg_id):
+        if not self.__is_empty(part):
+            part_svg = SVGParser(_get_path(part_enum, part))
+            avatar.get_element_by_id(svg_id).set_content(part_svg.children())
 
     def happy(self):
         pass
