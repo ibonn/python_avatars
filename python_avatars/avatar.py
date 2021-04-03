@@ -240,216 +240,99 @@ class Avatar:
         """
         Get the avatar with a happy face
         """
-        return Avatar(
-            style=self.style,
-            background_color=self.background_color,
-            top=self.top,
-            hat_color=self.hat_color,
-            eyebrows=self.__get_eyebrows(EyebrowType.RAISED_EXCITED_NATURAL, EyebrowType.RAISED_EXCITED),
-            eyes=EyeType.HAPPY,
-            nose=self.nose,
-            mouth=MouthType.SMILE,
-            facial_hair=self.facial_hair,
-            skin_color=self.skin_color,
-            hair_color=self.hair_color,
-            facial_hair_color=self.facial_hair_color,
-            accessory=self.accessory,
-            clothing=self.clothing,
-            clothing_color=self.clothing_color,
-            shirt_graphic=self.shirt_graphic,
-            shirt_text=self.shirt_text,
+        return self.__get_facial_expression(
+            EyebrowType.RAISED_EXCITED_NATURAL,
+            EyebrowType.RAISED_EXCITED,
+            MouthType.SMILE,
+            EyeType.HAPPY
         )
 
     def sad(self):
         """
         Get a sad version of the avatar
         """
-        return Avatar(
-            style=self.style,
-            background_color=self.background_color,
-            top=self.top,
-            hat_color=self.hat_color,
-            eyebrows=self.__get_eyebrows(EyebrowType.SAD_CONCERNED_NATURAL, EyebrowType.SAD_CONCERNED),
-            eyes=EyeType.DEFAULT,
-            nose=self.nose,
-            mouth=MouthType.SAD,
-            facial_hair=self.facial_hair,
-            skin_color=self.skin_color,
-            hair_color=self.hair_color,
-            facial_hair_color=self.facial_hair_color,
-            accessory=self.accessory,
-            clothing=self.clothing,
-            clothing_color=self.clothing_color,
-            shirt_graphic=self.shirt_graphic,
-            shirt_text=self.shirt_text,
+        return self.__get_facial_expression(
+            EyebrowType.SAD_CONCERNED_NATURAL,
+            EyebrowType.SAD_CONCERNED,
+            MouthType.SAD,
+            EyeType.DEFAULT
         )
 
     def frightened(self):
         """
         Get a frightened version of the avatar
         """
-        return Avatar(
-            style=self.style,
-            background_color=self.background_color,
-            top=self.top,
-            hat_color=self.hat_color,
-            eyebrows=self.__get_eyebrows(EyebrowType.RAISED_EXCITED_NATURAL, EyebrowType.RAISED_EXCITED),
-            eyes=EyeType.SQUINT,
-            nose=self.nose,
-            mouth=MouthType.SCREAM_OPEN,
-            facial_hair=self.facial_hair,
-            skin_color=self.skin_color,
-            hair_color=self.hair_color,
-            facial_hair_color=self.facial_hair_color,
-            accessory=self.accessory,
-            clothing=self.clothing,
-            clothing_color=self.clothing_color,
-            shirt_graphic=self.shirt_graphic,
-            shirt_text=self.shirt_text,
+        return self.__get_facial_expression(
+            EyebrowType.RAISED_EXCITED_NATURAL,
+            EyebrowType.RAISED_EXCITED,
+            MouthType.SCREAM_OPEN,
+            EyeType.SQUINT
         )
 
     def disgusted(self):
         """
         Get a disgusted version of the avatar
         """
-        return Avatar(
-            style=self.style,
-            background_color=self.background_color,
-            top=self.top,
-            hat_color=self.hat_color,
-            eyebrows=self.__get_eyebrows(EyebrowType.SAD_CONCERNED_NATURAL, EyebrowType.SAD_CONCERNED),
-            eyes=EyeType.HAPPY,
-            nose=self.nose,
-            mouth=MouthType.VOMIT,
-            facial_hair=self.facial_hair,
-            skin_color=self.skin_color,
-            hair_color=self.hair_color,
-            facial_hair_color=self.facial_hair_color,
-            accessory=self.accessory,
-            clothing=self.clothing,
-            clothing_color=self.clothing_color,
-            shirt_graphic=self.shirt_graphic,
-            shirt_text=self.shirt_text,
+        return self.__get_facial_expression(
+            EyebrowType.SAD_CONCERNED_NATURAL,
+            EyebrowType.SAD_CONCERNED,
+            MouthType.VOMIT,
+            EyeType.HAPPY
         )
 
     def angry(self):
         """
         Get an angry version of the avatar
         """
-        return Avatar(
-            style=self.style,
-            background_color=self.background_color,
-            top=self.top,
-            hat_color=self.hat_color,
-            eyebrows=self.__get_eyebrows(EyebrowType.ANGRY_NATURAL, EyebrowType.ANGRY),
-            eyes=self.eyes,
-            nose=self.nose,
-            mouth=MouthType.SAD,
-            facial_hair=self.facial_hair,
-            skin_color=self.skin_color,
-            hair_color=self.hair_color,
-            facial_hair_color=self.facial_hair_color,
-            accessory=self.accessory,
-            clothing=self.clothing,
-            clothing_color=self.clothing_color,
-            shirt_graphic=self.shirt_graphic,
-            shirt_text=self.shirt_text,
+        return self.__get_facial_expression(
+            EyebrowType.ANGRY_NATURAL,
+            EyebrowType.ANGRY,
+            MouthType.SAD,
+            self.eyes
         )
 
     def surprised(self):
         """
         Get a surprised version of the avatar
         """
-        return Avatar(
-            style=self.style,
-            background_color=self.background_color,
-            top=self.top,
-            hat_color=self.hat_color,
-            eyebrows=self.__get_eyebrows(EyebrowType.RAISED_EXCITED_NATURAL, EyebrowType.RAISED_EXCITED),
-            eyes=EyeType.SURPRISED,
-            nose=self.nose,
-            mouth=MouthType.DISBELIEF,
-            facial_hair=self.facial_hair,
-            skin_color=self.skin_color,
-            hair_color=self.hair_color,
-            facial_hair_color=self.facial_hair_color,
-            accessory=self.accessory,
-            clothing=self.clothing,
-            clothing_color=self.clothing_color,
-            shirt_graphic=self.shirt_graphic,
-            shirt_text=self.shirt_text,
+        return self.__get_facial_expression(
+            EyebrowType.RAISED_EXCITED_NATURAL,
+            EyebrowType.RAISED_EXCITED,
+            MouthType.DISBELIEF,
+            EyeType.SURPRISED
         )
 
     def confused(self):
         """
         Get a confused version of the avatar
         """
-        return Avatar(
-            style=self.style,
-            background_color=self.background_color,
-            top=self.top,
-            hat_color=self.hat_color,
-            eyebrows=self.__get_eyebrows(EyebrowType.UP_DOWN_NATURAL, EyebrowType.UP_DOWN),
-            eyes=EyeType.SQUINT,
-            nose=self.nose,
-            mouth=MouthType.SERIOUS,    # TODO find adequate mouth type
-            facial_hair=self.facial_hair,
-            skin_color=self.skin_color,
-            hair_color=self.hair_color,
-            facial_hair_color=self.facial_hair_color,
-            accessory=self.accessory,
-            clothing=self.clothing,
-            clothing_color=self.clothing_color,
-            shirt_graphic=self.shirt_graphic,
-            shirt_text=self.shirt_text,
+        return self.__get_facial_expression(
+            EyebrowType.UP_DOWN_NATURAL,
+            EyebrowType.UP_DOWN,
+            MouthType.SERIOUS,  # TODO find adequate mouth type
+            EyeType.SQUINT
         )
 
     def worried(self):
         """
         Get a worried version of the avatar
         """
-        return Avatar(
-            style=self.style,
-            background_color=self.background_color,
-            top=self.top,
-            hat_color=self.hat_color,
-            eyebrows=self.__get_eyebrows(EyebrowType.SAD_CONCERNED_NATURAL, EyebrowType.SAD_CONCERNED),
-            eyes=EyeType.SQUINT,
-            nose=self.nose,
-            mouth=MouthType.CONCERNED,
-            facial_hair=self.facial_hair,
-            skin_color=self.skin_color,
-            hair_color=self.hair_color,
-            facial_hair_color=self.facial_hair_color,
-            accessory=self.accessory,
-            clothing=self.clothing,
-            clothing_color=self.clothing_color,
-            shirt_graphic=self.shirt_graphic,
-            shirt_text=self.shirt_text,
+        return self.__get_facial_expression(
+            EyebrowType.SAD_CONCERNED_NATURAL,
+            EyebrowType.SAD_CONCERNED,
+            MouthType.CONCERNED,
+            EyeType.SQUINT
         )
 
     def neutral(self):
         """
         Get a neutral version of the avatar
         """
-        return Avatar(
-            style=self.style,
-            background_color=self.background_color,
-            top=self.top,
-            hat_color=self.hat_color,
-            eyebrows=self.__get_eyebrows(EyebrowType.DEFAULT_NATURAL, EyebrowType.DEFAULT),
-            eyes=EyeType.DEFAULT,
-            nose=self.nose,
-            mouth=MouthType.SERIOUS,
-            facial_hair=self.facial_hair,
-            skin_color=self.skin_color,
-            hair_color=self.hair_color,
-            facial_hair_color=self.facial_hair_color,
-            accessory=self.accessory,
-            clothing=self.clothing,
-            clothing_color=self.clothing_color,
-            shirt_graphic=self.shirt_graphic,
-            shirt_text=self.shirt_text,
+        return self.__get_facial_expression(
+            EyebrowType.DEFAULT_NATURAL,
+            EyebrowType.DEFAULT,
+            MouthType.SERIOUS,
+            EyeType.DEFAULT
         )
 
     def serious(self):
@@ -470,14 +353,31 @@ class Avatar:
         """
         return self.surprised()
 
-    def __get_eyebrows(self, natural, default):
-        """
-        Get on type or another of eyebrows. Used in all facial expression methods
-        """
+    def __get_facial_expression(self, natural_eyebrows, default_eyebrows, mouth, eyes):
         if 'natural' in self.eyebrows.name.lower():
-            return natural
+            eyebrows = natural_eyebrows
         else:
-            return default
+            eyebrows = default_eyebrows
+
+        return Avatar(
+            style=self.style,
+            background_color=self.background_color,
+            top=self.top,
+            hat_color=self.hat_color,
+            eyebrows=eyebrows,
+            eyes=eyes,
+            nose=self.nose,
+            mouth=mouth,
+            facial_hair=self.facial_hair,
+            skin_color=self.skin_color,
+            hair_color=self.hair_color,
+            facial_hair_color=self.facial_hair_color,
+            accessory=self.accessory,
+            clothing=self.clothing,
+            clothing_color=self.clothing_color,
+            shirt_graphic=self.shirt_graphic,
+            shirt_text=self.shirt_text,
+        )
 
     @staticmethod
     def __is_empty(value):
