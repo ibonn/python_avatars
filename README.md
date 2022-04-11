@@ -1,5 +1,6 @@
 # python_avatars
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/af686e104bb5495c856c09a325f00275)](https://app.codacy.com/gh/ibonn/python_avatars?utm_source=github.com&utm_medium=referral&utm_content=ibonn/python_avatars&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.org/ibonn/python_avatars.svg?branch=main)](https://travis-ci.org/ibonn/python_avatars) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0f0ba4f148724111a40681296d0dc740)](https://www.codacy.com/gh/ibonn/python_avatars/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ibonn/python_avatars&amp;utm_campaign=Badge_Grade) ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ibonn/python_avatars) [![PyPi version](https://img.shields.io/pypi/v/python_avatars)](https://img.shields.io/pypi/v/python_avatars) ![PyPI - Downloads](https://img.shields.io/pypi/dm/python_avatars) ![GitHub top language](https://img.shields.io/github/languages/top/ibonn/python_avatars) 
 
 [![Randomly generated avatars. (View at: https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)](https://raw.githubusercontent.com/ibonn/python_avatars/main/examples/random_gif_apng/avatars.png)](https://github.com/ibonn/python_avatars/blob/main/examples/random_gif_apng/avatars.png)
