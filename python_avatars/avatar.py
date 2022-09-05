@@ -93,8 +93,8 @@ class Avatar:
     ):
         """
         Generates a random avatar. The parameters for this method are exactly the same
-        as for the constructor. If none of them are specified, the values are chosen
-        randomly. The values for the specified parameters will stay fixed
+        as for the constructor. The values for the specified parameters will stay fixed
+        while the parameters with the value ``None`` will be chosen randomly.
         """
         return Avatar(
             style=AvatarStyle.pick_random() if style is None else style,

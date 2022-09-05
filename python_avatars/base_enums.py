@@ -20,7 +20,7 @@ class AvatarEnum(enum.Enum):
     @classmethod
     def pick_random(cls, favor=None):
         """
-        Pich a random value from this enum. The value in ``favor`` has
+        Pick a random value from this enum. The value in ``favor`` has
         more chances of being chosen
         """
         if favor is None:
