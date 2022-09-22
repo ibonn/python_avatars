@@ -15,3 +15,5 @@ class HatType(AvatarPart):
     WINTER_HAT_2 = 'winter_hat_2'
     WINTER_HAT_3 = 'winter_hat_3'
     WINTER_HAT_4 = 'winter_hat_4'
+    CHEF_CAP = 'chef_cap'
+    GLADIATOR_HELMET = 'gladiator_helmet'

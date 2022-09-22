@@ -178,9 +178,11 @@ class Avatar:
                         _get_path(FacialHairType, self.facial_hair)
                     )
 
-                    facial_hair.get_element_by_id(
+                    facial_hair_color = facial_hair.get_element_by_id(
                         'Facial-Hair-Color'
-                    ).set_attr('fill', self.facial_hair_color)
+                    )
+                    if facial_hair_color is not None:
+                        facial_hair_color.set_attr('fill', self.facial_hair_color)
 
                     top_facial_hair.set_content(facial_hair.children())
 
@@ -394,6 +396,7 @@ class Avatar:
         """
         Get the unique hash for the avatar
         """
+        # TODO Find a proper way to hash the object
         return hash(
             (
                 self.style,
@@ -433,4 +436,4 @@ class Avatar:
         """
         String representation for the avatar
         """
-        return str(self.__dict__)
+        return str({k: str(v) for k, v in self.__dict__.items()})

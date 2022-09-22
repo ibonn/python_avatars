@@ -20,3 +20,4 @@ class MouthType(AvatarPart):
     TONGUE = 'tongue'
     TWINKLE = 'twinkle'
     VOMIT = 'vomit'
+    BIG_SMILE = 'big_smile'
