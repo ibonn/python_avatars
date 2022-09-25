@@ -139,7 +139,9 @@
         "BEARD_MAGESTIC": "beard_magestic",
         "BEARD_MEDIUM": "beard_medium",
         "MOUSTACHE_FANCY": "moustache_fancy",
-        "MOUSTACHE_MAGNUM": "moustache_magnum"
+        "MOUSTACHE_MAGNUM": "moustache_magnum",
+        "EINSTEIN_MOUSTACHE": "einstien_mustache",
+        "WICK_BEARD": "wick_beard"
     },
     "HairColor": {
         "__doc__": "Hair/facial hair colors. You can use any other color using its hex code",
