@@ -228,7 +228,9 @@
         "__install__": true,
         "__enum_path__": "nose_types.py",
         "__path__": "avatar_parts/nose",
-        "DEFAULT": "default"
+        "DEFAULT": "default",
+        "SMALL": "small",
+        "WIDE": "wide"
     },
     "SkinColor": {
         "__doc__": "Skin colors. You can use any other color using its hex code",
