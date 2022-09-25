@@ -271,7 +271,7 @@ def factory_reset(confirm=True):
     :type confirm: bool
     """
 
-    if not confirm or (confirm and _prompt_confirmation('Do you want to uninstall all the installed parts?')):
+    if not confirm or _prompt_confirmation('Do you want to uninstall all the installed parts?'):
         # Load installed and remove svgs
         if os.path.isfile(_installed_path):
             with open(_installed_path, 'r') as f:
