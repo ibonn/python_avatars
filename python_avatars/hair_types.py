@@ -47,8 +47,7 @@ class HairType(AvatarPart):
     ELVIS = 'elvis'
     EVIL_SPIKE = 'evil_spike'
     HALF_SHAVED = 'half_shaved'
-    HAT = 'hat' # TODO move to hats
-    JEDI = 'jedi' # TODO move to hats
+    HAT = 'hat'
     LONG_HAIR_CURLY = 'long_hair_curly'
     LOOSE_HAIR = 'loose_hair'
     MOHAWK = 'mohawk'

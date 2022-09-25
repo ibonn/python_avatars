@@ -10,5 +10,4 @@ class NoseType(AvatarPart):
 
     DEFAULT = 'default'
     SMALL = 'small'
-    MEDIUM = 'medium'
     WIDE = 'wide'
