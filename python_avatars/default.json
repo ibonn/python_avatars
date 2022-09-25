@@ -11,7 +11,9 @@
         "PRESCRIPTION_2": "prescription_02",
         "ROUND": "round",
         "SUNGLASSES": "sunglasses",
-        "WAYFARERS": "wayfarers"
+        "WAYFARERS": "wayfarers",
+        "SUNGLASSES_2": "sunglasses_2",
+        "WAYFARERS_2": "wayfarers_2"
     },
     "AvatarStyle": {
         "__doc__": "Avatar styles",
