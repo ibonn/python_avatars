@@ -247,7 +247,8 @@
         "SMILE": "smile",
         "TONGUE": "tongue",
         "TWINKLE": "twinkle",
-        "VOMIT": "vomit"
+        "VOMIT": "vomit",
+        "BIG_SMILE": "big_smile"
     },
     "NoseType": {
         "__doc__": "Nose types",
