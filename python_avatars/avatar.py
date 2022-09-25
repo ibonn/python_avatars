@@ -236,7 +236,9 @@ class Avatar:
         """
         if not self.__is_empty(part):
             part_svg = SVGParser(_get_path(part_enum, part))
-            avatar.get_element_by_id(svg_id).set_content(part_svg.children())
+            p = avatar.get_element_by_id(svg_id)
+            if p is not None:
+                p.set_content(part_svg.children())
 
     def happy(self):
         """
