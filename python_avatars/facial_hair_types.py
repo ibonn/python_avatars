@@ -14,3 +14,5 @@ class FacialHairType(AvatarPart):
     BEARD_MEDIUM = 'beard_medium'
     MOUSTACHE_FANCY = 'moustache_fancy'
     MOUSTACHE_MAGNUM = 'moustache_magnum'
+    EINSTEIN_MOUSTACHE = 'einstien_mustache'
+    WICK_BEARD = 'wick_beard'

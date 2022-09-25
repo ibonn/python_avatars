@@ -16,3 +16,5 @@ class AccessoryType(AvatarPart):
     ROUND = 'round'
     SUNGLASSES = 'sunglasses'
     WAYFARERS = 'wayfarers'
+    SUNGLASSES_2 = 'sunglasses_2'
+    WAYFARERS_2 = 'wayfarers_2'

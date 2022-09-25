@@ -141,3 +141,4 @@ This project is licensed under the MIT License - see the [LICENSE file](LICENSE)
 
 ## Acknowledgments
 * Avatars designed by [Pablo Stanley](https://twitter.com/pablostanley) ([https://avataaars.com/](https://avataaars.com/))
+* Additional avatar parts from blush.design, designed by [Pablo Stanley](https://twitter.com/pablostanley) ([https://blush.design/](https://blush.design/collections/rChdrB8vX8xQJunpDPp8/avatars/avataaar-default))

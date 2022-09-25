@@ -9,3 +9,5 @@ class NoseType(AvatarPart):
     __path__ = 'avatar_parts/nose'
 
     DEFAULT = 'default'
+    SMALL = 'small'
+    WIDE = 'wide'

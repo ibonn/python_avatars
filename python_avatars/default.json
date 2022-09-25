@@ -11,7 +11,9 @@
         "PRESCRIPTION_2": "prescription_02",
         "ROUND": "round",
         "SUNGLASSES": "sunglasses",
-        "WAYFARERS": "wayfarers"
+        "WAYFARERS": "wayfarers",
+        "SUNGLASSES_2": "sunglasses_2",
+        "WAYFARERS_2": "wayfarers_2"
     },
     "AvatarStyle": {
         "__doc__": "Avatar styles",
@@ -81,7 +83,13 @@
         "OVERALL": "overall",
         "SHIRT_CREW_NECK": "shirt_crew_neck",
         "SHIRT_SCOOP_NECK": "shirt_scoop_neck",
-        "SHIRT_V_NECK": "shirt_v_neck"
+        "SHIRT_V_NECK": "shirt_v_neck",
+        "ASTRONAUT_SUIT": "astronaut_suit",
+        "BOND_SUIT": "bond_suit",
+        "CHEF": "chef",
+        "GLADIATOR": "gladiator",
+        "JEDI_ROBE": "jedi_robe",
+        "SHIRT_WICK": "shirt_wick"
     },
     "EyeType": {
         "__doc__": "Eye types", 
@@ -131,7 +139,9 @@
         "BEARD_MAGESTIC": "beard_magestic",
         "BEARD_MEDIUM": "beard_medium",
         "MOUSTACHE_FANCY": "moustache_fancy",
-        "MOUSTACHE_MAGNUM": "moustache_magnum"
+        "MOUSTACHE_MAGNUM": "moustache_magnum",
+        "EINSTEIN_MOUSTACHE": "einstien_mustache",
+        "WICK_BEARD": "wick_beard"
     },
     "HairColor": {
         "__doc__": "Hair/facial hair colors. You can use any other color using its hex code",
@@ -180,7 +190,30 @@
         "SIDES": "sides",
         "STRAIGHT_1": "straight_1",
         "STRAIGHT_2": "straight_2",
-        "STRAIGHT_STRAND": "straight_strand"
+        "STRAIGHT_STRAND": "straight_strand",
+        "ASTRONAUT": "astronout",
+        "BRAIDS": "braids",
+        "BRIDE": "bride",
+        "BUZZCUT": "buzzcut",
+        "CORNROWS": "cornrows",
+        "CURLY_2": "curly_2",
+        "DREADLOCKS": "dreadlocks",
+        "EINSTEIN_HAIR": "einstein_hair",
+        "ELVIS": "elvis",
+        "EVIL_SPIKE": "evil_spike",
+        "HALF_SHAVED": "half_shaved",
+        "HAT": "hat",
+        "LONG_HAIR_CURLY": "long_hair_curly",
+        "LOOSE_HAIR": "loose_hair",
+        "MOHAWK": "mohawk",
+        "MOWGLI": "mowgli",
+        "PIXIE": "pixie",
+        "POMPADOUR": "pompadour",
+        "QUIFF": "quiff",
+        "TWIST_LONG_HAIR": "twist_long_hair",
+        "TWIST_LONG_HAIR_2": "twist_long_hair_2",
+        "WICK": "wick",
+        "WILD": "wild"
     },
     "HatType": {
         "__doc__": "Hat types",
@@ -193,7 +226,10 @@
         "WINTER_HAT_1": "winter_hat_1",
         "WINTER_HAT_2": "winter_hat_2",
         "WINTER_HAT_3": "winter_hat_3",
-        "WINTER_HAT_4": "winter_hat_4"
+        "WINTER_HAT_4": "winter_hat_4",
+        "CHEF_CAP": "chef_cap",
+        "JEDI": "jedi",
+        "GLADIATOR_HELMET": "gladiator_helmet"
     },
     "MouthType": {
         "__doc__": "Mouth types",
@@ -211,14 +247,17 @@
         "SMILE": "smile",
         "TONGUE": "tongue",
         "TWINKLE": "twinkle",
-        "VOMIT": "vomit"
+        "VOMIT": "vomit",
+        "BIG_SMILE": "big_smile"
     },
     "NoseType": {
         "__doc__": "Nose types",
         "__install__": true,
         "__enum_path__": "nose_types.py",
         "__path__": "avatar_parts/nose",
-        "DEFAULT": "default"
+        "DEFAULT": "default",
+        "SMALL": "small",
+        "WIDE": "wide"
     },
     "SkinColor": {
         "__doc__": "Skin colors. You can use any other color using its hex code",
