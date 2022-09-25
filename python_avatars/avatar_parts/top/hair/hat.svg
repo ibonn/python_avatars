@@ -13,5 +13,7 @@
             <ellipse id="Hipster" fill="#1F333C" mask="url(#hairstylehat-mask-2)" cx="132" cy="87.5" rx="122" ry="57.5" />
             <ellipse id="Very" fill="#15232A" mask="url(#hairstylehat-mask-2)" cx="132" cy="82" rx="62" ry="25" />
         </g>
+        <g id="Facial-Hair" transform="translate(49.000000, 72.000000)"></g>
+        <g id="Accessory" transform="translate(62.000000, 85.000000)"></g>
     </g>
 </svg>
