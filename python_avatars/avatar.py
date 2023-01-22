@@ -219,6 +219,10 @@ class Avatar:
                     graphic.get_element_by_id(
                         'Graphic-Text'
                     ).children('tspan')[0].set_content(self.shirt_text)
+                else:
+                    # Apply transform to graphic elements (see issue #2 for details)
+                    graphic_id = '-'.join([x.capitalize() for x in self.shirt_graphic.name.split('_')])
+                    graphic.get_element_by_id(f"Clothing/Graphic/{graphic_id}").set_attr('transform', 'translate(77.000000, 58.000000)')
 
                 clothes.get_element_by_id(
                     'Graphic'
