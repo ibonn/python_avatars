@@ -1,4 +1,5 @@
 import enum
+from typing import Optional, Union
 
 from .accessory_types import AccessoryType
 from .avatar_styles import AvatarStyle
@@ -6,6 +7,7 @@ from .background_colors import BackgroundColor
 from .clothing_colors import ClothingColor
 from .clothing_graphics import ClothingGraphic
 from .clothing_types import ClothingType
+from .core import _get_path
 from .eye_types import EyeType
 from .eyebrow_types import EyebrowType
 from .facial_hair_types import FacialHairType
@@ -15,10 +17,8 @@ from .hat_types import HatType
 from .mouth_types import MouthType
 from .nose_types import NoseType
 from .skin_colors import SkinColor
+from .svg_parser import SVGParser
 from .top_types import TopType
-
-from . svg_parser import SVGParser
-from . core import _get_path
 
 
 class Avatar:
@@ -28,25 +28,25 @@ class Avatar:
 
     def __init__(
         self,
-        style=AvatarStyle.TRANSPARENT,
-        background_color=BackgroundColor.DEFAULT,
-        top=HairType.SHORT_FLAT,
-        hat_color=ClothingColor.HEATHER,
-        eyebrows=EyebrowType.DEFAULT,
-        eyes=EyeType.DEFAULT,
-        nose=NoseType.DEFAULT,
-        mouth=MouthType.DEFAULT,
-        facial_hair=FacialHairType.NONE,
-        skin_color=SkinColor.LIGHT,
-        hair_color=HairColor.BROWN,
-        facial_hair_color=HairColor.BROWN,
-        accessory=AccessoryType.NONE,
-        clothing=ClothingType.pick_random(),
-        clothing_color=ClothingColor.HEATHER,
-        shirt_graphic=ClothingGraphic.SKULL,
-        shirt_text='Hola!',
-        title=None,
-    ):
+        style: AvatarStyle = AvatarStyle.TRANSPARENT,
+        background_color: Union[str, BackgroundColor] = BackgroundColor.DEFAULT,
+        top: TopType = HairType.SHORT_FLAT,
+        hat_color: ClothingColor = ClothingColor.HEATHER,
+        eyebrows: EyebrowType = EyebrowType.DEFAULT,
+        eyes: EyeType = EyeType.DEFAULT,
+        nose: NoseType = NoseType.DEFAULT,
+        mouth: MouthType = MouthType.DEFAULT,
+        facial_hair: FacialHairType = FacialHairType.NONE,
+        skin_color: Union[str, SkinColor] = SkinColor.LIGHT,
+        hair_color: Union[str, HairColor] = HairColor.BROWN,
+        facial_hair_color: Union[str, HairColor] = HairColor.BROWN,
+        accessory: AccessoryType = AccessoryType.NONE,
+        clothing: ClothingType = ClothingType.pick_random(),
+        clothing_color: Union[str, ClothingColor] = ClothingColor.HEATHER,
+        shirt_graphic: ClothingGraphic = ClothingGraphic.SKULL,
+        shirt_text: str = 'Hola!',
+        title: Optional[str] = None,
+    ) -> None:
         self.style = style
         self.background_color = background_color
 
@@ -72,25 +72,25 @@ class Avatar:
 
     @staticmethod
     def random(
-        style=None,
-        background_color=None,
-        top=None,
-        hat_color=None,
-        eyebrows=None,
-        eyes=None,
-        nose=None,
-        mouth=None,
-        facial_hair=None,
-        skin_color=None,
-        hair_color=None,
-        facial_hair_color=None,
-        accessory=None,
-        clothing=None,
-        clothing_color=None,
-        shirt_graphic=None,
-        shirt_text=None,
-        title=None,
-    ):
+        style: Optional[AvatarStyle] = None,
+        background_color: Union[str, BackgroundColor, None] = None,
+        top: Optional[TopType] = None,
+        hat_color: Union[str, ClothingColor, None] = None,
+        eyebrows: Optional[EyebrowType] = None,
+        eyes: Optional[EyeType] = None,
+        nose: Optional[NoseType] = None,
+        mouth: Optional[MouthType] = None,
+        facial_hair: Optional[FacialHairType] = None,
+        skin_color: Union[str, SkinColor, None] = None,
+        hair_color: Union[str, HairColor, None] = None,
+        facial_hair_color: Union[str, HairColor, None] = None,
+        accessory: Optional[AccessoryType] = None,
+        clothing: Optional[ClothingType] = None,
+        clothing_color: Union[str, ClothingColor, None] = None,
+        shirt_graphic: Optional[ClothingGraphic] = None,
+        shirt_text: Optional[str] = None,
+        title: Optional[str] = None,
+    ) -> 'Avatar':
         """
         Generates a random avatar. The parameters for this method are exactly the same
         as for the constructor. The values for the specified parameters will stay fixed
@@ -127,7 +127,7 @@ class Avatar:
             title=title,
         )
 
-    def render(self, path=None):
+    def render(self, path: Optional[str] = None) -> str:
         """
         Render the avatar to svg. Always returns the resulting svg as a string
 
@@ -234,7 +234,7 @@ class Avatar:
 
         return avatar.render(path)
 
-    def __get_part(self, avatar, part, part_enum, svg_id):
+    def __get_part(self, avatar : SVGParser, part: Union[str, enum.Enum, None], part_enum: enum.Enum, svg_id: str) -> None:
         """
         Get the specified part as svg and set it to the avatar. Used in render().
         """
@@ -244,7 +244,7 @@ class Avatar:
             if p is not None:
                 p.set_content(part_svg.children())
 
-    def happy(self):
+    def happy(self) -> 'Avatar':
         """
         Get the avatar with a happy face
         """
@@ -255,7 +255,7 @@ class Avatar:
             EyeType.HAPPY
         )
 
-    def sad(self):
+    def sad(self) -> 'Avatar':
         """
         Get a sad version of the avatar
         """
@@ -266,7 +266,7 @@ class Avatar:
             EyeType.DEFAULT
         )
 
-    def frightened(self):
+    def frightened(self) -> 'Avatar':
         """
         Get a frightened version of the avatar
         """
@@ -277,7 +277,7 @@ class Avatar:
             EyeType.SQUINT
         )
 
-    def disgusted(self):
+    def disgusted(self) -> 'Avatar':
         """
         Get a disgusted version of the avatar
         """
@@ -288,7 +288,7 @@ class Avatar:
             EyeType.HAPPY
         )
 
-    def angry(self):
+    def angry(self) -> 'Avatar':
         """
         Get an angry version of the avatar
         """
@@ -299,7 +299,7 @@ class Avatar:
             self.eyes
         )
 
-    def surprised(self):
+    def surprised(self) -> 'Avatar':
         """
         Get a surprised version of the avatar
         """
@@ -310,7 +310,7 @@ class Avatar:
             EyeType.SURPRISED
         )
 
-    def confused(self):
+    def confused(self) -> 'Avatar':
         """
         Get a confused version of the avatar
         """
@@ -321,7 +321,7 @@ class Avatar:
             EyeType.SQUINT
         )
 
-    def worried(self):
+    def worried(self) -> 'Avatar':
         """
         Get a worried version of the avatar
         """
@@ -332,7 +332,7 @@ class Avatar:
             EyeType.SQUINT
         )
 
-    def neutral(self):
+    def neutral(self) -> 'Avatar':
         """
         Get a neutral version of the avatar
         """
@@ -343,25 +343,25 @@ class Avatar:
             EyeType.DEFAULT
         )
 
-    def serious(self):
+    def serious(self) -> 'Avatar':
         """
         Get a serious version of the avatar. Same as neutral()
         """
         return self.neutral()
 
-    def scared(self):
+    def scared(self) -> 'Avatar':
         """
         Get a scared version of the avatar. Same as frightened()
         """
         return self.frightened()
 
-    def shocked(self):
+    def shocked(self) -> 'Avatar':
         """
         Get a shocked version of the avatar. Same as surprised()
         """
         return self.surprised()
 
-    def __get_facial_expression(self, natural_eyebrows, default_eyebrows, mouth, eyes):
+    def __get_facial_expression(self, natural_eyebrows: EyebrowType, default_eyebrows: EyebrowType, mouth: MouthType, eyes: EyeType) -> 'Avatar':
         if 'natural' in self.eyebrows.name.lower():
             eyebrows = natural_eyebrows
         else:
@@ -388,7 +388,7 @@ class Avatar:
         )
 
     @staticmethod
-    def __is_empty(value):
+    def __is_empty(value: Union[str, None, enum.Enum]) -> bool:
         """
         Check wether a value is set or not for an attribute
 
@@ -398,7 +398,7 @@ class Avatar:
         """
         return value is None or value == '' or isinstance(value, enum.Enum) and value.value == ''
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         """
         Get the unique hash for the avatar
         """
@@ -426,23 +426,23 @@ class Avatar:
             )
         )
 
-    def __eq__(self, other):
+    def __eq__(self, other: 'Avatar') -> bool:
         """
         == operator. Compare 2 avatars and determine wether they are equal or not
         """
         return hash(self) == hash(other)
 
-    def __ne__(self, other):
+    def __ne__(self, other: 'Avatar') -> bool:
         """
         != operator. Compare 2 avatars and determine wether they are different or not
         """
         return not self.__eq__(other)
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         String representation for the avatar
         """
         return str({k: str(v) for k, v in self.__dict__.items()})
     
-    def _repr_svg_(self):
+    def _repr_svg_(self) -> str:
         return self.render()

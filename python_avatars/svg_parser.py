@@ -1,5 +1,6 @@
 import os
 import re
+from typing import Optional, Union, Any
 from xml.etree import ElementTree as ET
 
 SVG_NAMESPACE_URI = 'http://www.w3.org/2000/svg'
@@ -12,7 +13,7 @@ ET.register_namespace('xlink', XLINK_NAMESPACE_URI)
 
 class SVGParser:
 
-    def __init__(self, path=None, svg=None):
+    def __init__(self, path: Optional[str] = None, svg: Optional[ET.Element] = None) -> None:
         if path is None and svg is None:
             raise Exception('ArgumentMissingException')
 
@@ -27,7 +28,7 @@ class SVGParser:
             self.prefix = os.path.splitext(os.path.basename(path))[0]
             self.__rename_ids()
 
-    def __rename_ids(self):
+    def __rename_ids(self) -> None:
 
         xlink_href = '{{{}}}href'.format(XLINK_NAMESPACE_URI)
 
@@ -43,13 +44,13 @@ class SVGParser:
 
             self.__replace(x, xlink_href, r'#(.+)', r'#{}_{}')
 
-    def __replace(self, x, attr, regex, replacement):
+    def __replace(self, x: ET.Element, attr: str, regex: str, replacement: str):
         if x.get(attr) is not None:
             match = re.match(regex, x.get(attr))
             new_id = replacement.format(self.prefix, match.group(1))
             x.set(attr, new_id)
 
-    def get_element_by_id(self, element_id):
+    def get_element_by_id(self, element_id: str) -> Union['SVGParser', None]:
         result = self.tree.findall(
             '''.//*[@id='{}_{}']'''.format(self.prefix, element_id))
 
@@ -58,10 +59,10 @@ class SVGParser:
 
         return SVGParser(svg=result[0])
 
-    def set_attr(self, name, value):
+    def set_attr(self, name: str, value: Any) -> None:
         self.tree.set(name, str(value))
 
-    def children(self, tag_name=None):
+    def children(self, tag_name: Optional[str] = None) -> list['SVGParser']:
 
         if tag_name is None:
             return [SVGParser(svg=x) for x in self.tree]
@@ -75,7 +76,7 @@ class SVGParser:
 
             return [SVGParser(svg=x) for x in result]
 
-    def render(self, path=None):
+    def render(self, path: Optional[str] = None) -> str:
 
         svg_str = str(self)
 
@@ -85,7 +86,7 @@ class SVGParser:
 
         return svg_str
 
-    def set_content(self, content):
+    def set_content(self, content: Union[None, list, str, 'SVGParser']) -> None:
         if content is None:
             pass
         elif isinstance(content, list):
@@ -96,7 +97,7 @@ class SVGParser:
         else:
             self.tree.append(content.tree)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return ET.tostring(self.tree, encoding='utf-8', method='xml').decode('utf-8')
 
 

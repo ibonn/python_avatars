@@ -1,11 +1,13 @@
+import json
 import os
 import re
 import shutil
-import json
+from typing import Type, Union
 
 from .accessory_types import AccessoryType
 from .avatar_styles import AvatarStyle
 from .background_colors import BackgroundColor
+from .base_enums import AvatarColor, AvatarEnum, AvatarPart
 from .clothing_colors import ClothingColor
 from .clothing_graphics import ClothingGraphic
 from .clothing_types import ClothingType
@@ -18,7 +20,6 @@ from .hat_types import HatType
 from .mouth_types import MouthType
 from .nose_types import NoseType
 from .skin_colors import SkinColor
-from .base_enums import AvatarPart, AvatarColor
 
 # Variables for internal usage. Paths to files/folders
 _package_path = os.path.dirname(__file__)
@@ -26,7 +27,7 @@ _default_path = os.path.join(_package_path, 'default.json')
 _installed_path = os.path.join(_package_path, 'installed.json')
 
 
-def _check(condition, message, exception=RuntimeError):
+def _check(condition: bool, message: str, exception: Type[Exception] = RuntimeError) -> None:
     """
     Check wether a condition holds or not. If the condition is false, raises a RuntimeError with the provided message
 
@@ -42,7 +43,7 @@ def _check(condition, message, exception=RuntimeError):
         raise exception(message)
 
 
-def _install_enum(name, value, part_type, enum_type):
+def _install_enum(name: str, value: str, part_type: Type[AvatarEnum], enum_type: Union[Type[AvatarPart], Type[AvatarColor]]) -> bool:
     """
     Adds a value to a enum. Returns True on success. In case if error, an exception is raised
 
@@ -54,7 +55,7 @@ def _install_enum(name, value, part_type, enum_type):
     :type name: str
     :type value: str
     :type part_type: :class:`AvatarEnum`
-    :type enum_type: :class:`Avatarpart` or :class:`AvatarColor`
+    :type enum_type: :class:`AvatarPart` or :class:`AvatarColor`
 
     :raises RuntimeError: The error is raised if the enum cannot be expanded
     :raises FileExistsError: Raised when the enum contains an item named ``name``
@@ -105,7 +106,7 @@ def _install_enum(name, value, part_type, enum_type):
     return True
 
 
-def _prompt_uninstall_confirmation(class_name, enum_name):
+def _prompt_uninstall_confirmation(class_name: str, enum_name: str) -> bool:
     """
     Prompt a deletion confirmation message. Returns ``True`` when the user accepted and ``False`` when declined
 
@@ -120,7 +121,7 @@ def _prompt_uninstall_confirmation(class_name, enum_name):
     return _prompt_confirmation('Do you really want to uninstall {}.{}?'.format(class_name, enum_name))
 
 
-def _prompt_confirmation(msg):
+def _prompt_confirmation(msg: str) -> bool:
     """
     Prompt a confirmation message
 
@@ -133,7 +134,7 @@ def _prompt_confirmation(msg):
     return confirm_resp.lower().strip() == 'y'
 
 
-def _uninstall_enum(part, enum_type):
+def _uninstall_enum(part: AvatarEnum, enum_type: Type[AvatarEnum]) -> bool:
     """
     Removes a value for a given enum. Returns ``True`` on success
 
@@ -171,7 +172,7 @@ def _uninstall_enum(part, enum_type):
     return False
 
 
-def install_part(part_path, part_type):
+def install_part(part_path: str, part_type: Type[AvatarPart]) -> bool:
     """
     Installs a part (clothing, hair type, eye type...)
 
@@ -201,7 +202,7 @@ def install_part(part_path, part_type):
     return True
 
 
-def uninstall_part(part, confirm=True):
+def uninstall_part(part: AvatarPart, confirm: bool = True) -> bool:
     """
     Removes an installed part. Returns ``True`` on success, ``False`` otherwise
 
@@ -219,7 +220,7 @@ def uninstall_part(part, confirm=True):
     return False
 
 
-def install_color(name, value, part_type):
+def install_color(name: str, value: str, part_type: Type[AvatarColor]) -> bool:
     """
     Installs a color. Returns ``True`` on success
 
@@ -245,7 +246,7 @@ def install_color(name, value, part_type):
     return _install_enum(name, value, part_type, AvatarColor)
 
 
-def uninstall_color(color, confirm=True):
+def uninstall_color(color: AvatarColor, confirm: bool = True) -> bool:
     """
     Unistalls a color. Returns ``True`` on success, ``False`` otherwise
 
@@ -263,7 +264,7 @@ def uninstall_color(color, confirm=True):
     return _uninstall_enum(color, AvatarColor)
 
 
-def factory_reset(confirm=True):
+def factory_reset(confirm: bool = True) -> None:
     """
     Resets the package to its original state
 
@@ -295,7 +296,7 @@ def factory_reset(confirm=True):
                         AvatarPart if "__path__" in enum_values_dict else AvatarColor)
 
 
-def _get_path(enum_cls, value):
+def _get_path(enum_cls: Type[AvatarEnum], value: str) -> str:
     """
     Returns the path to the svg file for an AvatarPart given the enum and the name
 
@@ -308,7 +309,7 @@ def _get_path(enum_cls, value):
     return p
 
 
-def _sanitize(value):
+def _sanitize(value: str) -> str:
     """
     Prepares a string to be used as a Python identifier
 
@@ -327,7 +328,7 @@ def _sanitize(value):
     return value
 
 
-def _write_enum(e, values_dict, t):
+def _write_enum(e: AvatarEnum, values_dict: dict[str, str], t: Union[AvatarPart, AvatarColor]) -> None:
     """
     Writes an enum to an importable file
 
