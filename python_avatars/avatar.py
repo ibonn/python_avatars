@@ -443,3 +443,6 @@ class Avatar:
         String representation for the avatar
         """
         return str({k: str(v) for k, v in self.__dict__.items()})
+    
+    def _repr_svg_(self):
+        return self.render()
