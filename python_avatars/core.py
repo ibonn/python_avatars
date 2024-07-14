@@ -214,7 +214,14 @@ def uninstall_part(part: AvatarPart, confirm: bool = True) -> bool:
 
     :return: bool
     """
-    if _prompt_uninstall_confirmation(part.__class__.__name__, part.name) and _uninstall_enum(part, AvatarPart):
+    if confirm:
+        if _prompt_uninstall_confirmation(part.__class__.__name__, part.name):
+            return _uninstall_part(part)
+    return False
+
+
+def _uninstall_part(part: AvatarPart) -> bool:
+    if _uninstall_enum(part, AvatarPart):
         os.remove(_get_path(part.__class__, part.value))
         return True
     return False
